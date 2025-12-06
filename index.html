@@ -8,51 +8,40 @@
   <style>
     :root {
       --bg-deep: #020806;
-      --bg-soft: #0a1a15;
+      --bg-soft: #07130f;
       --accent: #c6a96b;
       --accent-soft: rgba(198,169,107,0.18);
-      --text-main: #f2f2f2;
-      --text-soft: #b6c2bb;
-      --border-subtle: #23342f;
-      --pill-bg: rgba(6,18,14,0.85);
-      --card-bg: rgba(5,16,12,0.88);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      --text-main: #f0f4f2;
+      --text-soft: #b3c1bb;
+      --border-subtle: #1c2a25;
+      --pill-bg: rgba(7,20,15,0.75);
+      --card-bg: rgba(8,26,20,0.40);
+      --card-border: rgba(155,190,170,0.22);
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-                   "Segoe UI", Roboto, sans-serif;
-      background:
-        radial-gradient(circle at top, #1a3d30 0, #020806 60%);
+      margin: 0;
+      padding: 40px 14px;
+      font-family: system-ui, "SF Pro Text", Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(circle at top, #163f2e 0, #020806 60%);
       color: var(--text-main);
-      min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 40px 14px;
+      align-items: flex-start;
+      min-height: 100vh;
     }
 
     .shell {
       width: 100%;
       max-width: 960px;
-      border-radius: 28px;
-      background: linear-gradient(135deg,
-                  rgba(14,40,32,0.92),
-                  rgba(2,8,6,0.95));
-      border: 1px solid rgba(181,214,195,0.18);
-      box-shadow:
-        0 26px 60px rgba(0,0,0,0.75),
-        0 0 0 1px rgba(0,0,0,0.6);
-      padding: 32px 26px 30px;
-      backdrop-filter: blur(20px);
+      border-radius: 26px;
+      background: linear-gradient(135deg, rgba(12,40,28,0.92), rgba(2,8,6,0.92));
+      border: 1px solid rgba(176,216,196,0.18);
+      box-shadow: 0 26px 70px rgba(0,0,0,0.85);
+      padding: 28px 26px;
       display: grid;
-      grid-template-columns: minmax(0, 3.4fr) minmax(0, 2.6fr);
-      gap: 32px;
+      gap: 26px;
+      grid-template-columns: 1.4fr 1fr;
       position: relative;
       overflow: hidden;
     }
@@ -61,281 +50,252 @@
     .shell::before {
       content: "";
       position: absolute;
-      inset: -160px;
+      inset: -140px;
       background:
-        radial-gradient(circle at 10% 0, rgba(115,189,141,0.22) 0, transparent 45%),
-        radial-gradient(circle at 90% 100%, rgba(45,122,94,0.22) 0, transparent 40%);
-      opacity: 0.75;
+        radial-gradient(circle at 12% 4%, rgba(95,170,125,0.22) 0, transparent 45%),
+        radial-gradient(circle at 88% 100%, rgba(65,135,110,0.22) 0, transparent 40%);
+      opacity: 0.8;
       pointer-events: none;
       mix-blend-mode: screen;
-    }
-
-    .shell-inner {
-      position: relative;
-      z-index: 1;
-      display: contents;
     }
 
     .chip {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 16px;
+      padding: 7px 14px;
       border-radius: 999px;
       border: 1px solid var(--border-subtle);
-      background: rgba(2,8,6,0.95);
+      background: rgba(2,8,6,0.92);
       color: var(--text-soft);
-      font-size: 14px;
-      letter-spacing: 0.11em;
-      margin-bottom: 24px;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
     }
 
     .chip-dot {
-      width: 9px;
-      height: 9px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: #45e0a0;
-      box-shadow: 0 0 10px rgba(69,224,160,0.9);
+      background: #4af0ac;
+      box-shadow: 0 0 8px rgba(74,240,172,0.9);
     }
 
+    /* HEADING — now slightly smaller */
     h1 {
-      font-size: clamp(36px, 4vw, 44px);
+      font-size: clamp(26px, 3vw, 32px);
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      margin-bottom: 14px;
-      font-weight: 580;
+      margin-bottom: 10px;
+      font-weight: 550;
     }
 
     .subtitle {
-      font-size: 18px;
+      font-size: 17px;
       color: var(--text-soft);
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       line-height: 1.6;
     }
 
     .divider {
-      width: 80px;
+      width: 74px;
       height: 2px;
       background: linear-gradient(90deg, var(--accent), transparent);
-      border-radius: 999px;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
+      border-radius: 9px;
     }
 
     .section-title {
-      font-size: 15px;
+      font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       color: var(--text-soft);
       margin-bottom: 10px;
     }
 
     .text-block {
-      font-size: 17px;
+      font-size: 16px;
+      line-height: 1.75;
       color: var(--text-main);
-      line-height: 1.85;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
 
     .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .pill {
-      font-size: 13.5px;
       padding: 8px 14px;
+      font-size: 13px;
       border-radius: 999px;
-      border: 1px solid rgba(191,214,199,0.22);
       background: var(--pill-bg);
+      border: 1px solid rgba(160,190,170,0.27);
       color: var(--text-soft);
-      backdrop-filter: blur(10px);
     }
 
     ul {
       list-style: none;
-      margin-left: 0;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     ul li {
-      font-size: 16px;
-      color: var(--text-soft);
-      margin-bottom: 8px;
-      position: relative;
       padding-left: 16px;
-      line-height: 1.7;
+      margin-bottom: 6px;
+      color: var(--text-soft);
+      font-size: 15px;
+      position: relative;
     }
 
     ul li::before {
       content: "▸";
       position: absolute;
       left: 0;
-      top: 3px;
+      top: 0;
       color: var(--accent);
       font-size: 12px;
     }
 
-    .micro-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-soft);
-      margin-bottom: 8px;
-    }
-
-    .contact {
-      font-size: 15px;
-      color: var(--text-soft);
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 14px;
-      margin-top: 16px;
-    }
-
-    .contact strong {
-      color: var(--text-main);
-      font-size: 16px;
-    }
-
-    /* right side cards */
+    /* RIGHT SIDE CARDS — softer */
     .card {
-      border-radius: 22px;
-      padding: 18px 18px 20px;
       background: var(--card-bg);
-      border: 1px solid rgba(160,196,176,0.22);
-      box-shadow:
-        0 16px 36px rgba(0,0,0,0.75),
-        inset 0 0 0 1px rgba(0,0,0,0.55);
-      margin-bottom: 18px;
+      border: 1px solid var(--card-border);
+      padding: 18px 16px;
+      margin-bottom: 14px;
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
     }
 
     .card-title {
-      font-size: 14px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      font-size: 13px;
       color: var(--text-soft);
-      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 10px;
     }
 
     .card-text {
-      font-size: 16px;
+      font-size: 15px;
+      line-height: 1.65;
       color: var(--text-main);
-      line-height: 1.85;
     }
 
     .mini-pill {
       display: inline-block;
-      font-size: 12px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(172,204,182,0.26);
-      background: rgba(4,16,11,0.95);
-      color: var(--text-soft);
-      margin-top: 10px;
+      margin-top: 8px;
       margin-right: 6px;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 11px;
+      border: 1px solid rgba(160,190,170,0.3);
+      background: rgba(3,13,10,0.85);
+      color: var(--text-soft);
+    }
+
+    .contact {
+      margin-top: 20px;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 16px;
+      font-size: 15px;
+      color: var(--text-soft);
     }
 
     @media (max-width: 780px) {
-      body {
-        padding: 22px 10px;
-        align-items: flex-start;
-      }
-      .shell {
-        grid-template-columns: 1fr;
-        padding: 22px 18px;
-      }
+      .shell { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
   <main class="shell">
-    <div class="shell-inner">
-      
-      <!-- LEFT -->
-      <section class="left">
-        <div class="chip">
-          <span class="chip-dot"></span>
-          <span>Quiet Research • Fraud & Corruption</span>
+
+    <!-- LEFT -->
+    <section class="left">
+      <div class="chip">
+        <span class="chip-dot"></span>
+        Quiet Research • Fraud & Corruption
+      </div>
+
+      <h1>SAHIL SINGHAL</h1>
+
+      <div class="subtitle">
+        Research and analysis of how fraud, corruption, and systemic breakdown unfold inside organisations —
+        and how regulators interpret those failures years later.
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section-title">About</div>
+      <p class="text-block">
+        Lawyer and Certified Fraud Examiner working at the intersection of misconduct patterns,
+        organisational behaviour, and enforcement intelligence — studying how complex decisions shift
+        under pressure and how internal failures silently evolve.
+      </p>
+
+      <div class="section-title">Areas I Work In</div>
+      <div class="pill-row">
+        <span class="pill">Fraud & Corruption Intelligence</span>
+        <span class="pill">Corporate Enforcement</span>
+        <span class="pill">Regulatory Behaviour</span>
+        <span class="pill">Internal Failures</span>
+        <span class="pill">Whistleblower Patterns</span>
+        <span class="pill">Cross-Border Risk</span>
+      </div>
+
+      <div class="section-title">Current Focus</div>
+      <p class="text-block">
+        I run <strong>Fraulex</strong>, a private intelligence platform analysing corruption patterns,
+        enforcement logic, and behavioural vulnerabilities across corporate systems.
+      </p>
+
+      <div class="section-title">Research Direction</div>
+      <ul>
+        <li>How fraud & corruption evolve inside organisations</li>
+        <li>Pressure-driven behaviour of executives & gatekeepers</li>
+        <li>Global enforcement patterns (India–UK–US)</li>
+        <li>Signals visible months before an investigation</li>
+        <li>Simulation-based decision analysis</li>
+      </ul>
+
+      <div class="contact">
+        <strong>sahil@fraulex.com</strong><br>
+        <span style="font-size:12px;">For research-aligned communication only.</span>
+      </div>
+    </section>
+
+    <!-- RIGHT -->
+    <aside class="right">
+      <div class="card">
+        <div class="card-title">Profile</div>
+        <div class="card-text">
+          Quiet, long-form research spanning legal analysis, fraud examination, and intelligence-style
+          case reconstruction — focused on structural weakness, behavioural triggers, and enforcement outcomes.
         </div>
+      </div>
 
-        <h1>SAHIL SINGHAL</h1>
-
-        <div class="subtitle">
-          Researching how fraud and corruption form inside organisations, how systems quietly fail, 
-          and how enforcement bodies interpret those failures years later.
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section-title">About</div>
-        <p class="text-block">
-          I am a <strong>Lawyer</strong> and <strong>Certified Fraud Examiner</strong> working at the 
-          intersection of fraud patterns, internal behaviour, and regulatory action. 
-          My research explores how misconduct actually evolves inside organisations 
-          and how enforcement bodies reconstruct it during investigations.
-        </p>
-
-        <div class="section-title">Areas I Work In</div>
-        <div class="pill-row">
-          <span class="pill">Fraud & Corruption Intelligence</span>
-          <span class="pill">Corporate Enforcement Analysis</span>
-          <span class="pill">Regulatory Behaviour</span>
-          <span class="pill">Internal Control Failures</span>
-          <span class="pill">Whistleblower Patterns</span>
-          <span class="pill">Cross-Border Misconduct</span>
-        </div>
-
-        <div class="section-title">Current Focus</div>
-        <p class="text-block">
-          I run <strong>Fraulex</strong>, a private intelligence and research platform studying misconduct 
-          evolution, regulator-credible defence models, and simulation-based risk environments. 
-          The platform is intentionally quiet and research-driven.
-        </p>
-
-        <div class="section-title">Research Direction</div>
-        <ul>
-          <li>Evolution of fraud & corruption across sectors</li>
-          <li>Behaviour of executives & boards under pressure</li>
-          <li>Patterns in global enforcement actions (India, UK, US)</li>
-          <li>Early-signal detection before investigations</li>
-          <li>Design of intelligence-grade corporate simulations</li>
-        </ul>
-
-        <div class="contact">
-          <div class="micro-label">Contact</div>
-          For discreet communication:<br>
-          <strong>sahil@fraulex.com</strong>
-        </div>
-      </section>
-
-      <!-- RIGHT -->
-      <aside class="right">
-        <div class="card">
-          <div class="card-title">Orientation</div>
-          <div class="card-text">
-            My research style is slow, quiet, and pattern-driven — based on deep case reading,
-            cross-jurisdiction comparison, and behavioural reconstruction.
-            <div>
-              <span class="mini-pill">Case Reconstruction</span>
-              <span class="mini-pill">Pattern Mapping</span>
-              <span class="mini-pill">Behavioural Signals</span>
-            </div>
+      <div class="card">
+        <div class="card-title">Orientation</div>
+        <div class="card-text">
+          I prioritise depth over visibility, using cross-jurisdiction study and failure-mapping to build
+          practical intelligence rather than commentary.
+          <div>
+            <span class="mini-pill">Case Reconstruction</span>
+            <span class="mini-pill">Failure Mapping</span>
+            <span class="mini-pill">Enforcement Trajectories</span>
           </div>
         </div>
+      </div>
 
-        <div class="card">
-          <div class="card-title">Long-Term Aim</div>
-          <div class="card-text">
-            To build a globally recognised body of corruption-intelligence work that merges 
-            legal reasoning, behavioural insight, and practical enforcement learning into 
-            a single disciplined research practice.
-          </div>
+      <div class="card">
+        <div class="card-title">Long-Term Aim</div>
+        <div class="card-text">
+          To build a global body of work on corruption intelligence that merges legal reasoning,
+          behavioural dynamics, and enforcement logic into a disciplined, research-first practice.
         </div>
-
-      </aside>
-    </div>
+      </div>
+    </aside>
   </main>
 </body>
 </html>
