@@ -7,13 +7,13 @@
 
   <style>
     :root {
-      --bg: #050608;
-      --bg-soft: #0c0f14;
+      --bg: #06110c; /* deep MI6 green */
+      --bg-soft: #0b1c14;
       --accent: #c6a96b;
       --accent-soft: rgba(198,169,107,0.18);
       --text-main: #e6e6e6;
       --text-soft: #a7a7a7;
-      --border-subtle: #1f2430;
+      --border-subtle: #1b2a22;
     }
 
     * {
@@ -23,17 +23,17 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-                   "Segoe UI", Roboto, sans-serif;
-      background: radial-gradient(circle at top, #151820 0, #050608 55%);
-      color: var(--text-main);
+      background: radial-gradient(circle at top, #12291e 0%, #06110c 60%);
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      padding: 40px 14px;
+      align-items: center; /* FULL CENTER */
+      padding: 30px;
+      font-family: system-ui, -apple-system, "SF Pro Text", sans-serif;
+      color: var(--text-main);
     }
 
+    /* MAIN CARD */
     .shell {
       width: 100%;
       max-width: 960px;
@@ -41,39 +41,28 @@
       background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(0,0,0,0.7));
       border: 1px solid rgba(255,255,255,0.06);
       box-shadow:
-        0 26px 60px rgba(0,0,0,0.7),
-        0 0 0 1px rgba(255,255,255,0.01);
-      padding: 28px 22px 26px;
+        0 26px 60px rgba(0,0,0,0.65),
+        0 0 0 1px rgba(255,255,255,0.03);
+      padding: 32px;
       backdrop-filter: blur(22px);
       display: grid;
-      grid-template-columns: minmax(0, 3.4fr) minmax(0, 2.6fr);
-      gap: 26px;
+      grid-template-columns: 3fr 2.2fr;
+      gap: 28px;
       position: relative;
       overflow: hidden;
     }
 
-    /* subtle floating glow */
+    /* glowing mist */
     .shell::before {
       content: "";
       position: absolute;
       inset: -120px;
       background:
-        radial-gradient(circle at 10% 0, rgba(198,169,107,0.22) 0, transparent 42%),
-        radial-gradient(circle at 90% 100%, rgba(111,199,255,0.16) 0, transparent 40%);
+        radial-gradient(circle at 20% 0%, rgba(198,169,107,0.22) 0, transparent 45%),
+        radial-gradient(circle at 90% 100%, rgba(120,255,180,0.14) 0, transparent 40%);
       opacity: 0.7;
       pointer-events: none;
       mix-blend-mode: screen;
-    }
-
-    .shell-inner {
-      position: relative;
-      z-index: 1;
-      display: contents;
-    }
-
-    .left, .right {
-      position: relative;
-      z-index: 1;
     }
 
     .chip {
@@ -83,7 +72,7 @@
       padding: 6px 12px;
       border-radius: 999px;
       border: 1px solid var(--border-subtle);
-      background: rgba(5,6,8,0.9);
+      background: rgba(5,6,8,0.5);
       color: var(--text-soft);
       font-size: 12px;
       text-transform: uppercase;
@@ -100,7 +89,7 @@
     }
 
     h1 {
-      font-size: clamp(30px, 3.2vw, 36px);
+      font-size: 38px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       margin-bottom: 10px;
@@ -130,7 +119,7 @@
     }
 
     .text-block {
-      font-size: 14.8px;
+      font-size: 15px;
       color: var(--text-main);
       line-height: 1.7;
       margin-bottom: 18px;
@@ -148,20 +137,15 @@
       padding: 6px 12px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.04);
-      background: rgba(8,10,14,0.9);
+      background: rgba(8,10,14,0.7);
       color: var(--text-soft);
-    }
-
-    ul {
-      list-style: none;
-      margin-left: 0;
-      margin-bottom: 18px;
     }
 
     ul li {
       font-size: 14px;
       color: var(--text-soft);
-      margin-bottom: 4px;
+      margin-bottom: 5px;
+      list-style: none;
       position: relative;
       padding-left: 14px;
     }
@@ -170,34 +154,21 @@
       content: "▸";
       position: absolute;
       left: 0;
-      top: 0;
       color: var(--accent);
       font-size: 11px;
-      transform: translateY(2px);
     }
 
-    .contact {
-      font-size: 14px;
-      color: var(--text-soft);
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 14px;
-      margin-top: 10px;
-    }
-
-    .contact strong {
-      color: var(--text-main);
-    }
-
-    /* right side image card */
+    /* PHOTO CARD */
     .photo-card {
       position: relative;
       border-radius: 24px;
       overflow: hidden;
-      background: #050608;
-      border: 1px solid rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.05);
+      background: #030805;
       box-shadow:
-        0 18px 40px rgba(0,0,0,0.85),
-        0 0 0 1px rgba(0,0,0,0.7);
+        0 18px 40px rgba(0,0,0,0.7),
+        0 0 0 1px rgba(0,0,0,0.6);
+      height: 100%;
       max-height: 520px;
     }
 
@@ -206,128 +177,82 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: saturate(1.02) contrast(1.02);
       transform: scale(1.02);
-      transition: transform 0.8s ease, filter 0.6s ease;
-    }
-
-    .photo-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top, rgba(0,0,0,0.0) 18%, rgba(0,0,0,0.55) 70%);
-      pointer-events: none;
+      transition: 0.6s;
     }
 
     .photo-card:hover img {
-      transform: scale(1.05);
-      filter: saturate(1.08) contrast(1.05);
+      transform: scale(1.06);
     }
 
-    .badge {
-      position: absolute;
-      left: 14px;
-      bottom: 14px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(5,6,8,0.9);
-      border: 1px solid rgba(255,255,255,0.08);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    .contact {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
       color: var(--text-soft);
-      z-index: 2;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
+      font-size: 14px;
     }
 
     @media (max-width: 780px) {
-      body {
-        padding: 22px 10px;
-      }
       .shell {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 20px 18px 22px;
+        grid-template-columns: 1fr;
       }
       .photo-card {
-        order: -1;
         max-height: 420px;
+        order: -1;
       }
     }
   </style>
 </head>
+
 <body>
   <main class="shell">
-    <div class="shell-inner">
-      <section class="left">
-        <div class="chip">
-          <span class="chip-dot"></span>
-          <span>Research • Fraud & Corruption</span>
-        </div>
+    <section class="left">
+      <div class="chip">
+        <span class="chip-dot"></span>
+        Research • Fraud & Corruption
+      </div>
 
-        <h1>SAHIL&nbsp;SINGHAL</h1>
-        <div class="subtitle">
-          Researcher focused on fraud, corruption, and corporate enforcement intelligence.
-        </div>
+      <h1>SAHIL SINGHAL</h1>
+      <div class="subtitle">Fraud, corruption & enforcement intelligence researcher.</div>
 
-        <div class="divider"></div>
+      <div class="divider"></div>
 
-        <div class="section-title">About</div>
-        <p class="text-block">
-          A Lawyer and Certified Fraud Examiner analysing how organisations break their own rules how misconduct forms,
-          how decisions shift under pressure, and how regulators interpret those
-          actions when they arrive years later.
-        </p>
+      <div class="section-title">About</div>
+      <p class="text-block">
+        A lawyer and Certified Fraud Examiner studying how misconduct forms, how decisions shift under pressure,
+        and how regulators interpret organisational behaviour years later.
+      </p>
 
-        <div class="section-title">Fields of Work</div>
-        <div class="pill-row">
-          <span class="pill">Fraud &amp; Corruption Analysis</span>
-          <span class="pill">Corporate Enforcement</span>
-          <span class="pill">Regulatory Intelligence</span>
-          <span class="pill">Investigation Patterns</span>
-          <span class="pill">Organisational Behaviour</span>
-          <span class="pill">Cross-Border Risk</span>
-        </div>
+      <div class="section-title">Fields</div>
+      <div class="pill-row">
+        <span class="pill">Fraud Intelligence</span>
+        <span class="pill">Corruption Analysis</span>
+        <span class="pill">Regulatory Behaviour</span>
+        <span class="pill">Corporate Enforcement</span>
+        <span class="pill">Cross-Border Risks</span>
+      </div>
 
-        <div class="section-title">Current Work</div>
-        <p class="text-block">
-          I run <strong>Fraulex</strong>, an intelligence and research platform
-          focused on fraud and corruption patterns, regulator-credible defence models,
-          and simulation of high-pressure decision environments. The platform is
-          intentionally low-visibility and research-driven.
-        </p>
+      <div class="section-title">Research Direction</div>
+      <ul>
+        <li>Evolution of misconduct inside organisations</li>
+        <li>Patterns in UK, US, EU enforcement</li>
+        <li>Internal system failures & collusion networks</li>
+        <li>Signals before investigations, raids or settlements</li>
+      </ul>
 
-        <div class="section-title">Research Direction</div>
-        <ul>
-          <li>Evolution of fraud and corruption inside complex organisations</li>
-          <li>Behaviour of executives and boards under enforcement risk</li>
-          <li>Patterns in enforcement actions across India, UK, US and key hubs</li>
-          <li>Early-warning signals before investigations, raids, or settlements</li>
-          <li>Design of intelligence-grade simulations for corporate integrity</li>
-        </ul>
+      <div class="contact">
+        Contact: <strong>sahil@fraulex.com</strong><br>
+        <span style="font-size:12px;">Research-aligned communication only.</span>
+      </div>
+    </section>
 
-        <div class="contact">
-          For discreet professional contact: <br>
-          <strong>sahil@fraulex.com</strong><br>
-          <span style="font-size:12px; color:var(--text-soft);">
-           Research-aligned communication only.
-          </span>
-        </div>
-      </section>
+    <aside class="right">
+      <div class="photo-card">
+        <img src="sahil.jpg" alt="Sahil Singhal Photo">
+      </div>
+    </aside>
 
-    
-          </div>
-        </div>
-      </aside>
-    </div>
   </main>
 </body>
 </html>
