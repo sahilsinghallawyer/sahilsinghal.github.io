@@ -2,23 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Sahil Singhal — Researcher</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Sahil Singhal — researcher focused on fraud, corruption, organisational behaviour, and regulatory intelligence."
-  />
-<img src="DSC02417.jpeg" style="width:180px; border-radius:12px;">
+  <title>Sahil Singhal – Intelligence Researcher</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
     :root {
       --bg: #050608;
-      --bg-elevated: #0c0f16;
-      --border-subtle: #202432;
-      --accent: #c5a86b;
-      --accent-soft: rgba(197, 168, 107, 0.2);
-      --text-main: #f3f3f3;
-      --text-muted: #a1a7b5;
-      --chip-bg: #141824;
+      --bg-soft: #0d0f14;
+      --accent: #c9a969;
+      --accent-soft: rgba(201, 169, 105, 0.16);
+      --text-main: #f5f5f5;
+      --text-soft: #b6b7c2;
     }
 
     * {
@@ -28,390 +22,318 @@
     }
 
     body {
+      background: radial-gradient(circle at top, #151824 0, #050608 55%);
+      color: var(--text-main);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
         "Helvetica Neue", Arial, sans-serif;
-      background: radial-gradient(circle at top, #111626 0, #050608 45%);
-      color: var(--text-main);
       min-height: 100vh;
-    }
-
-    .page {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 40px 18px 70px;
-    }
-
-    header {
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 26px;
-      margin-bottom: 40px;
+      padding: 32px 16px;
     }
 
-    .avatar-wrap {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      flex-shrink: 0;
-    }
-
-    .avatar-border {
-      position: absolute;
-      inset: -5px;
-      border-radius: 999px;
-      border: 1px solid rgba(197, 168, 107, 0.45);
-      opacity: 0;
-      transform: scale(0.96);
-      animation: halo-in 900ms ease-out 400ms forwards;
-    }
-
-    .avatar {
+    .frame {
       width: 100%;
-      height: 100%;
-      border-radius: 999px;
-      overflow: hidden;
-      filter: grayscale(12%);
-      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.7);
-      transform: translateY(8px);
-      opacity: 0;
-      animation: avatar-in 800ms ease-out 80ms forwards;
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1.05);
-    }
-
-    @keyframes avatar-in {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes halo-in {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .hero {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .hero-title {
-      font-size: 32px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-weight: 500;
-      margin-bottom: 6px;
-    }
-
-    .hero-sub {
-      font-size: 16px;
-      color: var(--text-muted);
-      max-width: 520px;
-      line-height: 1.6;
-    }
-
-    .hero-sub strong {
-      color: var(--text-main);
-      font-weight: 500;
-    }
-
-    .hero-tags {
-      margin-top: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .chip {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(161, 167, 181, 0.35);
-      background: rgba(10, 12, 18, 0.9);
-      color: var(--text-muted);
-    }
-
-    main {
-      margin-top: 36px;
+      max-width: 980px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #080a10, #050608);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      box-shadow:
+        0 26px 80px rgba(0, 0, 0, 0.85),
+        0 0 0 1px rgba(201, 169, 105, 0.04);
+      padding: 28px 26px;
       display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
-      gap: 26px;
-    }
-
-    section {
-      background: linear-gradient(
-        145deg,
-        rgba(10, 13, 22, 0.94),
-        rgba(6, 8, 14, 0.98)
-      );
-      border-radius: 18px;
-      border: 1px solid var(--border-subtle);
-      padding: 18px 18px 20px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 20px;
       position: relative;
       overflow: hidden;
     }
 
-    section::before {
+    /* subtle animated glow */
+    .frame::before {
       content: "";
       position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        circle at top right,
-        rgba(197, 168, 107, 0.16),
-        transparent 60%
-      );
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(201, 169, 105, 0.16), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(85, 118, 255, 0.16), transparent 55%);
       opacity: 0;
+      animation: floatGlow 18s ease-in-out infinite;
       pointer-events: none;
-      transition: opacity 220ms ease-out;
     }
 
-    section:hover::before {
-      opacity: 1;
+    @keyframes floatGlow {
+      0%, 10% { opacity: 0; transform: translate3d(0, 0, 0); }
+      25%, 50% { opacity: 1; transform: translate3d(-10px, 6px, 0); }
+      75% { opacity: 0.6; transform: translate3d(6px, -4px, 0); }
+      100% { opacity: 0; transform: translate3d(0, 0, 0); }
     }
 
-    .sec-title {
-      font-size: 14px;
+    .left {
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .tagline {
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      margin-bottom: 5px;
+      letter-spacing: 0.3em;
+      color: var(--text-soft);
     }
 
-    .sec-heading {
-      font-size: 17px;
-      font-weight: 500;
-      margin-bottom: 10px;
+    h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      font-weight: 600;
+      letter-spacing: 0.03em;
     }
 
-    .sec-body {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.7;
+    .subline {
+      margin-top: 4px;
+      font-size: 15px;
+      color: var(--text-soft);
     }
 
-    .sec-body strong {
-      color: var(--text-main);
-      font-weight: 500;
+    .divider {
+      width: 58px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      margin: 10px 0 4px;
+    }
+
+    .bio {
+      font-size: 15px;
+      color: var(--text-soft);
+      max-width: 480px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(6, 8, 12, 0.8);
+      color: var(--text-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      backdrop-filter: blur(8px);
+      white-space: nowrap;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .section-title {
+      margin-top: 12px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
     }
 
     .list {
+      margin-top: 6px;
+      font-size: 14px;
+      color: var(--text-soft);
       list-style: none;
-      margin-top: 10px;
     }
 
     .list li {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-      padding-left: 14px;
-      position: relative;
+      margin-bottom: 4px;
     }
 
-    .list li::before {
-      content: "•";
-      position: absolute;
-      left: 2px;
-      color: var(--accent);
+    .list span {
+      color: var(--text-main);
+    }
+
+    .contact {
+      margin-top: 14px;
       font-size: 14px;
+      color: var(--text-soft);
     }
 
-    .caps-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 8px;
-    }
-
-    .tag {
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: var(--chip-bg);
-      border: 1px solid rgba(86, 94, 118, 0.6);
-      color: var(--text-muted);
-    }
-
-    .muted {
-      color: var(--text-muted);
-      font-size: 13px;
-      margin-top: 8px;
-    }
-
-    footer {
-      margin-top: 30px;
-      padding-top: 16px;
-      border-top: 1px solid #181c28;
-      font-size: 11px;
-      color: #676f80;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    a {
+    .contact a {
       color: var(--accent);
       text-decoration: none;
+      border-bottom: 1px dotted rgba(201, 169, 105, 0.5);
     }
 
-    a:hover {
-      text-decoration: underline;
+    .contact a:hover {
+      border-bottom-style: solid;
+    }
+
+    .right {
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .photo-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 3 / 4;
+      border-radius: 26px;
+      overflow: hidden;
+      background: radial-gradient(circle at top, #22263a, #050608);
+      box-shadow:
+        0 18px 55px rgba(0, 0, 0, 0.9),
+        0 0 0 1px rgba(255, 255, 255, 0.03);
+      transform: translateY(6px);
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+    }
+
+    .photo-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(201, 169, 105, 0.25), transparent 55%);
+      opacity: 0.45;
+      mix-blend-mode: soft-light;
+      pointer-events: none;
+    }
+
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.02) contrast(1.04);
+      transform: scale(1.02);
+    }
+
+    .photo-wrap:hover {
+      transform: translateY(0);
+      box-shadow:
+        0 26px 80px rgba(0, 0, 0, 0.96),
+        0 0 0 1px rgba(201, 169, 105, 0.45);
+    }
+
+    .badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      background: rgba(5, 6, 10, 0.9);
+      color: var(--text-soft);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+    }
+
+    .corner-mark {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      color: var(--accent);
+      background: rgba(3, 4, 7, 0.9);
+    }
+
+    .footnote {
+      position: absolute;
+      bottom: 14px;
+      right: 22px;
+      font-size: 11px;
+      color: #6b6d79;
     }
 
     @media (max-width: 780px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
+      body {
+        padding: 18px 10px;
       }
-      main {
+      .frame {
         grid-template-columns: minmax(0, 1fr);
+        padding: 22px 18px 20px;
       }
-      .hero-title {
+      h1 {
         font-size: 26px;
+      }
+      .photo-wrap {
+        max-width: 260px;
+        margin-top: 4px;
+      }
+      .footnote {
+        position: static;
+        margin-top: 16px;
+        text-align: right;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="avatar-wrap">
-        <div class="avatar-border"></div>
-        <div class="avatar">
-          <!-- Replace the src below with your actual file path if different -->
-          <img src="assets/sahil-profile.jpg" alt="Sahil Singhal" />
-        </div>
+  <main class="frame">
+    <section class="left">
+      <div class="tagline">SAHIL SINGHAL</div>
+      <h1>Fraud & Corruption<br>Intelligence Researcher</h1>
+      <div class="subline">
+        Working at the intersection of corporate misconduct, regulatory environments, and global enforcement patterns.
       </div>
 
-      <div class="hero">
-        <div class="hero-title">Sahil&nbsp;Singhal</div>
-        <p class="hero-sub">
-          Researcher working at the intersection of
-          <strong>fraud, corruption, organisational behaviour,</strong> and
-          <strong>regulatory intelligence</strong>. I study how misconduct
-          forms, how systems fail, and how enforcement bodies interpret those
-          failures across jurisdictions.
-        </p>
+      <div class="divider"></div>
 
-        <div class="hero-tags">
-          <span class="chip">Fraud &amp; Corruption Intelligence</span>
-          <span class="chip">Regulatory Environments</span>
-          <span class="chip">Global Enforcement Patterns</span>
-        </div>
+      <p class="bio">
+        I study how risk forms inside organisations – through pressure, incentives, and structure – and how it is later read by
+        investigators, regulators, and markets. My work focuses on pattern recognition, case analysis, and intelligence models for
+        fraud and corruption.
+      </p>
+
+      <div class="section-title">Focus Areas</div>
+      <div class="grid">
+        <div class="pill"><span class="dot"></span> Fraud & corruption patterns</div>
+        <div class="pill"><span class="dot"></span> Regulatory & enforcement logic</div>
+        <div class="pill"><span class="dot"></span> Organisational behaviour under pressure</div>
+        <div class="pill"><span class="dot"></span> Cross-border investigations & OSINT</div>
       </div>
-    </header>
 
-    <main>
-      <!-- Left column -->
-      <section>
-        <div class="sec-title">Profile</div>
-        <div class="sec-heading">Research Focus</div>
-        <div class="sec-body">
-          My work centres on the
-          <strong>evolution of corporate misconduct</strong> — from subtle
-          pressure and incentives inside organisations to the eventual
-          involvement of regulators, investigators, and courts.
-          <br /><br />
-          I am particularly interested in:
-        </div>
-        <ul class="list">
-          <li>How bribery and corruption emerge inside otherwise “controlled” systems.</li>
-          <li>How fraud patterns repeat across industries and geographies.</li>
-          <li>How regulators form views on intent, credibility, and cooperation.</li>
-          <li>How organisations behave when confronted with scrutiny or crisis.</li>
-        </ul>
-      </section>
+      <div class="section-title">Current Work</div>
+      <ul class="list">
+        <li><span>Fraulex</span> – a private research platform for fraud, corruption and regulatory intelligence.</li>
+        <li>Building case-based pattern libraries and simulation models for complex corporate environments.</li>
+      </ul>
 
-      <!-- Right column -->
-      <section>
-        <div class="sec-title">Current Direction</div>
-        <div class="sec-heading">Fraulex — Private Intelligence Lab</div>
-        <div class="sec-body">
-          I currently build and run <strong>Fraulex</strong>, a quiet
-          research-led platform focused on:
-        </div>
-        <ul class="list">
-          <li>Pattern-based fraud &amp; corruption intelligence.</li>
-          <li>Research on regulatory reasoning and enforcement trends.</li>
-          <li>Simulation of crisis and decision-making under pressure.</li>
-        </ul>
-        <p class="muted">
-          The intent is to provide a disciplined, low-noise view of risk:
-          not as checklists, but as evolving patterns of behaviour and
-          oversight.
-        </p>
-      </section>
+      <div class="contact">
+        For professional contact: <a href="mailto:contact@sahilsinghal.com">contact@sahilsinghal.com</a>
+      </div>
+    </section>
 
-      <!-- Left-bottom -->
-      <section>
-        <div class="sec-title">Themes</div>
-        <div class="sec-heading">Areas of Ongoing Study</div>
-        <div class="sec-body">
-          A non-exhaustive set of questions I work on:
-        </div>
-        <ul class="list">
-          <li>What early signals appear before a major corruption or fraud case? </li>
-          <li>How do internal structures enable, ignore, or misread those signals?</li>
-          <li>How do anti-bribery regimes (FCPA, UKBA, PC Act, OECD standards) shape organisational behaviour?</li>
-          <li>How do cross-border investigations develop when multiple agencies are involved?</li>
-          <li>What does “adequate procedures” mean in practice, beyond policy language?</li>
-        </ul>
-        <div class="tag-row">
-          <span class="tag">FCPA / UKBA</span>
-          <span class="tag">PC Act &amp; Indian enforcement</span>
-          <span class="tag">Third-party risk</span>
-          <span class="tag">Organisational psychology</span>
-          <span class="tag">OSINT for integrity</span>
-        </div>
-      </section>
-
-      <!-- Right-bottom -->
-      <section>
-        <div class="sec-title">Contact</div>
-        <div class="sec-heading">Quiet, Professional Contact Only</div>
-        <div class="sec-body">
-          For work aligned with the themes above, I can be reached at:
-          <br /><br />
-          <strong>Email:</strong> contact@sahilsinghal.com
-          <br />
-        </div>
-        <p class="muted">
-          I do not maintain public social media for professional work. Any
-          engagement is evaluated for discretion, seriousness, and fit with
-          ongoing research.
-        </p>
-      </section>
-    </main>
-
-    <footer>
-      <span>© <span id="year"></span> Sahil Singhal</span>
-      <span>Low-profile research portfolio</span>
-    </footer>
-
-    <script>
-      // Set current year in footer
-      document.getElementById("year").textContent =
-        new Date().getFullYear();
-    </script>
-  </div>
+    <section class="right">
+      <div class="photo-wrap">
+        <!-- Replace the src with your actual uploaded image path or URL -->
+        <img src="F8725C83-FDF1-4351-A6B3-7895859FAFF4.jpeg" alt="Sahil Singhal" />
+        <div class="corner-mark">SS</div>
+        <div class="badge">Research • Intelligence • Systems</div>
+      </div>
+      <div class="footnote">Based in India · Working on global matters</div>
+    </section>
+  </main>
 </body>
 </html>
