@@ -1,62 +1,417 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sahil Singhal — Research</title>
-<style>
-body {
-    background:#080808;
-    color:#d7d7d7;
-    font-family: 'Inter', sans-serif;
-    margin:0; padding:40px;
-}
-h1 {
-    color:white;
-    font-size:38px;
-    margin-bottom:5px;
-    letter-spacing:1px;
-}
-.sub {
-    font-size:18px;
-    color:#b6b6b6;
-}
-.section-title {
-    margin-top:40px;
-    font-size:20px;
-    border-left:3px solid #6f6f6f;
-    padding-left:12px;
-}
-p {
-    font-size:16px;
-    line-height:1.6;
-    margin-top:12px;
-}
-.footer {
-    margin-top:60px;
-    font-size:13px;
-    color:#777;
-}
-</style>
+  <meta charset="UTF-8" />
+  <title>Sahil Singhal — Researcher</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Sahil Singhal — researcher focused on fraud, corruption, organisational behaviour, and regulatory intelligence."
+  />
+
+  <style>
+    :root {
+      --bg: #050608;
+      --bg-elevated: #0c0f16;
+      --border-subtle: #202432;
+      --accent: #c5a86b;
+      --accent-soft: rgba(197, 168, 107, 0.2);
+      --text-main: #f3f3f3;
+      --text-muted: #a1a7b5;
+      --chip-bg: #141824;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(circle at top, #111626 0, #050608 45%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 18px 70px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      margin-bottom: 40px;
+    }
+
+    .avatar-wrap {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      flex-shrink: 0;
+    }
+
+    .avatar-border {
+      position: absolute;
+      inset: -5px;
+      border-radius: 999px;
+      border: 1px solid rgba(197, 168, 107, 0.45);
+      opacity: 0;
+      transform: scale(0.96);
+      animation: halo-in 900ms ease-out 400ms forwards;
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 999px;
+      overflow: hidden;
+      filter: grayscale(12%);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.7);
+      transform: translateY(8px);
+      opacity: 0;
+      animation: avatar-in 800ms ease-out 80ms forwards;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
+    }
+
+    @keyframes avatar-in {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes halo-in {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .hero {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero-title {
+      font-size: 32px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    .hero-sub strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .hero-tags {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(161, 167, 181, 0.35);
+      background: rgba(10, 12, 18, 0.9);
+      color: var(--text-muted);
+    }
+
+    main {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+      gap: 26px;
+    }
+
+    section {
+      background: linear-gradient(
+        145deg,
+        rgba(10, 13, 22, 0.94),
+        rgba(6, 8, 14, 0.98)
+      );
+      border-radius: 18px;
+      border: 1px solid var(--border-subtle);
+      padding: 18px 18px 20px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at top right,
+        rgba(197, 168, 107, 0.16),
+        transparent 60%
+      );
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 220ms ease-out;
+    }
+
+    section:hover::before {
+      opacity: 1;
+    }
+
+    .sec-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+
+    .sec-heading {
+      font-size: 17px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .sec-body {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .sec-body strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .list {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .list li {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .list li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    .caps-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--chip-bg);
+      border: 1px solid rgba(86, 94, 118, 0.6);
+      color: var(--text-muted);
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid #181c28;
+      font-size: 11px;
+      color: #676f80;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 780px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-title {
+        font-size: 26px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <header>
+      <div class="avatar-wrap">
+        <div class="avatar-border"></div>
+        <div class="avatar">
+          <!-- Replace the src below with your actual file path if different -->
+          <img src="assets/sahil-profile.jpg" alt="Sahil Singhal" />
+        </div>
+      </div>
 
-<h1>Sahil Singhal</h1>
-<div class="sub">Researcher — Fraud, Integrity & Organisational Systems</div>
+      <div class="hero">
+        <div class="hero-title">Sahil&nbsp;Singhal</div>
+        <p class="hero-sub">
+          Researcher working at the intersection of
+          <strong>fraud, corruption, organisational behaviour,</strong> and
+          <strong>regulatory intelligence</strong>. I study how misconduct
+          forms, how systems fail, and how enforcement bodies interpret those
+          failures across jurisdictions.
+        </p>
 
-<div class="section-title">About</div>
-<p>I study how organisations fail, how misconduct evolves, and how regulatory systems interpret behaviour. My work spans corruption analysis, global enforcement patterns, decision psychology, and intelligence-driven risk understanding.</p>
+        <div class="hero-tags">
+          <span class="chip">Fraud &amp; Corruption Intelligence</span>
+          <span class="chip">Regulatory Environments</span>
+          <span class="chip">Global Enforcement Patterns</span>
+        </div>
+      </div>
+    </header>
 
-<div class="section-title">Fields of Study</div>
-<p>Fraud & corruption intelligence, cross-border enforcement, behavioural risk, regulatory interpretation, organisational systems, OSINT, investigative pattern mapping.</p>
+    <main>
+      <!-- Left column -->
+      <section>
+        <div class="sec-title">Profile</div>
+        <div class="sec-heading">Research Focus</div>
+        <div class="sec-body">
+          My work centres on the
+          <strong>evolution of corporate misconduct</strong> — from subtle
+          pressure and incentives inside organisations to the eventual
+          involvement of regulators, investigators, and courts.
+          <br /><br />
+          I am particularly interested in:
+        </div>
+        <ul class="list">
+          <li>How bribery and corruption emerge inside otherwise “controlled” systems.</li>
+          <li>How fraud patterns repeat across industries and geographies.</li>
+          <li>How regulators form views on intent, credibility, and cooperation.</li>
+          <li>How organisations behave when confronted with scrutiny or crisis.</li>
+        </ul>
+      </section>
 
-<div class="section-title">Current Work</div>
-<p>I operate Fraulex — an independent research platform focused on misconduct patterns, integrity risks, crisis behaviour, and global anti-corruption intelligence.</p>
+      <!-- Right column -->
+      <section>
+        <div class="sec-title">Current Direction</div>
+        <div class="sec-heading">Fraulex — Private Intelligence Lab</div>
+        <div class="sec-body">
+          I currently build and run <strong>Fraulex</strong>, a quiet
+          research-led platform focused on:
+        </div>
+        <ul class="list">
+          <li>Pattern-based fraud &amp; corruption intelligence.</li>
+          <li>Research on regulatory reasoning and enforcement trends.</li>
+          <li>Simulation of crisis and decision-making under pressure.</li>
+        </ul>
+        <p class="muted">
+          The intent is to provide a disciplined, low-noise view of risk:
+          not as checklists, but as evolving patterns of behaviour and
+          oversight.
+        </p>
+      </section>
 
-<div class="section-title">Contact</div>
-<p>contact@sahilsinghal.com</p>
+      <!-- Left-bottom -->
+      <section>
+        <div class="sec-title">Themes</div>
+        <div class="sec-heading">Areas of Ongoing Study</div>
+        <div class="sec-body">
+          A non-exhaustive set of questions I work on:
+        </div>
+        <ul class="list">
+          <li>What early signals appear before a major corruption or fraud case? </li>
+          <li>How do internal structures enable, ignore, or misread those signals?</li>
+          <li>How do anti-bribery regimes (FCPA, UKBA, PC Act, OECD standards) shape organisational behaviour?</li>
+          <li>How do cross-border investigations develop when multiple agencies are involved?</li>
+          <li>What does “adequate procedures” mean in practice, beyond policy language?</li>
+        </ul>
+        <div class="tag-row">
+          <span class="tag">FCPA / UKBA</span>
+          <span class="tag">PC Act &amp; Indian enforcement</span>
+          <span class="tag">Third-party risk</span>
+          <span class="tag">Organisational psychology</span>
+          <span class="tag">OSINT for integrity</span>
+        </div>
+      </section>
 
-<div class="footer">© 2025 — Minimal Personal Page</div>
+      <!-- Right-bottom -->
+      <section>
+        <div class="sec-title">Contact</div>
+        <div class="sec-heading">Quiet, Professional Contact Only</div>
+        <div class="sec-body">
+          For work aligned with the themes above, I can be reached at:
+          <br /><br />
+          <strong>Email:</strong> contact@sahilsinghal.com
+          <br />
+        </div>
+        <p class="muted">
+          I do not maintain public social media for professional work. Any
+          engagement is evaluated for discretion, seriousness, and fit with
+          ongoing research.
+        </p>
+      </section>
+    </main>
 
+    <footer>
+      <span>© <span id="year"></span> Sahil Singhal</span>
+      <span>Low-profile research portfolio</span>
+    </footer>
+
+    <script>
+      // Set current year in footer
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+    </script>
+  </div>
 </body>
 </html>
