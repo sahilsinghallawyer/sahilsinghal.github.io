@@ -1,275 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Sahil Singhal – Intelligence Researcher</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Sahil Singhal — Fraud & Corruption Intelligence Researcher</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     :root {
       --bg: #050608;
-      --bg-soft: #0d0f14;
-      --accent: #c9a969;
-      --accent-soft: rgba(201, 169, 105, 0.16);
-      --text-main: #f5f5f5;
-      --text-soft: #b6b7c2;
+      --bg-soft: #0c0f14;
+      --accent: #c6a96b;
+      --accent-soft: rgba(198,169,107,0.18);
+      --text-main: #e6e6e6;
+      --text-soft: #a7a7a7;
+      --border-subtle: #1f2430;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      background: radial-gradient(circle at top, #151824 0, #050608 55%);
-      color: var(--text-main);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Helvetica Neue", Arial, sans-serif;
+                   "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at top, #151820 0, #050608 55%);
+      color: var(--text-main);
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 32px 16px;
+      align-items: flex-start;
+      padding: 40px 14px;
     }
 
-    .frame {
+    .shell {
       width: 100%;
-      max-width: 980px;
+      max-width: 960px;
       border-radius: 28px;
-      background: linear-gradient(145deg, #080a10, #050608);
-      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(0,0,0,0.7));
+      border: 1px solid rgba(255,255,255,0.06);
       box-shadow:
-        0 26px 80px rgba(0, 0, 0, 0.85),
-        0 0 0 1px rgba(201, 169, 105, 0.04);
-      padding: 28px 26px;
+        0 26px 60px rgba(0,0,0,0.7),
+        0 0 0 1px rgba(255,255,255,0.01);
+      padding: 28px 22px 26px;
+      backdrop-filter: blur(22px);
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-      gap: 20px;
+      grid-template-columns: minmax(0, 3.4fr) minmax(0, 2.6fr);
+      gap: 26px;
       position: relative;
       overflow: hidden;
     }
 
-    /* subtle animated glow */
-    .frame::before {
+    /* subtle floating glow */
+    .shell::before {
       content: "";
       position: absolute;
-      inset: -40%;
+      inset: -120px;
       background:
-        radial-gradient(circle at 0% 0%, rgba(201, 169, 105, 0.16), transparent 55%),
-        radial-gradient(circle at 100% 100%, rgba(85, 118, 255, 0.16), transparent 55%);
-      opacity: 0;
-      animation: floatGlow 18s ease-in-out infinite;
+        radial-gradient(circle at 10% 0, rgba(198,169,107,0.22) 0, transparent 42%),
+        radial-gradient(circle at 90% 100%, rgba(111,199,255,0.16) 0, transparent 40%);
+      opacity: 0.7;
       pointer-events: none;
+      mix-blend-mode: screen;
     }
 
-    @keyframes floatGlow {
-      0%, 10% { opacity: 0; transform: translate3d(0, 0, 0); }
-      25%, 50% { opacity: 1; transform: translate3d(-10px, 6px, 0); }
-      75% { opacity: 0.6; transform: translate3d(6px, -4px, 0); }
-      100% { opacity: 0; transform: translate3d(0, 0, 0); }
-    }
-
-    .left {
+    .shell-inner {
+      position: relative;
       z-index: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 20px;
+      display: contents;
     }
 
-    .tagline {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.3em;
+    .left, .right {
+      position: relative;
+      z-index: 1;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(5,6,8,0.9);
       color: var(--text-soft);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      margin-bottom: 18px;
+    }
+
+    .chip-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #38d996;
+      box-shadow: 0 0 10px rgba(56,217,150,0.9);
     }
 
     h1 {
-      font-size: 32px;
-      line-height: 1.15;
-      font-weight: 600;
-      letter-spacing: 0.03em;
+      font-size: clamp(30px, 3.2vw, 36px);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-weight: 550;
     }
 
-    .subline {
-      margin-top: 4px;
-      font-size: 15px;
+    .subtitle {
+      font-size: 16px;
       color: var(--text-soft);
+      margin-bottom: 22px;
     }
 
     .divider {
-      width: 58px;
+      width: 72px;
       height: 2px;
-      border-radius: 999px;
       background: linear-gradient(90deg, var(--accent), transparent);
-      margin: 10px 0 4px;
+      border-radius: 999px;
+      margin-bottom: 22px;
     }
 
-    .bio {
-      font-size: 15px;
+    .section-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
       color: var(--text-soft);
-      max-width: 480px;
+      margin-bottom: 10px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 4px;
+    .text-block {
+      font-size: 14.8px;
+      color: var(--text-main);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
     }
 
     .pill {
       font-size: 12px;
-      padding: 7px 11px;
+      padding: 6px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(6, 8, 12, 0.8);
+      border: 1px solid rgba(255,255,255,0.04);
+      background: rgba(8,10,14,0.9);
       color: var(--text-soft);
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      backdrop-filter: blur(8px);
-      white-space: nowrap;
     }
 
-    .dot {
+    ul {
+      list-style: none;
+      margin-left: 0;
+      margin-bottom: 18px;
+    }
+
+    ul li {
+      font-size: 14px;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+      position: relative;
+      padding-left: 14px;
+    }
+
+    ul li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-size: 11px;
+      transform: translateY(2px);
+    }
+
+    .contact {
+      font-size: 14px;
+      color: var(--text-soft);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 14px;
+      margin-top: 10px;
+    }
+
+    .contact strong {
+      color: var(--text-main);
+    }
+
+    /* right side image card */
+    .photo-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #050608;
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow:
+        0 18px 40px rgba(0,0,0,0.85),
+        0 0 0 1px rgba(0,0,0,0.7);
+      max-height: 520px;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.02) contrast(1.02);
+      transform: scale(1.02);
+      transition: transform 0.8s ease, filter 0.6s ease;
+    }
+
+    .photo-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(0,0,0,0.0) 18%, rgba(0,0,0,0.55) 70%);
+      pointer-events: none;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.05);
+      filter: saturate(1.08) contrast(1.05);
+    }
+
+    .badge {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(5,6,8,0.9);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
       background: var(--accent);
     }
 
-    .section-title {
-      margin-top: 12px;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-soft);
-    }
-
-    .list {
-      margin-top: 6px;
-      font-size: 14px;
-      color: var(--text-soft);
-      list-style: none;
-    }
-
-    .list li {
-      margin-bottom: 4px;
-    }
-
-    .list span {
-      color: var(--text-main);
-    }
-
-    .contact {
-      margin-top: 14px;
-      font-size: 14px;
-      color: var(--text-soft);
-    }
-
-    .contact a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(201, 169, 105, 0.5);
-    }
-
-    .contact a:hover {
-      border-bottom-style: solid;
-    }
-
-    .right {
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .badge {
-      position: absolute;
-      bottom: 12px;
-      left: 12px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      background: rgba(5, 6, 10, 0.9);
-      color: var(--text-soft);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(10px);
-    }
-
-    .corner-mark {
-      position: absolute;
-      top: 14px;
-      right: 16px;
-      width: 16px;
-      height: 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 8px;
-      color: var(--accent);
-      background: rgba(3, 4, 7, 0.9);
-    }
-
-    .footnote {
-      position: absolute;
-      bottom: 14px;
-      right: 22px;
-      font-size: 11px;
-      color: #6b6d79;
-    }
-
-    
+    @media (max-width: 780px) {
+      body {
+        padding: 22px 10px;
+      }
+      .shell {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 20px 18px 22px;
+      }
+      .photo-card {
+        order: -1;
+        max-height: 420px;
       }
     }
   </style>
 </head>
 <body>
-  <main class="frame">
-    <section class="left">
-      <div class="tagline">SAHIL SINGHAL</div>
-      <h1>Fraud & Corruption<br>Intelligence Researcher</h1>
-      <div class="subline">
-        Working at the intersection of corporate misconduct, regulatory environments, and global enforcement patterns.
-      </div>
+  <main class="shell">
+    <div class="shell-inner">
+      <section class="left">
+        <div class="chip">
+          <span class="chip-dot"></span>
+          <span>Research • Fraud & Corruption</span>
+        </div>
 
-      <div class="divider"></div>
+        <h1>SAHIL&nbsp;SINGHAL</h1>
+        <div class="subtitle">
+          Researcher focused on fraud, corruption, and corporate enforcement intelligence.
+        </div>
 
-      <p class="bio">
-        I study how risk forms inside organisations through pressure, incentives, and structure and how it is later read by
-        investigators, regulators, and markets. My work focuses on pattern recognition, case analysis, and intelligence models for
-        fraud and corruption.
-      </p>
+        <div class="divider"></div>
 
-      <div class="section-title">Focus Areas</div>
-      <div class="grid">
-        <div class="pill"><span class="dot"></span> Fraud & corruption patterns</div>
-        <div class="pill"><span class="dot"></span> Regulatory & enforcement logic</div>
-        <div class="pill"><span class="dot"></span> Organisational behaviour under pressure</div>
-        <div class="pill"><span class="dot"></span> Cross-border investigations & OSINT</div>
-      </div>
+        <div class="section-title">About</div>
+        <p class="text-block">
+          I study how organisations break their own rules — how misconduct forms,
+          how decisions shift under pressure, and how regulators interpret those
+          actions when they arrive years later.
+        </p>
 
-      <div class="section-title">Current Work</div>
-      <ul class="list">
-        <li><span>Fraulex</span> – a private research platform for fraud, corruption and regulatory intelligence.</li>
-        <li>Building case-based pattern libraries and simulation models for complex corporate environments.</li>
-      </ul>
+        <div class="section-title">Fields of Work</div>
+        <div class="pill-row">
+          <span class="pill">Fraud &amp; Corruption Analysis</span>
+          <span class="pill">Corporate Enforcement</span>
+          <span class="pill">Regulatory Intelligence</span>
+          <span class="pill">Investigation Patterns</span>
+          <span class="pill">Organisational Behaviour</span>
+          <span class="pill">Cross-Border Risk</span>
+        </div>
 
-      <div class="contact">
-        For professional contact: <a href="mailto:contact@sahilsinghal.com">contact@sahilsinghal.com</a>
-      </div>
-    </section>
+        <div class="section-title">Current Work</div>
+        <p class="text-block">
+          I run <strong>Fraulex</strong>, a private intelligence and research platform
+          focused on fraud and corruption patterns, regulator-credible defence models,
+          and simulation of high-pressure decision environments. The platform is
+          intentionally low-visibility and research-driven; most work stays private.
+        </p>
 
-    <section class="right">
-      <div class="photo-wrap">
-        <!-- Replace the src with your actual uploaded image path or URL -->
-        <img src="sahil.jpg" alt="Sahil Singhal" />
-        <div class="corner-mark">SS</div>
-        <div class="badge">Research • Intelligence • Systems</div>
-      </div>
-      <div class="footnote">Based in India · Working on global matters</div>
-    </section>
+        <div class="section-title">Research Direction</div>
+        <ul>
+          <li>Evolution of fraud and corruption inside complex organisations</li>
+          <li>Behaviour of executives and boards under enforcement risk</li>
+          <li>Patterns in enforcement actions across India, UK, US and key hubs</li>
+          <li>Early-warning signals before investigations, raids, or settlements</li>
+          <li>Design of intelligence-grade simulations for corporate integrity</li>
+        </ul>
+
+        <div class="contact">
+          For discreet professional contact: <br>
+          <strong>contact@sahilsinghal.com</strong><br>
+          <span style="font-size:12px; color:var(--text-soft);">
+            No mass engagements. Research-aligned communication only.
+          </span>
+        </div>
+      </section>
+
+      <aside class="right">
+        <div class="photo-card">
+          <img src="sahil.jpg" alt="Portrait of Sahil Singhal">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span>Private Intelligence Research</span>
+          </div>
+        </div>
+      </aside>
+    </div>
   </main>
 </body>
 </html>
