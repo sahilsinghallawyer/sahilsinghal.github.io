@@ -1,274 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Sahil Singhal - Fraud Intelligence Researcher</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Sahil Singhal — Fraud & Corruption Intelligence Researcher</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root {
-  --bg-main: #0e1f1a;
-  --bg-panel: #132823;
-  --bg-card: #18322b;
-  --accent: #c6a96b;
-  --text-main: #e9f2ee;
-  --text-soft: #b7c9c2;
-  --border: rgba(198,169,107,0.25);
-}
+  <style>
+    :root {
+      --bg-main: #0e241c;
+      --bg-panel: #123128;
+      --bg-soft: #173a30;
+      --accent: #c9b27c;
+      --text-main: #eef4f1;
+      --text-soft: #c6d4ce;
+      --border: rgba(255,255,255,0.12);
+    }
 
-* {
-  box-sizing: border-box;
-}
+    body {
+      margin: 0;
+      padding: 40px 16px;
+      font-family: system-ui, -apple-system, "SF Pro Text", Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(180deg, #173a30 0%, #0e241c 100%);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
 
-body {
-  margin: 0;
-  padding: 40px 16px;
-  font-family: system-ui, -apple-system, "SF Pro Text", Segoe UI, Roboto, sans-serif;
-  background: var(--bg-main);
-  color: var(--text-main);
-  display: flex;
-  justify-content: center;
-}
+    .container {
+      max-width: 980px;
+      width: 100%;
+      background: var(--bg-panel);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      padding: 36px 34px;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 32px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+    }
 
-.shell {
-  width: 100%;
-  max-width: 980px;
-  background: var(--bg-panel);
-  border-radius: 24px;
-  border: 1px solid var(--border);
-  padding: 34px;
-  display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 30px;
-}
+    h1 {
+      font-size: 30px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-weight: 560;
+    }
 
-/* LEFT */
+    .subtitle {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text-soft);
+      margin-bottom: 22px;
+    }
 
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  color: var(--text-soft);
-  margin-bottom: 20px;
-}
+    .divider {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      margin-bottom: 24px;
+    }
 
-.chip-dot {
-  width: 7px;
-  height: 7px;
-  background: #4ee0a3;
-  border-radius: 50%;
-}
+    .section-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
 
-h1 {
-  font-size: 30px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin: 0 0 12px;
-  font-weight: 550;
-}
+    .text {
+      font-size: 16px;
+      line-height: 1.75;
+      margin-bottom: 18px;
+      color: var(--text-main);
+    }
 
-.subtitle {
-  font-size: 17px;
-  line-height: 1.65;
-  color: var(--text-soft);
-  margin-bottom: 26px;
-}
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
 
-.divider {
-  width: 80px;
-  height: 2px;
-  background: var(--accent);
-  margin-bottom: 26px;
-  border-radius: 4px;
-}
+    .pill {
+      font-size: 13px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      color: var(--text-soft);
+    }
 
-.section-title {
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-soft);
-  margin-bottom: 10px;
-}
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 22px;
+    }
 
-.text-block {
-  font-size: 16px;
-  line-height: 1.75;
-  margin-bottom: 22px;
-}
+    ul li {
+      font-size: 15px;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+      padding-left: 14px;
+      position: relative;
+    }
 
-.pill-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 24px;
-}
+    ul li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
 
-.pill {
-  padding: 7px 14px;
-  font-size: 13px;
-  border-radius: 999px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  color: var(--text-soft);
-}
+    .quote {
+      font-style: italic;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-soft);
+      border-left: 3px solid var(--accent);
+      padding-left: 16px;
+      margin: 26px 0;
+    }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 22px;
-}
+    .card {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px 16px;
+      margin-bottom: 16px;
+    }
 
-ul li {
-  position: relative;
-  padding-left: 16px;
-  margin-bottom: 6px;
-  font-size: 15px;
-  color: var(--text-soft);
-}
+    .card-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
 
-ul li::before {
-  content: "▸";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-}
+    .card-text {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-main);
+    }
 
-.contact {
-  border-top: 1px solid var(--border);
-  padding-top: 16px;
-  font-size: 15px;
-  color: var(--text-soft);
-}
+    .contact {
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      font-size: 15px;
+      color: var(--text-soft);
+      margin-top: 20px;
+    }
 
-/* RIGHT */
-
-.card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 18px;
-  margin-bottom: 18px;
-}
-
-.card-title {
-  font-size: 13px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-soft);
-  margin-bottom: 10px;
-}
-
-.card-text {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--text-main);
-}
-
-.mini-pill {
-  display: inline-block;
-  margin-top: 8px;
-  margin-right: 6px;
-  padding: 4px 10px;
-  font-size: 11px;
-  border-radius: 999px;
-  background: var(--bg-panel);
-  border: 1px solid var(--border);
-  color: var(--text-soft);
-}
-
-@media (max-width: 820px) {
-  .shell {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+    @media (max-width: 820px) {
+      .container {
+        grid-template-columns: 1fr;
+        padding: 26px 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<main class="shell">
+  <main class="container">
 
-  </div>
+    <!-- LEFT -->
+    <section>
+      <h1>SAHIL SINGHAL</h1>
 
-  <h1>Sahil Singhal</h1>
-
-  <div class="subtitle">
-    Research and analysis of how fraud, corruption, and systemic breakdown
-    unfold inside organisations and how regulators interpret those failures.
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section-title">About</div>
-  <p class="text-block">
-    A Lawyer and Certified Fraud Examiner conducting long form research on
-    corruption, misconduct, and enforcement intelligence. My work focuses on
-    how internal decisions drift, controls weaken, and regulatory exposure
-    quietly accumulates.
-  </p>
-
-  <div class="section-title">Areas of Research Work</div>
-  <div class="pill-row">
-    <span class="pill">Fraud & Corruption Intelligence</span>
-    <span class="pill">Global Corporate Enforcement</span>
-    <span class="pill">Regulatory Behaviour</span>
-    <span class="pill">Internal Control Failure</span>
-    <span class="pill">Whistleblower Patterns</span>
-    <span class="pill">Cross-Border Risk</span>
-  </div>
-
-  <div class="section-title">Research Direction</div>
-  <ul>
-    <li>Evolution of corruption inside complex organisations</li>
-    <li>Behaviour of executives under pressure</li>
-    <li>India–UK–US enforcement trajectories</li>
-    <li>Early signals before investigations</li>
-    <li>Simulation-driven decision analysis</li>
-  </ul>
-
-  <div class="contact">
-    <strong>sahil@fraulex.com</strong><br>
-    <span style="font-size:12px;">Research aligned communication only</span>
-  </div>
-</section>
-
-<aside>
-  <div class="card">
-    <div class="card-title">Profile</div>
-    <div class="card-text">
-      Independent research practice combining legal reasoning,
-      fraud examination, and intelligence style case reconstruction.
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">Orientation</div>
-    <div class="card-text">
-      Depth over visibility. Long form case reading, cross-jurisdiction
-      comparison, and disciplined pattern building.
-      <div>
-        <span class="mini-pill">Case Reconstruction</span>
-        <span class="mini-pill">Pattern Mapping</span>
-        <span class="mini-pill">Enforcement Logic</span>
+      <div class="subtitle">
+        Lawyer and Certified Fraud Examiner focused on the study of fraud,
+        corruption, and regulatory enforcement across complex organisations.
       </div>
-    </div>
-  </div>
 
-  <div class="card">
-    <div class="card-title">Long Term Aim</div>
-    <div class="card-text">
-      To build a globally credible body of work in fraud and corruption
-      intelligence grounded in research, restraint, and clarity.
-    </div>
-  </div>
-</aside>
+      <div class="divider"></div>
 
-</main>
+      <div class="section-title">About</div>
+      <p class="text">
+        My work centres on understanding how misconduct forms inside organisations —
+        how decisions drift under pressure, how internal controls fail quietly,
+        and how regulators later reconstruct those failures during enforcement.
+      </p>
+
+      <div class="section-title">Research Focus</div>
+      <div class="pill-row">
+        <span class="pill">Fraud & Corruption Analysis</span>
+        <span class="pill">Corporate Enforcement</span>
+        <span class="pill">Regulatory Interpretation</span>
+        <span class="pill">Internal Control Failures</span>
+        <span class="pill">Cross-Border Risk</span>
+      </div>
+
+      <div class="quote">
+        “Serious misconduct rarely begins as crime.  
+        It begins as a series of tolerated decisions.”
+      </div>
+
+      <div class="section-title">Current Work</div>
+      <p class="text">
+        I am building a private research practice examining enforcement cases,
+        investigative patterns, and corruption risks across India, the UK,
+        and the United States — with an emphasis on regulatory logic rather
+        than procedural compliance.
+      </p>
+
+      <div class="contact">
+        sahil@fraulex.com<br>
+        <span style="font-size:13px;">Research-aligned communication only.</span>
+      </div>
+    </section>
+
+    <!-- RIGHT -->
+    <aside>
+      <div class="card">
+        <div class="card-title">Orientation</div>
+        <div class="card-text">
+          Long-form case reading, cross-jurisdiction comparison,
+          and failure-mapping rather than commentary or consulting.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Geographic Scope</div>
+        <div class="card-text">
+          India • United Kingdom • United States  
+          with emphasis on bribery, corruption,
+          and enforcement-driven risk.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Long-Term Direction</div>
+        <div class="card-text">
+          To develop a globally credible body of research
+          on corruption intelligence that integrates law,
+          behaviour, and enforcement reasoning.
+        </div>
+      </div>
+    </aside>
+
+  </main>
 </body>
 </html>
