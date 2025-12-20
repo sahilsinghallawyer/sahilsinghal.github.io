@@ -7,23 +7,30 @@
 
   <style>
     :root {
-      --bg-main: #f4f7f5;
-      --bg-panel: #ffffff;
-      --bg-soft: #eef3f0;
-      --accent: #9a8a5e;
-      --accent-soft: rgba(154,138,94,0.18);
-      --text-main: #1f2b26;
-      --text-soft: #5f6f68;
-      --border-subtle: #d8e1db;
-      --pill-bg: #f1f5f2;
-      --card-bg: #fbfdfc;
+      --bg-main: #eaf3ef;
+      --bg-shell: #f2f8f5;
+      --bg-accent: #dfeee7;
+
+      --green-soft: #4b7f6a;
+      --green-mid: #3f6f5c;
+
+      --text-main: #1f2f28;
+      --text-soft: #4b5f56;
+
+      --accent: #9c7c38;
+      --border-soft: #c7dcd2;
     }
 
     body {
       margin: 0;
-      padding: 40px 14px;
-      font-family: system-ui, "SF Pro Text", Segoe UI, Roboto, sans-serif;
-      background: linear-gradient(180deg, #f8fbf9 0%, #eef3f0 100%);
+      padding: 50px 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(
+        180deg,
+        var(--bg-main) 0%,
+        var(--bg-shell) 100%
+      );
       color: var(--text-main);
       display: flex;
       justify-content: center;
@@ -34,11 +41,16 @@
     .shell {
       width: 100%;
       max-width: 980px;
-      background: var(--bg-panel);
-      border-radius: 22px;
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      padding: 32px 30px;
+      background: linear-gradient(
+        135deg,
+        #f6fbf9,
+        #edf6f2
+      );
+      border-radius: 26px;
+      border: 1px solid var(--border-soft);
+      box-shadow:
+        0 22px 48px rgba(0,0,0,0.06);
+      padding: 36px 34px;
       display: grid;
       grid-template-columns: 1.4fr 1fr;
       gap: 30px;
@@ -50,56 +62,57 @@
       gap: 8px;
       padding: 7px 14px;
       border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      background: var(--bg-soft);
+      border: 1px solid var(--border-soft);
+      background: #ffffff;
       font-size: 12px;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--text-soft);
-      margin-bottom: 20px;
+      color: var(--green-mid);
+      margin-bottom: 22px;
     }
 
     .chip-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #5fae8a;
+      background: var(--green-mid);
     }
 
     h1 {
-      font-size: clamp(26px, 3vw, 32px);
-      letter-spacing: 0.12em;
+      font-size: 30px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       margin-bottom: 10px;
-      font-weight: 550;
+      font-weight: 560;
     }
 
     .subtitle {
       font-size: 17px;
-      line-height: 1.6;
       color: var(--text-soft);
       margin-bottom: 22px;
+      line-height: 1.65;
     }
 
     .divider {
       width: 70px;
       height: 2px;
       background: linear-gradient(90deg, var(--accent), transparent);
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
     .section-title {
       font-size: 13px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-soft);
+      color: var(--green-soft);
       margin-bottom: 10px;
     }
 
     .text-block {
       font-size: 16px;
       line-height: 1.75;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
+      color: var(--text-main);
     }
 
     .pill-row {
@@ -113,22 +126,22 @@
       padding: 7px 14px;
       font-size: 13px;
       border-radius: 999px;
-      background: var(--pill-bg);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-soft);
+      background: var(--bg-accent);
+      border: 1px solid var(--border-soft);
+      color: var(--green-mid);
     }
 
     ul {
       list-style: none;
-      margin-bottom: 20px;
-      padding-left: 0;
+      padding: 0;
+      margin-bottom: 22px;
     }
 
     ul li {
       padding-left: 16px;
       margin-bottom: 6px;
-      font-size: 15px;
       color: var(--text-soft);
+      font-size: 15px;
       position: relative;
     }
 
@@ -140,51 +153,54 @@
       font-size: 12px;
     }
 
+    .contact {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-soft);
+      font-size: 15px;
+      color: var(--text-soft);
+    }
+
+    /* RIGHT SIDE */
     .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-subtle);
-      padding: 18px 18px;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 20px 18px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.05);
       margin-bottom: 16px;
-      border-radius: 18px;
     }
 
     .card-title {
       font-size: 13px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-soft);
+      color: var(--green-soft);
       margin-bottom: 10px;
     }
 
     .card-text {
-      font-size: 15px;
+      font-size: 15.5px;
       line-height: 1.65;
+      color: var(--text-main);
     }
 
     .mini-pill {
       display: inline-block;
-      margin-top: 8px;
+      margin-top: 10px;
       margin-right: 6px;
-      border-radius: 999px;
-      padding: 4px 10px;
+      padding: 5px 12px;
       font-size: 11px;
-      border: 1px solid var(--border-subtle);
-      background: var(--bg-soft);
-      color: var(--text-soft);
-    }
-
-    .contact {
-      margin-top: 20px;
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 16px;
-      font-size: 15px;
-      color: var(--text-soft);
+      border-radius: 999px;
+      background: var(--bg-accent);
+      border: 1px solid var(--border-soft);
+      color: var(--green-mid);
     }
 
     @media (max-width: 780px) {
       .shell {
         grid-template-columns: 1fr;
-        padding: 24px 20px;
+        padding: 28px 22px;
       }
     }
   </style>
@@ -197,52 +213,40 @@
     <section>
       <div class="chip">
         <span class="chip-dot"></span>
-        Independent Research • Fraud & Corruption
+        Quiet Research • Fraud & Corruption
       </div>
 
-      <h1>Sahil Singhal</h1>
+      <h1>SAHIL SINGHAL</h1>
 
       <div class="subtitle">
-        Research and analysis of how fraud, corruption, and systemic failure
-        develop inside organisations — and how regulators interpret those
-        failures long after decisions are made.
+        Research and analysis of how fraud, corruption, and systemic breakdown unfold inside organisations —
+        and how regulators interpret those failures years later.
       </div>
 
       <div class="divider"></div>
 
       <div class="section-title">About</div>
       <p class="text-block">
-        Lawyer and Certified Fraud Examiner working across fraud analysis,
-        corruption risk, and regulatory intelligence. My work focuses on
-        reconstructing how misconduct evolves, where systems quietly fail,
-        and why enforcement outcomes differ across jurisdictions.
+        Lawyer and Certified Fraud Examiner working at the intersection of misconduct patterns,
+        organisational behaviour, and enforcement intelligence. My work focuses on understanding
+        how decisions fail quietly before becoming public cases.
       </p>
 
-      <div class="section-title">Areas of Focus</div>
+      <div class="section-title">Areas of Work</div>
       <div class="pill-row">
         <span class="pill">Fraud & Corruption Intelligence</span>
         <span class="pill">Corporate Enforcement</span>
-        <span class="pill">Regulatory Interpretation</span>
+        <span class="pill">Regulatory Behaviour</span>
         <span class="pill">Internal Control Failures</span>
         <span class="pill">Whistleblower Patterns</span>
         <span class="pill">Cross-Border Risk</span>
       </div>
 
-      <div class="section-title">Current Work</div>
+      <div class="section-title">Current Focus</div>
       <p class="text-block">
-        I run <strong>Fraulex</strong>, a research-led intelligence platform
-        studying corruption patterns, enforcement logic, and behavioural
-        vulnerabilities within corporate systems.
+        Founder of <strong>Fraulex</strong>, a research-led intelligence platform analysing corruption
+        patterns, enforcement logic, and institutional blind spots across jurisdictions.
       </p>
-
-      <div class="section-title">Research Direction</div>
-      <ul>
-        <li>How fraud and corruption form inside organisations</li>
-        <li>Decision-making under pressure and incentive distortion</li>
-        <li>India–UK–US enforcement trends</li>
-        <li>Signals preceding investigations and regulatory action</li>
-        <li>Simulation-based analysis of high-risk decisions</li>
-      </ul>
 
       <div class="contact">
         <strong>sahil@fraulex.com</strong><br>
@@ -255,19 +259,18 @@
       <div class="card">
         <div class="card-title">Profile</div>
         <div class="card-text">
-          Independent, long-form research combining legal reasoning, fraud
-          examination, and intelligence-style case reconstruction.
+          Long-form research spanning legal analysis, fraud examination,
+          and intelligence-style case reconstruction.
         </div>
       </div>
 
       <div class="card">
-        <div class="card-title">Method</div>
+        <div class="card-title">Orientation</div>
         <div class="card-text">
-          Cross-jurisdiction case study, failure mapping, and regulator
-          behaviour analysis — prioritising depth over visibility.
+          Depth over visibility. Quiet pattern building instead of commentary.
           <div>
             <span class="mini-pill">Case Reconstruction</span>
-            <span class="mini-pill">Pattern Mapping</span>
+            <span class="mini-pill">Failure Mapping</span>
             <span class="mini-pill">Enforcement Logic</span>
           </div>
         </div>
@@ -276,8 +279,8 @@
       <div class="card">
         <div class="card-title">Long-Term Aim</div>
         <div class="card-text">
-          To build a globally respected body of work in corruption intelligence
-          that bridges law, behaviour, and enforcement outcomes.
+          Build a globally credible body of work on corruption intelligence
+          grounded in law, behaviour, and enforcement reality.
         </div>
       </div>
     </aside>
