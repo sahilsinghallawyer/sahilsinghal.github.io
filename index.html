@@ -7,23 +7,23 @@
 
   <style>
     :root {
-      --bg-deep: #020806;
-      --bg-soft: #07130f;
-      --accent: #c6a96b;
-      --accent-soft: rgba(198,169,107,0.18);
-      --text-main: #f0f4f2;
-      --text-soft: #b3c1bb;
-      --border-subtle: #1c2a25;
-      --pill-bg: rgba(7,20,15,0.75);
-      --card-bg: rgba(8,26,20,0.40);
-      --card-border: rgba(155,190,170,0.22);
+      --bg-main: #f4f7f5;
+      --bg-panel: #ffffff;
+      --bg-soft: #eef3f0;
+      --accent: #9a8a5e;
+      --accent-soft: rgba(154,138,94,0.18);
+      --text-main: #1f2b26;
+      --text-soft: #5f6f68;
+      --border-subtle: #d8e1db;
+      --pill-bg: #f1f5f2;
+      --card-bg: #fbfdfc;
     }
 
     body {
       margin: 0;
       padding: 40px 14px;
       font-family: system-ui, "SF Pro Text", Segoe UI, Roboto, sans-serif;
-      background: radial-gradient(circle at top, #163f2e 0, #020806 60%);
+      background: linear-gradient(180deg, #f8fbf9 0%, #eef3f0 100%);
       color: var(--text-main);
       display: flex;
       justify-content: center;
@@ -33,30 +33,15 @@
 
     .shell {
       width: 100%;
-      max-width: 960px;
-      border-radius: 26px;
-      background: linear-gradient(135deg, rgba(12,40,28,0.92), rgba(2,8,6,0.92));
-      border: 1px solid rgba(176,216,196,0.18);
-      box-shadow: 0 26px 70px rgba(0,0,0,0.85);
-      padding: 28px 26px;
+      max-width: 980px;
+      background: var(--bg-panel);
+      border-radius: 22px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      padding: 32px 30px;
       display: grid;
-      gap: 26px;
       grid-template-columns: 1.4fr 1fr;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* ambient glow */
-    .shell::before {
-      content: "";
-      position: absolute;
-      inset: -140px;
-      background:
-        radial-gradient(circle at 12% 4%, rgba(95,170,125,0.22) 0, transparent 45%),
-        radial-gradient(circle at 88% 100%, rgba(65,135,110,0.22) 0, transparent 40%);
-      opacity: 0.8;
-      pointer-events: none;
-      mix-blend-mode: screen;
+      gap: 30px;
     }
 
     .chip {
@@ -66,25 +51,24 @@
       padding: 7px 14px;
       border-radius: 999px;
       border: 1px solid var(--border-subtle);
-      background: rgba(2,8,6,0.92);
-      color: var(--text-soft);
-      font-size: 13px;
+      background: var(--bg-soft);
+      font-size: 12px;
       letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-soft);
       margin-bottom: 20px;
     }
 
     .chip-dot {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: #4af0ac;
-      box-shadow: 0 0 8px rgba(74,240,172,0.9);
+      background: #5fae8a;
     }
 
-    /* HEADING — now slightly smaller */
     h1 {
       font-size: clamp(26px, 3vw, 32px);
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       margin-bottom: 10px;
       font-weight: 550;
@@ -92,23 +76,22 @@
 
     .subtitle {
       font-size: 17px;
+      line-height: 1.6;
       color: var(--text-soft);
       margin-bottom: 22px;
-      line-height: 1.6;
     }
 
     .divider {
-      width: 74px;
+      width: 70px;
       height: 2px;
       background: linear-gradient(90deg, var(--accent), transparent);
       margin-bottom: 24px;
-      border-radius: 9px;
     }
 
     .section-title {
-      font-size: 14px;
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       color: var(--text-soft);
       margin-bottom: 10px;
     }
@@ -116,7 +99,6 @@
     .text-block {
       font-size: 16px;
       line-height: 1.75;
-      color: var(--text-main);
       margin-bottom: 18px;
     }
 
@@ -128,24 +110,25 @@
     }
 
     .pill {
-      padding: 8px 14px;
+      padding: 7px 14px;
       font-size: 13px;
       border-radius: 999px;
       background: var(--pill-bg);
-      border: 1px solid rgba(160,190,170,0.27);
+      border: 1px solid var(--border-subtle);
       color: var(--text-soft);
     }
 
     ul {
       list-style: none;
       margin-bottom: 20px;
+      padding-left: 0;
     }
 
     ul li {
       padding-left: 16px;
       margin-bottom: 6px;
-      color: var(--text-soft);
       font-size: 15px;
+      color: var(--text-soft);
       position: relative;
     }
 
@@ -153,33 +136,29 @@
       content: "▸";
       position: absolute;
       left: 0;
-      top: 0;
       color: var(--accent);
       font-size: 12px;
     }
 
-    /* RIGHT SIDE CARDS — softer */
     .card {
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      padding: 18px 16px;
-      margin-bottom: 14px;
-      border-radius: 20px;
-      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      padding: 18px 18px;
+      margin-bottom: 16px;
+      border-radius: 18px;
     }
 
     .card-title {
       font-size: 13px;
-      color: var(--text-soft);
       text-transform: uppercase;
       letter-spacing: 0.14em;
+      color: var(--text-soft);
       margin-bottom: 10px;
     }
 
     .card-text {
       font-size: 15px;
       line-height: 1.65;
-      color: var(--text-main);
     }
 
     .mini-pill {
@@ -189,8 +168,8 @@
       border-radius: 999px;
       padding: 4px 10px;
       font-size: 11px;
-      border: 1px solid rgba(160,190,170,0.3);
-      background: rgba(3,13,10,0.85);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-soft);
       color: var(--text-soft);
     }
 
@@ -203,7 +182,10 @@
     }
 
     @media (max-width: 780px) {
-      .shell { grid-template-columns: 1fr; }
+      .shell {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+      }
     }
   </style>
 </head>
@@ -212,78 +194,81 @@
   <main class="shell">
 
     <!-- LEFT -->
-    <section class="left">
+    <section>
       <div class="chip">
         <span class="chip-dot"></span>
-        Quiet Research • Fraud & Corruption
+        Independent Research • Fraud & Corruption
       </div>
 
-      <h1>SAHIL SINGHAL</h1>
+      <h1>Sahil Singhal</h1>
 
       <div class="subtitle">
-        Research and analysis of how fraud, corruption, and systemic breakdown unfold inside organisations —
-        and how regulators interpret those failures years later.
+        Research and analysis of how fraud, corruption, and systemic failure
+        develop inside organisations — and how regulators interpret those
+        failures long after decisions are made.
       </div>
 
       <div class="divider"></div>
 
       <div class="section-title">About</div>
       <p class="text-block">
-        Lawyer and Certified Fraud Examiner working at the intersection of misconduct patterns,
-        organisational behaviour, and enforcement intelligence — studying how complex decisions shift
-        under pressure and how internal failures silently evolve.
+        Lawyer and Certified Fraud Examiner working across fraud analysis,
+        corruption risk, and regulatory intelligence. My work focuses on
+        reconstructing how misconduct evolves, where systems quietly fail,
+        and why enforcement outcomes differ across jurisdictions.
       </p>
 
-      <div class="section-title">Areas I Work In</div>
+      <div class="section-title">Areas of Focus</div>
       <div class="pill-row">
         <span class="pill">Fraud & Corruption Intelligence</span>
         <span class="pill">Corporate Enforcement</span>
-        <span class="pill">Regulatory Behaviour</span>
-        <span class="pill">Internal Failures</span>
+        <span class="pill">Regulatory Interpretation</span>
+        <span class="pill">Internal Control Failures</span>
         <span class="pill">Whistleblower Patterns</span>
         <span class="pill">Cross-Border Risk</span>
       </div>
 
-      <div class="section-title">Current Focus</div>
+      <div class="section-title">Current Work</div>
       <p class="text-block">
-        I run <strong>Fraulex</strong>, a private intelligence platform analysing corruption patterns,
-        enforcement logic, and behavioural vulnerabilities across corporate systems.
+        I run <strong>Fraulex</strong>, a research-led intelligence platform
+        studying corruption patterns, enforcement logic, and behavioural
+        vulnerabilities within corporate systems.
       </p>
 
       <div class="section-title">Research Direction</div>
       <ul>
-        <li>How fraud & corruption evolve inside organisations</li>
-        <li>Pressure-driven behaviour of executives & gatekeepers</li>
-        <li>Global enforcement patterns (India–UK–US)</li>
-        <li>Signals visible months before an investigation</li>
-        <li>Simulation-based decision analysis</li>
+        <li>How fraud and corruption form inside organisations</li>
+        <li>Decision-making under pressure and incentive distortion</li>
+        <li>India–UK–US enforcement trends</li>
+        <li>Signals preceding investigations and regulatory action</li>
+        <li>Simulation-based analysis of high-risk decisions</li>
       </ul>
 
       <div class="contact">
         <strong>sahil@fraulex.com</strong><br>
-        <span style="font-size:12px;">For research-aligned communication only.</span>
+        <span style="font-size:12px;">Research-aligned communication only.</span>
       </div>
     </section>
 
     <!-- RIGHT -->
-    <aside class="right">
+    <aside>
       <div class="card">
         <div class="card-title">Profile</div>
         <div class="card-text">
-          Quiet, long-form research spanning legal analysis, fraud examination, and intelligence-style
-          case reconstruction — focused on structural weakness, behavioural triggers, and enforcement outcomes.
+          Independent, long-form research combining legal reasoning, fraud
+          examination, and intelligence-style case reconstruction.
         </div>
       </div>
 
       <div class="card">
-        <div class="card-title">Orientation</div>
+        <div class="card-title">Method</div>
         <div class="card-text">
-          I prioritise depth over visibility, using cross-jurisdiction study and failure-mapping to build
-          practical intelligence rather than commentary.
+          Cross-jurisdiction case study, failure mapping, and regulator
+          behaviour analysis — prioritising depth over visibility.
           <div>
             <span class="mini-pill">Case Reconstruction</span>
-            <span class="mini-pill">Failure Mapping</span>
-            <span class="mini-pill">Enforcement Trajectories</span>
+            <span class="mini-pill">Pattern Mapping</span>
+            <span class="mini-pill">Enforcement Logic</span>
           </div>
         </div>
       </div>
@@ -291,11 +276,12 @@
       <div class="card">
         <div class="card-title">Long-Term Aim</div>
         <div class="card-text">
-          To build a global body of work on corruption intelligence that merges legal reasoning,
-          behavioural dynamics, and enforcement logic into a disciplined, research-first practice.
+          To build a globally respected body of work in corruption intelligence
+          that bridges law, behaviour, and enforcement outcomes.
         </div>
       </div>
     </aside>
+
   </main>
 </body>
 </html>
