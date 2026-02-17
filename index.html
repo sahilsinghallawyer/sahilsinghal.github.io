@@ -9,17 +9,19 @@
 :root{
   --bg:#f6f3ec;
   --panel:#fbf8f1;
-  --text:#2a2a2a;
-  --muted:#6f6f6f;
-  --accent:#8c7a4a;
-  --line:#e3ddcf;
+  --text:#1f1f1f;
+  --muted:#6b6b6b;
+  --accent:#9a8553;
+  --line:#e1dbc9;
+  --card:#ffffffcc;
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  background:radial-gradient(circle at top,#fffdf7 0%,#f2eee4 55%);
+  background:
+    linear-gradient(180deg,#fffdf7 0%,#f1ecdf 100%);
   font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   color:var(--text);
   display:flex;
@@ -32,46 +34,84 @@ body{
   width:100%;
   background:var(--panel);
   border:1px solid var(--line);
-  border-radius:18px;
-  padding:44px;
-  box-shadow:0 18px 50px rgba(0,0,0,.08);
+  border-radius:20px;
+  padding:50px;
+  box-shadow:0 22px 60px rgba(0,0,0,.1);
+  animation:fadeIn .8s ease-out;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:none}
+}
+
+/* HEADER */
+.header{
+  position:relative;
+  padding-bottom:32px;
+  margin-bottom:36px;
+  border-bottom:1px solid var(--line);
+}
+
+.header::before{
+  content:"INTELLIGENCE FILE";
+  position:absolute;
+  top:-18px;
+  right:0;
+  font-size:10px;
+  letter-spacing:.35em;
+  color:var(--accent);
 }
 
 h1{
   margin:0;
-  font-size:28px;
-  letter-spacing:.22em;
-  font-weight:500;
+  font-size:30px;
+  letter-spacing:.28em;
+  font-weight:520;
 }
 
 .sub{
-  margin-top:12px;
+  margin-top:14px;
   font-size:16px;
   color:var(--muted);
-  max-width:650px;
+  max-width:700px;
   line-height:1.6;
 }
 
+/* QUOTE */
 .quote{
-  margin:30px 0 40px;
-  padding-left:18px;
-  border-left:3px solid var(--accent);
+  margin:34px 0 40px;
+  padding:18px 22px;
+  background:var(--card);
+  border-left:4px solid var(--accent);
+  border-radius:10px;
   font-style:italic;
   font-size:15px;
-  color:#5f563f;
-  max-width:720px;
+  color:#5a523e;
+  max-width:760px;
 }
 
+/* SECTIONS */
 .section{
-  margin-top:36px;
+  margin-top:34px;
+  padding:22px 26px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.section:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(0,0,0,.08);
 }
 
 .label{
   font-size:11px;
   text-transform:uppercase;
-  letter-spacing:.25em;
-  color:#8b826a;
-  margin-bottom:12px;
+  letter-spacing:.28em;
+  color:#8a7f64;
+  margin-bottom:10px;
 }
 
 p{
@@ -80,16 +120,17 @@ p{
   max-width:780px;
 }
 
+/* FOOTER */
 .footer{
-  margin-top:44px;
-  padding-top:20px;
+  margin-top:46px;
+  padding-top:22px;
   border-top:1px solid var(--line);
   font-size:13px;
   color:#7a7363;
 }
 
 @media(max-width:720px){
-  .container{padding:32px}
+  .container{padding:34px}
 }
 </style>
 </head>
@@ -98,36 +139,37 @@ p{
 
 <div class="container">
 
-<h1>SAHIL SINGHAL</h1>
+  <div class="header">
+    <h1>SAHIL SINGHAL</h1>
+    <div class="sub">
+      White-collar crime defence research examining how evidence,
+      procedure, and judicial reasoning determine outcomes.
+    </div>
+  </div>
 
-<div class="sub">
-White-collar crime defence research focused on courtroom reasoning,
-evidentiary breakdowns, and regulatory decision-making.
-</div>
+  <div id="intel-quote" class="quote"></div>
 
-<div id="intel-quote" class="quote"></div>
+  <div class="section">
+    <div class="label">Research Focus</div>
+    <p>
+      Focused on the forensic reconstruction of fraud and corruption cases —
+      identifying where investigations overreach, where evidence weakens,
+      and how courts evaluate credibility across jurisdictions.
+    </p>
+  </div>
 
-<div class="section">
-  <div class="label">Research Focus</div>
-  <p>
-    I analyse how fraud and corruption cases are investigated, framed,
-    and ultimately assessed by courts — with emphasis on evidentiary
-    credibility, procedural lapses, and judicial interpretation.
-  </p>
-</div>
+  <div class="section">
+    <div class="label">Method</div>
+    <p>
+      Analysis is grounded in court judgments, enforcement orders, and
+      procedural records to map how allegations transform into findings
+      — or fail under judicial scrutiny.
+    </p>
+  </div>
 
-<div class="section">
-  <div class="label">Approach</div>
-  <p>
-    My work reconstructs enforcement actions through case law,
-    regulatory orders, and trial outcomes to identify where
-    prosecutions succeed, weaken, or collapse under scrutiny.
-  </p>
-</div>
-
-<div class="footer">
-  Research communication only • sahil@fraulex.com
-</div>
+  <div class="footer">
+    Research communication only • sahil@fraulex.com
+  </div>
 
 </div>
 
