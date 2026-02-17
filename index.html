@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Simulation Philosophy — Sahil Singhal</title>
+<title>Sahil Singhal — White Collar Defence Research</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -20,7 +20,8 @@
 
 body{
   margin:0;
-  background:linear-gradient(180deg,#fffdf7 0%,#f1ecdf 100%);
+  background:
+    linear-gradient(180deg,#fffdf7 0%,#f1ecdf 100%);
   font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   color:var(--text);
   display:flex;
@@ -44,6 +45,7 @@ body{
   to{opacity:1;transform:none}
 }
 
+/* HEADER */
 .header{
   position:relative;
   padding-bottom:32px;
@@ -52,7 +54,7 @@ body{
 }
 
 .header::before{
-  content:"SIMULATION DOCTRINE";
+  content:"INTELLIGENCE FILE";
   position:absolute;
   top:-18px;
   right:0;
@@ -63,8 +65,8 @@ body{
 
 h1{
   margin:0;
-  font-size:28px;
-  letter-spacing:.24em;
+  font-size:30px;
+  letter-spacing:.28em;
   font-weight:520;
 }
 
@@ -76,8 +78,22 @@ h1{
   line-height:1.6;
 }
 
+/* QUOTE */
+.quote{
+  margin:34px 0 40px;
+  padding:18px 22px;
+  background:var(--card);
+  border-left:4px solid var(--accent);
+  border-radius:10px;
+  font-style:italic;
+  font-size:15px;
+  color:#5a523e;
+  max-width:760px;
+}
+
+/* SECTIONS */
 .section{
-  margin-top:36px;
+  margin-top:34px;
   padding:22px 26px;
   background:var(--card);
   border:1px solid var(--line);
@@ -95,7 +111,7 @@ h1{
   text-transform:uppercase;
   letter-spacing:.28em;
   color:#8a7f64;
-  margin-bottom:12px;
+  margin-bottom:10px;
 }
 
 p{
@@ -104,17 +120,7 @@ p{
   max-width:780px;
 }
 
-.quote{
-  margin:34px 0;
-  padding:18px 22px;
-  background:var(--card);
-  border-left:4px solid var(--accent);
-  border-radius:10px;
-  font-style:italic;
-  font-size:15px;
-  color:#5a523e;
-}
-
+/* FOOTER */
 .footer{
   margin-top:46px;
   padding-top:22px;
@@ -134,73 +140,56 @@ p{
 <div class="container">
 
   <div class="header">
-    <h1>SIMULATION PHILOSOPHY</h1>
+    <h1>SAHIL SINGHAL</h1>
     <div class="sub">
-      Anticipating regulatory exposure through structured reconstruction of enforcement scenarios.
+      White-collar crime defence research examining how evidence,
+      procedure, and judicial reasoning determine outcomes.
     </div>
   </div>
 
-  <div class="quote">
-    “Most institutional failures are predictable — but rarely rehearsed.”
-  </div>
+  <div id="intel-quote" class="quote"></div>
 
   <div class="section">
-    <div class="label">Why Simulation Matters</div>
+    <div class="label">Research Focus</div>
     <p>
-      Enforcement actions rarely fail due to ignorance of law. They fail due to
-      unprepared reaction under pressure. Simulation exists to study behaviour
-      before the crisis arrives — to understand how decisions shift when
-      scrutiny, documentation requests, and regulatory timelines begin.
+      Focused on the forensic reconstruction of fraud and corruption cases —
+      identifying where investigations overreach, where evidence weakens,
+      and how courts evaluate credibility across jurisdictions.
     </p>
   </div>
 
   <div class="section">
-    <div class="label">Methodology</div>
+    <div class="label">Method</div>
     <p>
-      Each scenario is reconstructed from real court judgments, enforcement orders,
-      and cross-border investigations. We model:
-      <br><br>
-      • Trigger event<br>
-      • Evidence collection pathway<br>
-      • Regulator interpretation patterns<br>
-      • Internal response breakdowns<br>
-      • Judicial scrutiny thresholds
-      <br><br>
-      The objective is not dramatization — but structural anticipation.
-    </p>
-  </div>
-
-  <div class="section">
-    <div class="label">Core Simulation Types</div>
-    <p>
-      Dawn raid response protocols.  
-      Evidence preservation failures.  
-      Whistleblower escalation timelines.  
-      Cross-border disclosure exposure.  
-      Board-level liability mapping.
-      <br><br>
-      Each model tests decision stability under procedural pressure.
-    </p>
-  </div>
-
-  <div class="section">
-    <div class="label">Outcome</div>
-    <p>
-      Simulation produces institutional clarity:  
-      Where defence collapses.  
-      Where cooperation mitigates exposure.  
-      Where documentation fails scrutiny.  
-      Where regulatory posture hardens.
-      <br><br>
-      It transforms uncertainty into mapped probability.
+      Analysis is grounded in court judgments, enforcement orders, and
+      procedural records to map how allegations transform into findings
+      — or fail under judicial scrutiny.
     </p>
   </div>
 
   <div class="footer">
-    Simulation is a discipline of anticipation, not performance.
+    Research communication only • sahil@fraulex.com
   </div>
 
 </div>
+
+<script>
+const quotes = [
+  "Courts punish failure of proof, not suspicion.",
+  "Evidence decides outcomes long before arguments do.",
+  "What survives judicial scrutiny matters more than what is alleged.",
+  "Procedural discipline is the strongest defence.",
+  "Most cases fail on documentation, not intent.",
+  "Judges trust records more than narratives.",
+  "Regulatory belief collapses without evidentiary structure.",
+  "Cross-examination exposes what investigation conceals.",
+  "Silence in records often determines verdicts.",
+  "Defence is built where investigation shortcuts exist."
+];
+
+document.getElementById("intel-quote").textContent =
+  quotes[Math.floor(Math.random()*quotes.length)];
+</script>
 
 </body>
 </html>
