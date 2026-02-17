@@ -1,178 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Sahil Singhal — White-Collar Crime Defence</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<title>Sahil Singhal — White Collar Defence Research</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root{
-      --bg:#0f1f1a;
-      --panel:#132823;
-      --text:#e8f1ed;
-      --muted:#a9beb6;
-      --accent:#7fb3a6;
-    }
+<style>
+:root{
+  --bg:#0b1411;
+  --panel:#0f1f19;
+  --text:#e8efe9;
+  --muted:#9fb4aa;
+  --accent:#5fb3a2;
+}
 
-    *{box-sizing:border-box}
+*{box-sizing:border-box}
 
-    html,body{
-      margin:0;
-      padding:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif;
-      scroll-behavior:smooth;
-    }
+body{
+  margin:0;
+  background:radial-gradient(circle at top,#14332a 0%,#0b1411 55%);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--text);
+  display:flex;
+  justify-content:center;
+  padding:60px 16px;
+}
 
-    body{overflow-x:hidden}
+.container{
+  max-width:900px;
+  width:100%;
+  background:linear-gradient(145deg,#102a21,#0b1411);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:22px;
+  padding:42px;
+  box-shadow:0 30px 80px rgba(0,0,0,.7);
+}
 
-    .wrap{
-      max-width:860px;
-      margin:0 auto;
-      padding:80px 22px;
-      animation: fadeIn 1.4s ease forwards;
-      opacity:0;
-    }
+h1{
+  margin:0;
+  font-size:30px;
+  letter-spacing:.18em;
+  font-weight:500;
+}
 
-    @keyframes fadeIn{
-      to{opacity:1}
-    }
+.sub{
+  margin-top:10px;
+  font-size:16px;
+  color:var(--muted);
+  max-width:640px;
+  line-height:1.6;
+}
 
-    h1{
-      letter-spacing:.14em;
-      font-weight:500;
-      margin:0 0 10px;
-    }
+.quote{
+  margin:28px 0 38px;
+  padding-left:16px;
+  border-left:2px solid var(--accent);
+  font-style:italic;
+  font-size:15px;
+  color:var(--muted);
+  max-width:700px;
+}
 
-    .sub{
-      color:var(--muted);
-      margin-bottom:34px;
-      transition:color .4s ease;
-    }
+.section{
+  margin-top:34px;
+}
 
-    .sub:hover{color:var(--text)}
+.label{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  color:var(--muted);
+  margin-bottom:10px;
+}
 
-    section{
-      background:transparent;
-      padding:28px 0;
-      border-top:1px solid rgba(255,255,255,.08);
-      transition:background .4s ease;
-    }
+p{
+  line-height:1.7;
+  font-size:15px;
+  color:var(--text);
+  max-width:760px;
+}
 
-    section:hover{
-      background:linear-gradient(
-        90deg,
-        rgba(127,179,166,.05),
-        transparent
-      );
-    }
+.footer{
+  margin-top:40px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.08);
+  font-size:13px;
+  color:var(--muted);
+}
 
-    p{
-      line-height:1.75;
-      margin:0 0 16px;
-      transition:opacity .3s ease;
-    }
-
-    p:hover{opacity:1}
-
-    ul{
-      margin:0 0 16px 18px;
-    }
-
-    li{
-      margin:7px 0;
-      color:var(--muted);
-      transition:color .3s ease, transform .3s ease;
-    }
-
-    li:hover{
-      color:var(--text);
-      transform:translateX(4px);
-    }
-
-    .small{
-      font-size:14px;
-      color:var(--muted);
-    }
-
-    a{
-      color:var(--accent);
-      text-decoration:none;
-      position:relative;
-    }
-
-    a::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-2px;
-      width:0;
-      height:1px;
-      background:var(--accent);
-      transition:width .3s ease;
-    }
-
-    a:hover::after{width:100%}
-
-    .cursor-dot{
-      position:fixed;
-      width:6px;
-      height:6px;
-      border-radius:50%;
-      background:var(--accent);
-      pointer-events:none;
-      opacity:.35;
-      transform:translate(-50%,-50%);
-      transition:transform .08s linear;
-    }
-
-    @media(max-width:700px){
-      .wrap{padding:64px 18px}
-    }
-  </style>
+@media(max-width:700px){
+  .container{padding:30px}
+}
+</style>
 </head>
 
 <body>
 
-<div class="cursor-dot" id="cursor"></div>
+<div class="container">
 
-<main class="wrap">
-  <h1>SAHIL SINGHAL</h1>
-  <div class="sub">White-Collar Crime · Fraud & Corruption Defence</div>
+<h1>SAHIL SINGHAL</h1>
 
-  <section>
-    <p>
-      Lawyer and Certified Fraud Examiner focused on how white-collar cases are
-      constructed, defended, and adjudicated. My work examines evidence integrity,
-      procedural failure, and regulatory reasoning across India, the UK, and the US.
-    </p>
-  </section>
+<div class="sub">
+White-collar crime defence research focused on courtroom reasoning, evidentiary failures,
+and regulatory decision-making across jurisdictions.
+</div>
 
-  <section>
-    <p><strong>Focus</strong></p>
-    <ul>
-      <li>Fraud and corruption case reconstruction</li>
-      <li>Evidence assessment and preservation</li>
-      <li>Regulatory and judicial reasoning patterns</li>
-      <li>Defence-oriented analytical strategy</li>
-    </ul>
+<div id="intel-quote" class="quote"></div>
 
-    <p class="small">
-      Case-driven · Evidence-first · Defence-oriented<br>
-      No commentary. No promotion. No noise.
-    </p>
-  </section>
+<div class="section">
+  <div class="label">Focus</div>
+  <p>
+    I study how fraud cases are constructed, challenged, and decided in court — 
+    with emphasis on evidence integrity, procedural lapses, and behavioural interpretation
+    by judges and enforcement agencies.
+  </p>
+</div>
 
-  <section>
-    <p class="small">
-      Contact:
-      <a href="mailto:sahil@fraulex.com">sahil@fraulex.com</a>
-    </p>
-  </section>
-</main>
+<div class="section">
+  <div class="label">Method</div>
+  <p>
+    Case-law driven analysis, regulator behaviour mapping, and reconstruction of
+    investigative decision paths that determine conviction, acquittal, or penalty mitigation.
+  </p>
+</div>
+
+<div class="footer">
+  Research communication only • sahil@fraulex.com
+</div>
+
+</div>
 
 <script>
-  const dot = document.getElementById("cursor");
-  document.addEventListener("mousemove", e=>{
-    dot.style.transform = `translate(${e.clientX}px, ${e.clientY
+const quotes = [
+  "Courts do not punish suspicion — they punish proof.",
+  "Most prosecutions collapse on evidence, not intent.",
+  "What survives cross-examination matters more than what appears in charge sheets.",
+  "The strongest defence is procedural clarity.",
+  "Judges read conduct before they read statutes.",
+  "A case is lost when evidence is mishandled, not when wrongdoing occurs.",
+  "Courts distrust narratives unsupported by contemporaneous records.",
+  "Silence in records is often louder than testimony.",
+  "Regulatory belief is irrelevant without evidentiary discipline.",
+  "Defence succeeds where investigation shortcuts are exposed."
+];
+
+document.getElementById("intel-quote").textContent =
+  quotes[Math.floor(Math.random()*quotes.length)];
+</script>
+
+</body>
+</html>
