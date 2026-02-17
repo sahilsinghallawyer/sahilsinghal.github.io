@@ -7,18 +7,19 @@
 
 <style>
 :root{
-  --bg:#0b1411;
-  --panel:#0f1f19;
-  --text:#e8efe9;
-  --muted:#9fb4aa;
-  --accent:#5fb3a2;
+  --bg:#f6f3ec;
+  --panel:#fbf8f1;
+  --text:#2a2a2a;
+  --muted:#6f6f6f;
+  --accent:#8c7a4a;
+  --line:#e3ddcf;
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  background:radial-gradient(circle at top,#14332a 0%,#0b1411 55%);
+  background:radial-gradient(circle at top,#fffdf7 0%,#f2eee4 55%);
   font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   color:var(--text);
   display:flex;
@@ -29,67 +30,66 @@ body{
 .container{
   max-width:900px;
   width:100%;
-  background:linear-gradient(145deg,#102a21,#0b1411);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:22px;
-  padding:42px;
-  box-shadow:0 30px 80px rgba(0,0,0,.7);
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:44px;
+  box-shadow:0 18px 50px rgba(0,0,0,.08);
 }
 
 h1{
   margin:0;
-  font-size:30px;
-  letter-spacing:.18em;
+  font-size:28px;
+  letter-spacing:.22em;
   font-weight:500;
 }
 
 .sub{
-  margin-top:10px;
+  margin-top:12px;
   font-size:16px;
   color:var(--muted);
-  max-width:640px;
+  max-width:650px;
   line-height:1.6;
 }
 
 .quote{
-  margin:28px 0 38px;
-  padding-left:16px;
-  border-left:2px solid var(--accent);
+  margin:30px 0 40px;
+  padding-left:18px;
+  border-left:3px solid var(--accent);
   font-style:italic;
   font-size:15px;
-  color:var(--muted);
-  max-width:700px;
+  color:#5f563f;
+  max-width:720px;
 }
 
 .section{
-  margin-top:34px;
+  margin-top:36px;
 }
 
 .label{
-  font-size:12px;
+  font-size:11px;
   text-transform:uppercase;
-  letter-spacing:.2em;
-  color:var(--muted);
-  margin-bottom:10px;
+  letter-spacing:.25em;
+  color:#8b826a;
+  margin-bottom:12px;
 }
 
 p{
-  line-height:1.7;
+  line-height:1.75;
   font-size:15px;
-  color:var(--text);
-  max-width:760px;
+  max-width:780px;
 }
 
 .footer{
-  margin-top:40px;
-  padding-top:18px;
-  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:44px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
   font-size:13px;
-  color:var(--muted);
+  color:#7a7363;
 }
 
-@media(max-width:700px){
-  .container{padding:30px}
+@media(max-width:720px){
+  .container{padding:32px}
 }
 </style>
 </head>
@@ -101,26 +101,27 @@ p{
 <h1>SAHIL SINGHAL</h1>
 
 <div class="sub">
-White-collar crime defence research focused on courtroom reasoning, evidentiary failures,
-and regulatory decision-making across jurisdictions.
+White-collar crime defence research focused on courtroom reasoning,
+evidentiary breakdowns, and regulatory decision-making.
 </div>
 
 <div id="intel-quote" class="quote"></div>
 
 <div class="section">
-  <div class="label">Focus</div>
+  <div class="label">Research Focus</div>
   <p>
-    I study how fraud cases are constructed, challenged, and decided in court — 
-    with emphasis on evidence integrity, procedural lapses, and behavioural interpretation
-    by judges and enforcement agencies.
+    I analyse how fraud and corruption cases are investigated, framed,
+    and ultimately assessed by courts — with emphasis on evidentiary
+    credibility, procedural lapses, and judicial interpretation.
   </p>
 </div>
 
 <div class="section">
-  <div class="label">Method</div>
+  <div class="label">Approach</div>
   <p>
-    Case-law driven analysis, regulator behaviour mapping, and reconstruction of
-    investigative decision paths that determine conviction, acquittal, or penalty mitigation.
+    My work reconstructs enforcement actions through case law,
+    regulatory orders, and trial outcomes to identify where
+    prosecutions succeed, weaken, or collapse under scrutiny.
   </p>
 </div>
 
@@ -132,16 +133,16 @@ and regulatory decision-making across jurisdictions.
 
 <script>
 const quotes = [
-  "Courts do not punish suspicion — they punish proof.",
-  "Most prosecutions collapse on evidence, not intent.",
-  "What survives cross-examination matters more than what appears in charge sheets.",
-  "The strongest defence is procedural clarity.",
-  "Judges read conduct before they read statutes.",
-  "A case is lost when evidence is mishandled, not when wrongdoing occurs.",
-  "Courts distrust narratives unsupported by contemporaneous records.",
-  "Silence in records is often louder than testimony.",
-  "Regulatory belief is irrelevant without evidentiary discipline.",
-  "Defence succeeds where investigation shortcuts are exposed."
+  "Courts punish failure of proof, not suspicion.",
+  "Evidence decides outcomes long before arguments do.",
+  "What survives judicial scrutiny matters more than what is alleged.",
+  "Procedural discipline is the strongest defence.",
+  "Most cases fail on documentation, not intent.",
+  "Judges trust records more than narratives.",
+  "Regulatory belief collapses without evidentiary structure.",
+  "Cross-examination exposes what investigation conceals.",
+  "Silence in records often determines verdicts.",
+  "Defence is built where investigation shortcuts exist."
 ];
 
 document.getElementById("intel-quote").textContent =
