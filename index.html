@@ -7,20 +7,20 @@
 
 <style>
 :root{
-  --bg:#f6f3ec;
-  --panel:#fbf8f1;
-  --text:#1f1f1f;
-  --muted:#6b6b6b;
-  --accent:#9a8553;
-  --line:#e1dbc9;
-  --card:#ffffffcc;
+  --bg:#0f1115;
+  --panel:#161a20;
+  --text:#e8e6df;
+  --muted:#a7a29a;
+  --accent:#b49b5a;
+  --line:#2a2f38;
+  --card:#1c2128;
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  background:linear-gradient(180deg,#fffdf7 0%,#f1ecdf 100%);
+  background:linear-gradient(180deg,#0f1115 0%,#141820 100%);
   font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   color:var(--text);
   display:flex;
@@ -35,7 +35,7 @@ body{
   border:1px solid var(--line);
   border-radius:20px;
   padding:55px;
-  box-shadow:0 22px 60px rgba(0,0,0,.1);
+  box-shadow:0 25px 70px rgba(0,0,0,.6);
 }
 
 .header{
@@ -78,7 +78,7 @@ h1{
   border-radius:10px;
   font-style:italic;
   font-size:15px;
-  color:#5a523e;
+  color:#d6d2c9;
   max-width:780px;
 }
 
@@ -88,13 +88,19 @@ h1{
   background:var(--card);
   border:1px solid var(--line);
   border-radius:14px;
+  transition:all .25s ease;
+}
+
+.section:hover{
+  transform:translateY(-2px);
+  box-shadow:0 15px 40px rgba(0,0,0,.5);
 }
 
 .label{
   font-size:11px;
   text-transform:uppercase;
   letter-spacing:.3em;
-  color:#8a7f64;
+  color:#b8aa7a;
   margin-bottom:12px;
 }
 
@@ -109,11 +115,16 @@ p{
   padding-top:22px;
   border-top:1px solid var(--line);
   font-size:13px;
-  color:#7a7363;
+  color:#8c877e;
 }
 
-@media(max-width:720px){
-  .container{padding:36px}
+.footer a{
+  color:#8c877e;
+  text-decoration:none;
+}
+
+.footer a:hover{
+  color:var(--accent);
 }
 </style>
 </head>
@@ -134,7 +145,7 @@ p{
   <div class="section">
     <div class="label">Executive Profile</div>
     <p>
-      A Lawyer and Certified Fraud Examiner with over eight years of experience across corporate investigations, fraud risk management, and white-collar litigation. Currently leading risk management and investigation functions within a multi-plant manufacturing environment, reporting directly to senior leadership and advising on financial exposure, misconduct escalation, regulatory sensitivity, and reputational containment.
+      A Lawyer and Certified Fraud Examiner with over eight years of experience across corporate investigations, fraud risk management, and white-collar litigation. Currently leading risk management and investigation functions within a multi-plant manufacturing environment, advising senior leadership on financial exposure, misconduct escalation, regulatory sensitivity, and reputational containment.
     </p>
     <p>
       Responsible for overseeing fraud, corruption, third-party misconduct, procurement irregularities, financial exposure, and governance failures across operational units. Work is grounded in evidence-based analysis, structured fact-finding, and legally defensible documentation standards.
@@ -167,11 +178,11 @@ p{
 
   <div class="footer">
     Professional profile • Research communication only • 
-    <a href="mailto:sahil@fraulex.com" style="color:#7a7363;text-decoration:none;">
+    <a href="mailto:sahil@fraulex.com">
       sahil@fraulex.com
     </a>
     • 
-    <a href="https://www.fraulex.com" target="_blank" style="color:#7a7363;text-decoration:none;">
+    <a href="https://www.fraulex.com" target="_blank">
       www.fraulex.com
     </a>
   </div>
