@@ -5,15 +5,17 @@
 <title>Sahil Singhal — Risk & Investigations</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --bg1:#0f2e25;
-  --bg2:#123a2f;
+  --bg2:#163f33;
   --panel:#ffffff;
-  --card:#ffffff;
-  --text:#1e2628;
+  --card:#ffffffee;
+  --text:#1f2627;
   --muted:#6f7f82;
-  --accent:#1aa89c;
+  --accent:#18b2a1;
   --line:#e6efee;
 }
 
@@ -21,86 +23,92 @@
 
 body{
   margin:0;
-  background:linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 100%);
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(24,178,161,0.08), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(24,178,161,0.06), transparent 40%),
+    linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 100%);
+  font-family:'Inter',sans-serif;
   color:var(--text);
   display:flex;
   justify-content:center;
-  padding:70px 16px;
+  padding:80px 16px;
 }
 
 .container{
-  max-width:880px;
+  max-width:900px;
   width:100%;
   background:var(--panel);
-  border-radius:18px;
-  padding:50px;
-  box-shadow:0 35px 80px rgba(0,0,0,.35);
+  border-radius:22px;
+  padding:60px;
+  box-shadow:0 40px 100px rgba(0,0,0,.35);
+  position:relative;
+  overflow:hidden;
+}
+
+.container::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:linear-gradient(90deg,transparent, var(--accent), transparent);
 }
 
 .header{
-  position:relative;
-  padding-bottom:28px;
-  margin-bottom:32px;
+  padding-bottom:30px;
+  margin-bottom:40px;
   border-bottom:1px solid var(--line);
-}
-
-.header::before{
-  content:"RISK INTELLIGENCE PROFILE";
-  position:absolute;
-  top:-18px;
-  right:0;
-  font-size:10px;
-  letter-spacing:.35em;
-  color:var(--accent);
 }
 
 h1{
   margin:0;
-  font-size:30px;
-  letter-spacing:.3em;
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  letter-spacing:.18em;
   font-weight:500;
 }
 
 .sub{
-  margin-top:14px;
-  font-size:16px;
+  margin-top:16px;
+  font-size:17px;
   color:var(--muted);
-  max-width:720px;
-  line-height:1.6;
+  max-width:760px;
+  line-height:1.7;
 }
 
 .section{
-  margin-top:34px;
-  padding:24px 26px;
+  margin-top:36px;
+  padding:26px 30px;
   background:var(--card);
   border:1px solid var(--line);
-  border-radius:12px;
-  transition:all .25s ease;
+  border-radius:16px;
+  backdrop-filter:blur(6px);
+  transition:all .3s ease;
 }
 
 .section:hover{
-  transform:translateY(-2px);
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(0,0,0,.1);
 }
 
 .label{
   font-size:11px;
   text-transform:uppercase;
-  letter-spacing:.3em;
+  letter-spacing:.35em;
   color:var(--accent);
-  margin-bottom:12px;
+  margin-bottom:14px;
 }
 
 p{
-  line-height:1.75;
-  font-size:15px;
-  max-width:780px;
+  line-height:1.8;
+  font-size:16px;
+  max-width:800px;
 }
 
 .footer{
-  margin-top:44px;
-  padding-top:20px;
+  margin-top:50px;
+  padding-top:24px;
   border-top:1px solid var(--line);
   font-size:13px;
   color:var(--muted);
@@ -109,6 +117,7 @@ p{
 .footer a{
   color:var(--muted);
   text-decoration:none;
+  transition:.2s;
 }
 
 .footer a:hover{
@@ -158,13 +167,9 @@ p{
 
   <div class="footer">
     Professional profile • Research communication only • 
-    <a href="mailto:sahil@fraulex.com">
-      sahil@fraulex.com
-    </a>
+    <a href="mailto:sahil@fraulex.com">sahil@fraulex.com</a>
     • 
-    <a href="https://www.fraulex.com" target="_blank">
-      www.fraulex.com
-    </a>
+    <a href="https://www.fraulex.com" target="_blank">www.fraulex.com</a>
   </div>
 
 </div>
