@@ -7,20 +7,20 @@
 
 <style>
 :root{
-  --bg:#0f1115;
-  --panel:#161a20;
-  --text:#e8e6df;
-  --muted:#a7a29a;
-  --accent:#b49b5a;
-  --line:#2a2f38;
-  --card:#1c2128;
+  --bg:#0e1416;
+  --panel:#121a1d;
+  --card:#162226;
+  --text:#e6f1ef;
+  --muted:#8ea5a1;
+  --accent:#19b5a5;
+  --line:#1f2c30;
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  background:linear-gradient(180deg,#0f1115 0%,#141820 100%);
+  background:linear-gradient(180deg,#0e1416 0%,#11191c 100%);
   font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   color:var(--text);
   display:flex;
@@ -29,24 +29,24 @@ body{
 }
 
 .container{
-  max-width:920px;
+  max-width:880px;
   width:100%;
   background:var(--panel);
   border:1px solid var(--line);
-  border-radius:20px;
-  padding:55px;
+  border-radius:18px;
+  padding:50px;
   box-shadow:0 25px 70px rgba(0,0,0,.6);
 }
 
 .header{
   position:relative;
-  padding-bottom:32px;
-  margin-bottom:36px;
+  padding-bottom:28px;
+  margin-bottom:32px;
   border-bottom:1px solid var(--line);
 }
 
 .header::before{
-  content:"RISK & ENFORCEMENT PROFILE";
+  content:"RISK INTELLIGENCE PROFILE";
   position:absolute;
   top:-18px;
   right:0;
@@ -57,69 +57,51 @@ body{
 
 h1{
   margin:0;
-  font-size:32px;
-  letter-spacing:.28em;
-  font-weight:520;
+  font-size:30px;
+  letter-spacing:.3em;
+  font-weight:500;
 }
 
 .sub{
   margin-top:14px;
-  font-size:17px;
+  font-size:16px;
   color:var(--muted);
-  max-width:760px;
+  max-width:720px;
   line-height:1.6;
 }
 
-.quote{
-  margin:34px 0 40px;
-  padding:20px 24px;
-  background:var(--card);
-  border-left:4px solid var(--accent);
-  border-radius:10px;
-  font-style:italic;
-  font-size:15px;
-  color:#d6d2c9;
-  max-width:780px;
-}
-
 .section{
-  margin-top:36px;
-  padding:26px 28px;
+  margin-top:34px;
+  padding:24px 26px;
   background:var(--card);
   border:1px solid var(--line);
-  border-radius:14px;
-  transition:all .25s ease;
-}
-
-.section:hover{
-  transform:translateY(-2px);
-  box-shadow:0 15px 40px rgba(0,0,0,.5);
+  border-radius:12px;
 }
 
 .label{
   font-size:11px;
   text-transform:uppercase;
   letter-spacing:.3em;
-  color:#b8aa7a;
+  color:var(--accent);
   margin-bottom:12px;
 }
 
 p{
-  line-height:1.8;
-  font-size:16px;
-  max-width:820px;
+  line-height:1.75;
+  font-size:15px;
+  max-width:780px;
 }
 
 .footer{
-  margin-top:50px;
-  padding-top:22px;
+  margin-top:44px;
+  padding-top:20px;
   border-top:1px solid var(--line);
   font-size:13px;
-  color:#8c877e;
+  color:var(--muted);
 }
 
 .footer a{
-  color:#8c877e;
+  color:var(--muted);
   text-decoration:none;
 }
 
@@ -136,43 +118,35 @@ p{
   <div class="header">
     <h1>SAHIL SINGHAL</h1>
     <div class="sub">
-      Fraud Risk Leader, White-Collar Legal Professional, and Certified Fraud Examiner specialising in corporate investigations, governance risk, and enforcement strategy.
+      Lawyer and Certified Fraud Examiner specialising in corporate investigations, fraud risk management, and enforcement analysis.
     </div>
   </div>
 
-  <div id="intel-quote" class="quote"></div>
-
   <div class="section">
-    <div class="label">Executive Profile</div>
+    <div class="label">Profile</div>
     <p>
-      A Lawyer and Certified Fraud Examiner with over eight years of experience across corporate investigations, fraud risk management, and white-collar litigation. Currently leading risk management and investigation functions within a multi-plant manufacturing environment, advising senior leadership on financial exposure, misconduct escalation, regulatory sensitivity, and reputational containment.
-    </p>
-    <p>
-      Responsible for overseeing fraud, corruption, third-party misconduct, procurement irregularities, financial exposure, and governance failures across operational units. Work is grounded in evidence-based analysis, structured fact-finding, and legally defensible documentation standards.
+      Focused on investigation-led fraud risk management within complex operational environments. Work involves handling fraud, corruption, misconduct, and governance-related matters across multi-location structures, supported by structured evidence review and disciplined documentation standards.
     </p>
   </div>
 
   <div class="section">
-    <div class="label">Investigation & Risk Leadership</div>
+    <div class="label">Investigations</div>
     <p>
-      Accountable for conducting and managing sensitive investigations across multiple manufacturing locations, including whistleblower-triggered matters and workplace misconduct under applicable law. Experience includes identifying material financial leakages, enabling recovery and deterrence, and advising CXOs on remediation strategy and escalation management.
-    </p>
-    <p>
-      Works closely with internal audit, legal teams, and operational leadership to ensure investigation findings translate into sustainable control improvements and preventive risk culture.
+      Experience includes third-party risk exposure, procurement irregularities, financial leakages, whistleblower-triggered matters, and workplace misconduct cases under applicable law. Emphasis is placed on factual reconstruction, exposure assessment, and sustainable risk containment.
     </p>
   </div>
 
   <div class="section">
-    <div class="label">Legal & Enforcement Perspective</div>
+    <div class="label">Legal Perspective</div>
     <p>
-      Prior litigation experience before NCLT, Delhi High Court, and Supreme Court informs a disciplined understanding of how fraud allegations are constructed, challenged, and sustained under judicial scrutiny. This dual perspective strengthens internal investigation quality and anticipates enforcement exposure before escalation.
+      Background in white-collar and economic offence litigation informs a structured understanding of evidentiary thresholds, procedural safeguards, and how allegations are evaluated under judicial scrutiny.
     </p>
   </div>
 
   <div class="section">
-    <div class="label">Research & Intelligence</div>
+    <div class="label">Research</div>
     <p>
-      Founder of Fraulex, an independent research initiative examining fraud indicators, bribery exposure patterns, enforcement reasoning, and judicial outcomes across Indian and global regulatory frameworks. Research complements operational responsibilities by strengthening preventive insight and governance awareness.
+      Founder of Fraulex, an independent research initiative examining fraud indicators, enforcement reasoning, and governance exposure patterns across Indian and global regulatory frameworks.
     </p>
   </div>
 
@@ -188,24 +162,6 @@ p{
   </div>
 
 </div>
-
-<script>
-const quotes = [
-  "Evidence shapes outcomes long before arguments begin.",
-  "Risk ignored becomes enforcement exposure.",
-  "Integrity failures surface where controls are weakest.",
-  "Financial leakage begins where oversight ends.",
-  "Judicial scrutiny rewards documentation, not narratives.",
-  "Governance strength determines enforcement resilience.",
-  "Fraud is rarely sudden; it is structurally enabled.",
-  "Procedural discipline prevents reputational collapse.",
-  "Risk containment requires evidentiary clarity.",
-  "Prevention begins with understanding escalation."
-];
-
-document.getElementById("intel-quote").textContent =
-  quotes[Math.floor(Math.random()*quotes.length)];
-</script>
 
 </body>
 </html>
