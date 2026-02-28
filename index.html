@@ -7,20 +7,21 @@
 
 <style>
 :root{
-  --bg:#0f1b1d;
+  --bg1:#0f2e25;
+  --bg2:#123a2f;
   --panel:#ffffff;
   --card:#ffffff;
   --text:#1e2628;
   --muted:#6f7f82;
   --accent:#1aa89c;
-  --line:#e4eceb;
+  --line:#e6efee;
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  background:linear-gradient(180deg,#0f1b1d 0%,#142326 100%);
+  background:linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 100%);
   font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   color:var(--text);
   display:flex;
@@ -34,7 +35,7 @@ body{
   background:var(--panel);
   border-radius:18px;
   padding:50px;
-  box-shadow:0 35px 80px rgba(0,0,0,.45);
+  box-shadow:0 35px 80px rgba(0,0,0,.35);
 }
 
 .header{
