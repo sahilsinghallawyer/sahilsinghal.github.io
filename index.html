@@ -4,45 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sahil Singhal — CFE · Fraud Lawyer · Intelligence Researcher</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 
 /* ── RESET ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 17px; }
 
 /* ── TOKENS ── */
 :root {
-  --ink:      #0c0f0e;
-  --ink2:     #161c1a;
-  --ink3:     #1f2926;
-  --forest:   #0d2b22;
-  --teal:     #0e6b5a;
-  --teal2:    #14917a;
-  --teal3:    #1ab99e;
-  --teal-dim: rgba(20,145,122,0.1);
+  --ink:      #0a0d14;
+  --ink2:     #12161f;
+  --ink3:     #1a2030;
+  --deep:     #0d1526;
+  --blue:     #1a4fd6;
+  --blue2:    #2762f5;
+  --blue3:    #5585ff;
+  --blue-dim: rgba(26,79,214,0.10);
   --gold:     #c9952a;
   --gold2:    #e5b84a;
-  --cream:    #f5f1e8;
-  --cream2:   #ebe5d6;
-  --cream3:   #dfd7c4;
+  --cream:    #f4f1eb;
+  --cream2:   #eae5d8;
+  --cream3:   #ddd6c6;
   --white:    #ffffff;
-  --text:     #1a211f;
-  --text2:    #3d4f4a;
-  --text3:    #7a8f8a;
-  --rule:     rgba(13,43,34,0.1);
-  --rule2:    rgba(20,145,122,0.15);
-  --shadow:   0 12px 48px rgba(12,15,14,0.08);
-  --shadow2:  0 24px 80px rgba(12,15,14,0.12);
+  --text:     #18202e;
+  --text2:    #3a4660;
+  --text3:    #7a889e;
+  --rule:     rgba(13,21,38,0.10);
+  --rule2:    rgba(26,79,214,0.15);
+  --shadow:   0 12px 48px rgba(10,13,20,0.08);
+  --shadow2:  0 24px 80px rgba(10,13,20,0.14);
 }
 
 /* ── BASE ── */
 body {
   background: var(--cream);
   color: var(--text);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.65;
   overflow-x: hidden;
 }
 
@@ -51,55 +51,54 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(245,241,232,0.92);
-  backdrop-filter: blur(16px);
+  background: rgba(244,241,235,0.93);
+  backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--rule);
-  height: 58px;
+  height: 62px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 48px;
+  padding: 0 52px;
 }
 
 .nav-name {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.25em;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--blue);
 }
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 34px;
   list-style: none;
 }
 
 .nav-links a {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.15em;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text3);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.nav-links a:hover { color: var(--teal); }
+.nav-links a:hover { color: var(--blue); }
 
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
-  background: var(--forest);
+  background: var(--deep);
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 100px 0 80px;
+  padding: 110px 0 90px;
 }
 
-/* Subtle pattern */
 .hero::before {
   content: '';
   position: absolute;
@@ -109,15 +108,15 @@ nav {
       0deg,
       transparent,
       transparent 79px,
-      rgba(255,255,255,0.03) 79px,
-      rgba(255,255,255,0.03) 80px
+      rgba(255,255,255,0.025) 79px,
+      rgba(255,255,255,0.025) 80px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 79px,
-      rgba(255,255,255,0.03) 79px,
-      rgba(255,255,255,0.03) 80px
+      rgba(255,255,255,0.025) 79px,
+      rgba(255,255,255,0.025) 80px
     );
   pointer-events: none;
 }
@@ -127,14 +126,14 @@ nav {
   position: absolute;
   top: -200px; left: -200px;
   width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(20,145,122,0.12) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(26,79,214,0.13) 0%, transparent 65%);
   pointer-events: none;
 }
 
 .hero-inner {
-  max-width: 1080px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 52px;
   position: relative;
   z-index: 1;
   display: grid;
@@ -143,73 +142,71 @@ nav {
   align-items: center;
 }
 
-/* LEFT */
-.hero-left {}
-
 .hero-kicker {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.3em;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--teal3);
-  margin-bottom: 24px;
+  color: var(--blue3);
+  margin-bottom: 26px;
 }
 
 .hero-kicker::before {
   content: '';
   width: 28px;
   height: 1px;
-  background: var(--teal3);
+  background: var(--blue3);
 }
 
 .hero-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(44px, 5vw, 68px);
-  font-weight: 300;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 5.5vw, 74px);
+  font-weight: 400;
   color: var(--cream);
-  line-height: 1.05;
+  line-height: 1.04;
   letter-spacing: -0.01em;
   margin-bottom: 6px;
 }
 
 .hero-name strong {
-  font-weight: 600;
+  font-weight: 700;
   display: block;
 }
 
 .hero-titles {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 28px;
-  margin-top: 16px;
+  gap: 7px;
+  margin-bottom: 30px;
+  margin-top: 18px;
 }
 
 .hero-title-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.15em;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 5px 12px;
-  border: 1px solid rgba(20,145,122,0.4);
-  color: var(--teal3);
-  background: rgba(20,145,122,0.08);
+  padding: 6px 13px;
+  border: 1px solid rgba(26,79,214,0.45);
+  color: var(--blue3);
+  background: rgba(26,79,214,0.09);
 }
 
 .hero-desc {
-  font-size: 15px;
-  color: rgba(245,241,232,0.6);
-  line-height: 1.8;
-  max-width: 440px;
-  margin-bottom: 36px;
+  font-size: 16.5px;
+  color: rgba(244,241,235,0.65);
+  line-height: 1.82;
+  max-width: 460px;
+  margin-bottom: 38px;
+  font-weight: 300;
 }
 
 .hero-actions {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
@@ -217,22 +214,23 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--teal2);
+  background: var(--blue2);
   color: var(--white);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
   font-weight: 500;
-  padding: 13px 24px;
+  padding: 14px 26px;
   text-decoration: none;
   transition: all 0.25s;
   border: none;
   cursor: pointer;
+  letter-spacing: 0.02em;
 }
 
 .btn-primary:hover {
-  background: var(--teal3);
+  background: var(--blue3);
   transform: translateY(-1px);
-  box-shadow: 0 12px 32px rgba(20,145,122,0.3);
+  box-shadow: 0 12px 32px rgba(26,79,214,0.35);
 }
 
 .btn-ghost {
@@ -240,29 +238,27 @@ nav {
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: rgba(245,241,232,0.7);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
+  color: rgba(244,241,235,0.7);
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
   font-weight: 400;
-  padding: 13px 20px;
+  padding: 14px 22px;
   text-decoration: none;
-  border: 1px solid rgba(245,241,232,0.15);
+  border: 1px solid rgba(244,241,235,0.18);
   transition: all 0.2s;
   cursor: pointer;
 }
 
 .btn-ghost:hover {
   color: var(--cream);
-  border-color: rgba(245,241,232,0.35);
+  border-color: rgba(244,241,235,0.38);
 }
 
 /* RIGHT — CREDENTIAL CARD */
-.hero-right {}
-
 .credential-card {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  padding: 36px;
+  padding: 38px;
   position: relative;
 }
 
@@ -271,69 +267,63 @@ nav {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--teal2), var(--gold));
+  background: linear-gradient(90deg, var(--blue2), var(--gold));
 }
 
 .cred-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 8px;
-  letter-spacing: 0.3em;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--teal3);
-  margin-bottom: 20px;
+  color: var(--blue3);
+  margin-bottom: 22px;
 }
 
 .cred-item {
   display: flex;
   gap: 16px;
   align-items: flex-start;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .cred-item:last-child { border-bottom: none; padding-bottom: 0; }
 .cred-item:first-of-type { padding-top: 0; }
 
-.cred-icon {
-  font-size: 18px;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.cred-content {}
+.cred-icon { font-size: 19px; flex-shrink: 0; margin-top: 2px; }
 
 .cred-title {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--cream);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
   line-height: 1.3;
 }
 
 .cred-sub {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.1em;
-  color: rgba(245,241,232,0.35);
+  font-family: 'Space Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  color: rgba(244,241,235,0.38);
 }
 
 /* ── COMMON SECTION ── */
 section {
-  padding: 96px 48px;
+  padding: 100px 52px;
 }
 
 .section-inner {
-  max-width: 1080px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .section-kicker {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.3em;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 8px;
+  color: var(--blue);
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -343,112 +333,98 @@ section {
   content: '';
   width: 20px;
   height: 1px;
-  background: var(--teal);
+  background: var(--blue);
 }
 
 .section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(28px, 3.5vw, 42px);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 3.8vw, 46px);
   font-weight: 400;
   color: var(--text);
   line-height: 1.2;
   letter-spacing: -0.01em;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .section-title em {
   font-style: italic;
-  color: var(--teal);
+  color: var(--blue);
 }
 
 .section-lead {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text2);
-  line-height: 1.8;
-  max-width: 580px;
+  line-height: 1.82;
+  max-width: 600px;
 }
 
 /* ── ABOUT ── */
-.about-section {
-  background: var(--white);
-}
+.about-section { background: var(--white); }
 
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: 68px;
   align-items: start;
-  margin-top: 48px;
+  margin-top: 52px;
 }
-
-.about-left {}
 
 .about-body {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text2);
-  line-height: 1.85;
-  margin-bottom: 16px;
+  line-height: 1.88;
+  margin-bottom: 18px;
 }
 
-.about-body strong { color: var(--text); font-weight: 500; }
-
-.about-right {}
+.about-body strong { color: var(--text); font-weight: 600; }
 
 .expertise-list {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
 }
 
 .expertise-item {
   display: flex;
-  gap: 14px;
+  gap: 15px;
   align-items: flex-start;
-  padding: 14px 16px;
+  padding: 15px 17px;
   background: var(--cream);
   transition: background 0.15s;
 }
 
 .expertise-item:hover { background: var(--cream2); }
 
-.exp-icon {
-  font-size: 16px;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.exp-content {}
+.exp-icon { font-size: 17px; flex-shrink: 0; margin-top: 2px; }
 
 .exp-title {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   color: var(--text);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .exp-desc {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text3);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 /* ── CAPARO ── */
-.caparo-section {
-  background: var(--cream);
-}
+.caparo-section { background: var(--cream); }
 
 .caparo-card {
   background: var(--white);
   border: 1px solid var(--rule);
-  margin-top: 48px;
+  margin-top: 52px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
 }
 
 .caparo-left {
-  background: var(--forest);
-  padding: 48px;
+  background: var(--deep);
+  padding: 52px;
   position: relative;
   overflow: hidden;
 }
@@ -458,21 +434,21 @@ section {
   position: absolute;
   bottom: -60px; right: -60px;
   width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(20,145,122,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(26,79,214,0.15) 0%, transparent 70%);
 }
 
 .caparo-org {
-  font-family: 'DM Mono', monospace;
-  font-size: 8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--teal3);
-  margin-bottom: 16px;
+  color: var(--blue3);
+  margin-bottom: 18px;
 }
 
 .caparo-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
   font-weight: 400;
   color: var(--cream);
   line-height: 1.2;
@@ -480,78 +456,77 @@ section {
 }
 
 .caparo-full {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
   letter-spacing: 0.1em;
-  color: rgba(245,241,232,0.35);
-  margin-bottom: 24px;
+  color: rgba(244,241,235,0.38);
+  margin-bottom: 26px;
 }
 
 .caparo-tagline {
-  font-size: 13px;
-  color: rgba(245,241,232,0.6);
+  font-size: 14px;
+  color: rgba(244,241,235,0.62);
   line-height: 1.7;
   font-style: italic;
+  font-family: 'Playfair Display', serif;
 }
 
 .caparo-verticals {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-top: 28px;
+  gap: 9px;
+  margin-top: 30px;
 }
 
 .caparo-vertical {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(245,241,232,0.5);
+  color: rgba(244,241,235,0.5);
 }
 
 .caparo-vertical::before {
   content: '';
   width: 16px;
   height: 1px;
-  background: var(--teal3);
+  background: var(--blue3);
 }
 
-.caparo-right {
-  padding: 48px;
-}
+.caparo-right { padding: 52px; }
 
 .caparo-role-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
   font-weight: 400;
   color: var(--text);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   line-height: 1.3;
 }
 
 .caparo-role-desc {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text2);
-  line-height: 1.8;
-  margin-bottom: 24px;
+  line-height: 1.82;
+  margin-bottom: 26px;
 }
 
 .service-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 7px;
 }
 
 .service-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
   letter-spacing: 0.1em;
-  padding: 5px 10px;
-  background: var(--teal-dim);
-  color: var(--teal);
+  padding: 6px 11px;
+  background: var(--blue-dim);
+  color: var(--blue);
   border: 1px solid var(--rule2);
 }
 
@@ -567,7 +542,7 @@ section {
   position: absolute;
   top: -100px; right: -100px;
   width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(20,145,122,0.06) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(26,79,214,0.07) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -576,12 +551,12 @@ section {
   position: absolute;
   bottom: -100px; left: 200px;
   width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(201,149,42,0.04) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(201,149,42,0.05) 0%, transparent 65%);
   pointer-events: none;
 }
 
 .fraulex-inner {
-  max-width: 1080px;
+  max-width: 1100px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -590,42 +565,42 @@ section {
 .fraulex-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: 68px;
   align-items: start;
-  margin-bottom: 48px;
+  margin-bottom: 52px;
 }
 
 .fraulex-brand {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(42px, 5vw, 64px);
-  font-weight: 300;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(46px, 5.5vw, 68px);
+  font-weight: 400;
   color: var(--cream);
   line-height: 1.0;
   letter-spacing: -0.01em;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
-.fraulex-brand span { color: var(--teal3); }
+.fraulex-brand span { color: var(--blue3); }
 
 .fraulex-tagline {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.25em;
+  font-family: 'Space Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold2);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .fraulex-desc {
-  font-size: 14px;
-  color: rgba(245,241,232,0.55);
-  line-height: 1.8;
+  font-size: 15.5px;
+  color: rgba(244,241,235,0.58);
+  line-height: 1.84;
 }
 
 .framework-box {
   background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 32px;
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 34px;
   position: relative;
 }
 
@@ -634,56 +609,50 @@ section {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--teal2), var(--gold));
+  background: linear-gradient(90deg, var(--blue2), var(--gold));
 }
 
 .framework-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 8px;
-  letter-spacing: 0.3em;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--gold2);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
-.framework-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
+.framework-steps { display: flex; flex-direction: column; }
 
 .framework-step {
   display: flex;
   gap: 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .framework-step:last-child { border-bottom: none; padding-bottom: 0; }
 
 .step-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
-  font-weight: 300;
-  color: rgba(20,145,122,0.25);
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: rgba(26,79,214,0.28);
   line-height: 1;
   flex-shrink: 0;
-  width: 32px;
+  width: 34px;
 }
 
-.step-content {}
-
 .step-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
   font-weight: 500;
   color: var(--cream);
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .step-desc {
-  font-size: 12px;
-  color: rgba(245,241,232,0.4);
+  font-size: 13px;
+  color: rgba(244,241,235,0.42);
   line-height: 1.6;
 }
 
@@ -697,10 +666,10 @@ section {
 .product-card {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.05);
-  padding: 28px 24px;
+  padding: 30px 26px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 13px;
   transition: all 0.2s;
   position: relative;
   overflow: hidden;
@@ -711,106 +680,89 @@ section {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: var(--teal2);
+  background: var(--blue2);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s;
 }
 
-.product-card:hover { background: rgba(255,255,255,0.05); }
+.product-card:hover { background: rgba(255,255,255,0.055); }
 .product-card:hover::before { transform: scaleX(1); }
 
-.product-icon { font-size: 22px; }
+.product-icon { font-size: 23px; }
 
 .product-type {
-  font-family: 'DM Mono', monospace;
-  font-size: 8px;
-  letter-spacing: 0.2em;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--teal3);
+  color: var(--blue3);
 }
 
 .product-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
   font-weight: 500;
   color: var(--cream);
   line-height: 1.3;
 }
 
 .product-desc {
-  font-size: 12px;
-  color: rgba(245,241,232,0.4);
-  line-height: 1.6;
+  font-size: 13px;
+  color: rgba(244,241,235,0.42);
+  line-height: 1.65;
   flex: 1;
 }
 
-.product-price {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  color: var(--gold2);
-  letter-spacing: 0.1em;
-}
-
 /* ── RESEARCH ── */
-.research-section {
-  background: var(--cream);
-}
+.research-section { background: var(--cream); }
 
 .research-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  margin-top: 48px;
+  gap: 52px;
+  margin-top: 52px;
   align-items: start;
 }
 
-.research-left {}
-
 .research-body {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text2);
-  line-height: 1.85;
-  margin-bottom: 16px;
+  line-height: 1.88;
+  margin-bottom: 18px;
 }
 
-.research-body strong { color: var(--text); font-weight: 500; }
+.research-body strong { color: var(--text); font-weight: 600; }
 
-.research-right {}
-
-.focus-areas {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+.focus-areas { display: flex; flex-direction: column; gap: 13px; }
 
 .focus-area {
   background: var(--white);
   border: 1px solid var(--rule);
-  border-left: 3px solid var(--teal);
-  padding: 16px 18px;
+  border-left: 3px solid var(--blue);
+  padding: 17px 20px;
   transition: box-shadow 0.2s;
 }
 
 .focus-area:hover { box-shadow: var(--shadow); }
 
 .focus-title {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   color: var(--text);
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .focus-desc {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text3);
-  line-height: 1.55;
+  line-height: 1.58;
 }
 
 /* ── CONTACT ── */
 .contact-section {
-  background: var(--forest);
-  padding: 80px 48px;
+  background: var(--deep);
+  padding: 90px 52px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -822,25 +774,25 @@ section {
   top: 0; left: 50%;
   transform: translateX(-50%);
   width: 400px; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--teal2), transparent);
+  background: linear-gradient(90deg, transparent, var(--blue2), transparent);
 }
 
 .contact-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(28px, 4vw, 44px);
-  font-weight: 300;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 400;
   color: var(--cream);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   line-height: 1.2;
 }
 
-.contact-title em { font-style: italic; color: var(--teal3); }
+.contact-title em { font-style: italic; color: var(--blue3); }
 
 .contact-sub {
-  font-size: 14px;
-  color: rgba(245,241,232,0.5);
-  margin-bottom: 36px;
-  line-height: 1.6;
+  font-size: 15.5px;
+  color: rgba(244,241,235,0.52);
+  margin-bottom: 40px;
+  line-height: 1.7;
 }
 
 .contact-links {
@@ -854,40 +806,30 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 13px 24px;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  padding: 14px 26px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.2s;
 }
 
-.contact-link.primary {
-  background: var(--teal2);
-  color: var(--white);
-}
-
-.contact-link.primary:hover {
-  background: var(--teal3);
-  transform: translateY(-1px);
-}
+.contact-link.primary { background: var(--blue2); color: var(--white); }
+.contact-link.primary:hover { background: var(--blue3); transform: translateY(-1px); }
 
 .contact-link.secondary {
   background: transparent;
-  color: rgba(245,241,232,0.6);
-  border: 1px solid rgba(245,241,232,0.15);
+  color: rgba(244,241,235,0.62);
+  border: 1px solid rgba(244,241,235,0.16);
 }
 
-.contact-link.secondary:hover {
-  color: var(--cream);
-  border-color: rgba(245,241,232,0.35);
-}
+.contact-link.secondary:hover { color: var(--cream); border-color: rgba(244,241,235,0.36); }
 
 /* ── FOOTER ── */
 footer {
   background: var(--ink);
-  padding: 24px 48px;
+  padding: 26px 52px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -897,63 +839,46 @@ footer {
 }
 
 .footer-name {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  color: var(--teal3);
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--blue3);
 }
 
-.footer-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-}
+.footer-links { display: flex; gap: 26px; list-style: none; }
 
 .footer-links a {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(245,241,232,0.25);
+  color: rgba(244,241,235,0.26);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.footer-links a:hover { color: var(--teal3); }
+.footer-links a:hover { color: var(--blue3); }
 
 .footer-copy {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  color: rgba(245,241,232,0.2);
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: rgba(244,241,235,0.22);
   letter-spacing: 0.08em;
-}
-
-/* ── DIVIDER ── */
-.section-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--rule), transparent);
 }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   nav { padding: 0 24px; }
   .nav-links { display: none; }
-  section { padding: 64px 24px; }
-  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
-  .hero { padding: 90px 0 60px; }
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .caparo-card { grid-template-columns: 1fr; }
-  .fraulex-header { grid-template-columns: 1fr; gap: 40px; }
+  section { padding: 68px 24px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; padding: 0 24px; }
+  .hero { padding: 96px 0 64px; }
+  .about-grid, .caparo-card, .fraulex-header, .research-grid { grid-template-columns: 1fr; }
+  .about-grid { gap: 40px; }
+  .caparo-left, .caparo-right { padding: 36px 28px; }
   .products-grid { grid-template-columns: 1fr; }
-  .research-grid { grid-template-columns: 1fr; gap: 32px; }
-  .contact-section { padding: 60px 24px; }
-  footer { padding: 20px 24px; flex-direction: column; text-align: center; }
-}
-
-@media (max-width: 600px) {
-  .hero-inner { padding: 0 24px; }
-  .hero-name { font-size: 40px; }
-  .caparo-left, .caparo-right { padding: 32px 24px; }
+  .contact-section { padding: 64px 24px; }
+  footer { padding: 22px 24px; flex-direction: column; text-align: center; }
 }
 
 </style>
@@ -991,7 +916,7 @@ footer {
       </div>
 
       <p class="hero-desc">
-        I work at the intersection of corporate investigations, enforcement exposure, and fraud risk intelligence. I investigate how financial misconduct is built, hidden, and prosecuted — and translate that intelligence into actionable insight for organisations that cannot afford to miss it.
+        I work at the intersection of corporate investigations, enforcement exposure, and fraud risk intelligence — at <strong style="color:rgba(244,241,235,0.85);">Caparo Special Services Group (CSSG)</strong> and through <strong style="color:rgba(244,241,235,0.85);">Fraulex Intelligence</strong>, an independent research initiative decoding how financial misconduct is built, hidden, and prosecuted.
       </p>
 
       <div class="hero-actions">
@@ -1002,7 +927,7 @@ footer {
 
     <div class="hero-right">
       <div class="credential-card">
-        <div class="cred-label">// Credentials & Affiliations</div>
+        <div class="cred-label">// Credentials &amp; Affiliations</div>
 
         <div class="cred-item">
           <div class="cred-icon">⚖️</div>
@@ -1031,7 +956,7 @@ footer {
         <div class="cred-item">
           <div class="cred-icon">🔍</div>
           <div class="cred-content">
-            <div class="cred-title">Fraulex Intelligence — Founder</div>
+            <div class="cred-title">Fraulex Intelligence</div>
             <div class="cred-sub">Independent Research · Global Fraud Intelligence Platform</div>
           </div>
         </div>
@@ -1065,7 +990,7 @@ footer {
           My work combines <strong>forensic investigation methodology</strong> with legal reasoning. I do not just identify what went wrong — I analyse the institutional failures, documentation patterns, and behavioural indicators that allowed misconduct to develop and persist.
         </p>
         <p class="about-body">
-          This approach means I understand not only how fraud happens, but how evidence of it is evaluated under judicial scrutiny — a perspective that informs both investigative work and the intelligence I produce through <strong>Fraulex Intelligence</strong>.
+          This approach means I understand not only how fraud happens, but how evidence of it is evaluated under judicial scrutiny — a perspective that informs both investigative work at <strong>CSSG</strong> and the intelligence I produce through <strong>Fraulex Intelligence</strong>.
         </p>
       </div>
 
@@ -1081,7 +1006,7 @@ footer {
           <div class="expertise-item">
             <div class="exp-icon">⚖️</div>
             <div class="exp-content">
-              <div class="exp-title">Legal Analysis & White Collar Crime</div>
+              <div class="exp-title">Legal Analysis &amp; White Collar Crime</div>
               <div class="exp-desc">Enforcement exposure analysis, evidentiary standards, regulatory proceedings, and legal defensibility of investigation findings.</div>
             </div>
           </div>
@@ -1102,7 +1027,7 @@ footer {
           <div class="expertise-item">
             <div class="exp-icon">📁</div>
             <div class="exp-content">
-              <div class="exp-title">Due Diligence & Risk Profiling</div>
+              <div class="exp-title">Due Diligence &amp; Risk Profiling</div>
               <div class="exp-desc">Corporate and individual risk profiling for transactions, partnerships, and senior appointments.</div>
             </div>
           </div>
@@ -1134,7 +1059,7 @@ footer {
       </div>
 
       <div class="caparo-right">
-        <div class="caparo-role-title">Fraud Risk & Investigations Professional</div>
+        <div class="caparo-role-title">Fraud Risk &amp; Investigations Professional</div>
         <p class="caparo-role-desc">
           At CSSG I work across the full spectrum of GRC services — from proactive fraud risk assessments and whistleblower programme management to reactive fraud investigations and digital forensics. Every engagement is CFE-led and legally defensible from day one.
           <br><br>
@@ -1158,16 +1083,16 @@ footer {
 </section>
 
 <!-- FRAULEX -->
-<section class="fraulex-section" id="fraulex" style="padding: 96px 48px;">
+<section class="fraulex-section" id="fraulex" style="padding: 100px 52px;">
   <div class="fraulex-inner">
-    <div class="section-kicker" style="color: var(--teal3);">Independent Research Initiative</div>
+    <div class="section-kicker" style="color: var(--blue3);">Independent Research Initiative</div>
 
     <div class="fraulex-header">
       <div>
         <div class="fraulex-brand">Frau<span>lex</span></div>
         <div class="fraulex-tagline">Decoding Hidden Fraud Patterns</div>
         <p class="fraulex-desc">
-          Fraulex is my independent fraud intelligence research initiative. It analyses how corporate fraud is constructed, how enforcement cases are built by regulators and prosecutors, and how organisations can use that intelligence to protect themselves — before a crisis arrives.
+          Fraulex is an independent fraud intelligence research initiative. It analyses how corporate fraud is constructed, how enforcement cases are built by regulators and prosecutors, and how organisations can use that intelligence to protect themselves — before a crisis arrives.
           <br><br>
           The platform produces intelligence products drawn from real enforcement cases across DOJ, SFO, SFIO, FCA, and ED — making enforcement-grade fraud intelligence accessible to businesses that cannot afford traditional consultancy fees.
         </p>
@@ -1201,9 +1126,8 @@ footer {
       </div>
     </div>
 
-    <!-- Research Material -->
-    <div style="margin-bottom: 16px;">
-      <div class="section-kicker" style="color: var(--teal3);">Research Material</div>
+    <div style="margin-bottom: 18px;">
+      <div class="section-kicker" style="color: var(--blue3);">Research Material</div>
     </div>
 
     <div class="products-grid">
@@ -1212,51 +1136,40 @@ footer {
         <div class="product-type">RiskMap Series</div>
         <div class="product-name">Sector Fraud Risk Libraries</div>
         <div class="product-desc">Complete fraud risk universe for 20+ sectors. Every risk identified from real enforcement cases. Warning signs. Exact remediation steps. Two modes — plain language and professional.</div>
-  
       </div>
-
       <div class="product-card">
         <div class="product-icon">📋</div>
         <div class="product-type">Intelligence Briefs</div>
         <div class="product-name">Decoded Enforcement Cases</div>
         <div class="product-desc">Real enforcement cases decoded into eight sections — fraud architecture, concealment, control failures, signals timeline, enforcement lens. For GCs, CCOs, and boards.</div>
-        
       </div>
-
       <div class="product-card">
         <div class="product-icon">🔬</div>
         <div class="product-type">Evidence Toolkits</div>
         <div class="product-name">Investigation Methodology</div>
         <div class="product-desc">Professional-grade evidence intelligence for fraud investigators. What evidence to collect. Court standing guide. Preservation protocol. Legal privilege protection.</div>
-        
       </div>
-
       <div class="product-card">
         <div class="product-icon">🚨</div>
         <div class="product-type">Investigation Guides</div>
         <div class="product-name">Crisis Response Protocols</div>
         <div class="product-desc">Step-by-step guides for the first 48–72 hours of a fraud crisis. Dawn raid response. Whistleblower response. Internal fraud discovery. Immediate use.</div>
-        
       </div>
-
       <div class="product-card">
         <div class="product-icon">⚖️</div>
         <div class="product-type">Regulatory References</div>
         <div class="product-name">Framework Intelligence</div>
         <div class="product-desc">Decoded regulatory frameworks — UK Bribery Act Section 7, FCPA, Prevention of Corruption Act India, PMLA. What adequate procedures actually requires.</div>
-        
       </div>
-
       <div class="product-card">
         <div class="product-icon">🎯</div>
         <div class="product-type">Simulations</div>
         <div class="product-name">Behavioural Fraud Testing</div>
         <div class="product-desc">Decision-makers face the same choices that led to prosecution in real enforcement cases. Every response correlated against real outcomes. For enterprise clients.</div>
-        
       </div>
     </div>
 
-    <div style="text-align: center; margin-top: 36px;">
+    <div style="text-align: center; margin-top: 40px;">
       <a href="https://www.fraulex.com" class="btn-primary" style="display: inline-flex;">Visit Fraulex Intelligence →</a>
     </div>
   </div>
@@ -1319,7 +1232,7 @@ footer {
   <div class="contact-links">
     <a href="mailto:sahil@fraulex.com" class="contact-link primary">✉ sahil@fraulex.com</a>
     <a href="https://www.fraulex.com" class="contact-link secondary" target="_blank">🌐 fraulex.com</a>
-    <a href="https://www.caparo.co.in" class="contact-link secondary" target="_blank">🏢 caparo.co.in</a>
+    <a href="https://www.caparo.in" class="contact-link secondary" target="_blank">🏢 caparo.in</a>
   </div>
 </div>
 
