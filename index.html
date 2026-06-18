@@ -3,519 +3,383 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sahil Singhal — CFE · Lawyer · Intelligence Researcher</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Sahil Singhal — CFE · Lawyer · Fraud Intelligence Researcher</title>
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:#0B0B0F;color:#E8E2D9;font-family:'Outfit',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden;}
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap');
 
-:root{
-  --black:#0B0B0F;
-  --dark:#111116;
-  --panel:#16161C;
-  --border:#FFFFFF0D;
-  --border2:#FFFFFF18;
-  --gold:#D4A843;
-  --gold2:#E8C060;
-  --gold3:#F0D080;
-  --sand:#C8B896;
-  --cream:#F0EAE0;
-  --offwhite:#E8E2D9;
-  --muted:#8A8478;
-  --faint:#4A4640;
-}
+  :root{
+    --paper:#FBFAF7;
+    --ink:#262420;
+    --ink-soft:#5A5648;
+    --grey:#8C8775;
+    --rule:#EAE6DA;
+    --accent:#9C6B3F;
+    --accent-soft:#9C6B3F0F;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --max: 700px;
+  }
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:68px;transition:all 0.4s;}
-nav.s{background:rgba(11,11,15,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
-.nav-logo{font-family:'Cormorant',serif;font-size:22px;font-weight:600;letter-spacing:0.04em;color:var(--cream);text-decoration:none;}
-.nav-logo span{color:var(--gold);}
-.nav-links{display:flex;gap:40px;list-style:none;}
-.nav-links a{font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
-.nav-links a:hover{color:var(--gold);}
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.7;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+    font-feature-settings:"liga" 1;
+  }
+  a{color:inherit; text-decoration:none;}
+  ::selection{background:var(--accent-soft);}
+  *:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;background:#0B0B0F;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
 
-/* animated gold orb */
-.orb{position:absolute;border-radius:50%;pointer-events:none;}
-.orb1{width:700px;height:700px;top:-200px;right:-150px;background:radial-gradient(circle,rgba(212,168,67,0.12) 0%,transparent 65%);}
-.orb2{width:500px;height:500px;bottom:-100px;left:-100px;background:radial-gradient(circle,rgba(212,168,67,0.07) 0%,transparent 65%);}
-.orb3{width:300px;height:300px;top:40%;left:40%;background:radial-gradient(circle,rgba(200,184,150,0.04) 0%,transparent 70%);}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
 
-.hero-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+  /* ---------- NAV ---------- */
+  nav{ padding:32px 0 0; }
+  .nav-inner{
+    max-width:var(--max); margin:0 auto; padding:0 32px;
+    display:flex; align-items:baseline; justify-content:space-between;
+  }
+  .nav-name{font-family:var(--serif); font-weight:500; font-size:16px;}
+  .nav-links{display:flex; gap:30px; font-size:14px; color:var(--grey);}
+  .nav-links a:hover{color:var(--ink);}
+  @media (max-width:560px){
+    .nav-links{gap:16px; font-size:13px;}
+  }
 
-.hero-inner{max-width:1200px;margin:0 auto;padding:120px 56px 80px;position:relative;z-index:1;display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center;}
+  /* ---------- HERO ---------- */
+  header.hero{ padding:100px 0 76px; }
+  .kicker{
+    font-size:14px; letter-spacing:0.03em; color:var(--accent);
+    margin-bottom:24px; font-weight:500;
+  }
+  h1.hero-name{
+    font-family:var(--serif); font-weight:400; font-size:clamp(44px, 7.5vw, 68px);
+    line-height:1.05; letter-spacing:-0.01em; margin-bottom:10px;
+  }
+  .hero-role{
+    font-size:15px; color:var(--grey); margin-bottom:48px;
+  }
+  .hero-statement{
+    font-family:var(--serif); font-weight:400; font-size:clamp(23px, 3.2vw, 30px); line-height:1.5;
+    color:var(--ink); max-width:580px; margin-bottom:26px;
+  }
+  .hero-statement em{font-style:italic; font-weight:400; color:var(--ink-soft);}
 
-.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(212,168,67,0.08);border:1px solid rgba(212,168,67,0.2);padding:8px 18px;margin-bottom:36px;}
-.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;}
-.hero-badge-text{font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+  .hero-sub{font-size:16px; color:var(--ink-soft); max-width:520px; margin-bottom:42px; line-height:1.7;}
+  .hero-ctas{display:flex; gap:18px; flex-wrap:wrap; align-items:center;}
+  .btn{
+    font-size:14.5px; letter-spacing:0.01em; font-weight:500;
+    padding:14px 28px; display:inline-block; border-radius:4px;
+    transition:opacity 0.2s, background 0.2s, color 0.2s;
+  }
+  .btn-primary{background:var(--ink); color:var(--paper);}
+  .btn-primary:hover{background:var(--accent);}
+  .btn-text{color:var(--ink-soft); padding:14px 4px; border-bottom:1px solid var(--rule);}
+  .btn-text:hover{border-color:var(--ink); color:var(--ink);}
 
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+  .credit-line{
+    margin-top:68px; padding-top:30px; border-top:1px solid var(--rule);
+    display:flex; gap:42px; flex-wrap:wrap;
+  }
+  .credit{font-size:14.5px; color:var(--grey);}
+  .credit b{color:var(--ink); font-weight:600;}
 
-.hero-name{font-family:'Cormorant',serif;font-size:clamp(72px,8vw,120px);font-weight:300;line-height:0.9;letter-spacing:-0.02em;margin-bottom:8px;color:var(--cream);}
-.hero-name-bold{font-weight:700;font-style:italic;color:var(--gold);display:block;}
-.hero-rule{width:80px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin:28px 0;}
+  /* ---------- SECTION shared ---------- */
+  section{padding:90px 0;}
+  .rule-top{border-top:1px solid var(--rule);}
+  .eyebrow{
+    font-size:14px; letter-spacing:0.03em; color:var(--accent);
+    margin-bottom:22px; font-weight:500;
+  }
+  h2{
+    font-family:var(--serif); font-weight:400; font-size:clamp(30px, 4.2vw, 40px);
+    line-height:1.2; margin-bottom:26px; max-width:560px; letter-spacing:-0.005em;
+  }
+  h2 em{font-style:italic; font-weight:400; color:var(--ink-soft);}
+  .lede{color:var(--ink-soft); max-width:560px; margin-bottom:8px; font-size:16.5px; line-height:1.75;}
 
-.hero-desc{font-size:17px;color:rgba(232,226,217,0.6);line-height:1.9;max-width:520px;margin-bottom:44px;}
-.hero-desc strong{color:var(--cream);font-weight:500;}
+  /* ---------- about / focus areas ---------- */
+  .focus-list{margin-top:50px;}
+  .focus-item{ padding:30px 0; border-bottom:1px solid var(--rule); }
+  .focus-item:first-child{padding-top:0;}
+  .focus-item h3{font-family:var(--serif); font-size:21px; font-weight:500; margin-bottom:8px;}
+  .focus-item p{color:var(--ink-soft); font-size:15.5px; line-height:1.7; max-width:480px;}
 
-.hero-btns{display:flex;gap:14px;align-items:center;}
-.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#0B0B0F;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:16px 32px;text-decoration:none;transition:all 0.3s;}
-.btn-primary:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 20px 50px rgba(212,168,67,0.3);}
-.btn-ghost{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:16px 0;border-bottom:1px solid var(--faint);transition:all 0.3s;}
-.btn-ghost:hover{color:var(--cream);border-bottom-color:var(--cream);}
+  /* ---------- CSSG ---------- */
+  .cssg-block{margin-top:40px;}
+  .cssg-block .org{font-size:14.5px; color:var(--accent); margin-bottom:16px; font-weight:500;}
+  .cssg-block p{color:var(--ink-soft); font-size:16px; max-width:540px; line-height:1.75; margin-bottom:24px;}
+  .cssg-tags{display:flex; gap:10px; flex-wrap:wrap;}
+  .cssg-tags span{
+    font-size:13.5px; color:var(--ink-soft);
+    border:1px solid var(--rule); padding:8px 16px; border-radius:30px;
+  }
 
-/* HERO CARD */
-.hero-card{background:var(--panel);border:1px solid var(--border2);padding:0;overflow:hidden;position:relative;}
-.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2),transparent);}
-.hc-top{padding:28px 30px;border-bottom:1px solid var(--border);}
-.hc-label{font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);opacity:0.7;margin-bottom:0;}
-.hc-row{display:flex;gap:16px;align-items:center;padding:18px 30px;border-bottom:1px solid var(--border);transition:background 0.2s;}
-.hc-row:last-child{border-bottom:none;}
-.hc-row:hover{background:rgba(255,255,255,0.02);}
-.hc-icon{width:36px;height:36px;background:rgba(212,168,67,0.08);border:1px solid rgba(212,168,67,0.15);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
-.hc-title{font-size:13px;font-weight:500;color:var(--cream);margin-bottom:2px;line-height:1.3;}
-.hc-sub{font-size:10px;color:var(--muted);letter-spacing:0.04em;}
+  /* ---------- FRAULEX ---------- */
+  .fx-name{font-family:var(--serif); font-style:italic; font-weight:400;}
+  .fx-framework{ margin-top:50px; display:flex; flex-direction:column; }
+  .fx-step{ padding:26px 0; border-bottom:1px solid var(--rule); }
+  .fx-step:first-child{padding-top:0;}
+  .fx-step .step-word{font-family:var(--serif); font-style:italic; font-size:18px; color:var(--accent); margin-bottom:8px; display:block;}
+  .fx-step h4{font-family:var(--serif); font-size:19px; font-weight:500; margin-bottom:8px;}
+  .fx-step p{font-size:15px; color:var(--ink-soft); line-height:1.7; max-width:460px;}
 
-/* STAT BAR */
-.stat-bar{background:var(--gold);padding:0;}
-.stat-bar-inner{max-width:1200px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:repeat(3,1fr);}
-.sb-item{padding:28px 0;display:flex;align-items:center;gap:20px;border-right:1px solid rgba(11,11,15,0.15);}
-.sb-item:last-child{border-right:none;}
-.sb-num{font-family:'Cormorant',serif;font-size:52px;font-weight:700;color:#0B0B0F;line-height:1;}
-.sb-num sup{font-size:0.4em;vertical-align:super;}
-.sb-line{width:1px;height:40px;background:rgba(11,11,15,0.2);}
-.sb-text{}
-.sb-label{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#0B0B0F;margin-bottom:3px;}
-.sb-sub{font-size:10px;color:rgba(11,11,15,0.55);letter-spacing:0.04em;}
+  .catalogue{margin-top:58px;}
+  .catalogue-head{ font-size:14px; color:var(--grey); margin-bottom:8px; }
+  .entry{ padding:30px 0; border-bottom:1px solid var(--rule); }
+  .entry:first-of-type{padding-top:30px;}
+  .entry h3{font-family:var(--serif); font-size:19px; font-weight:500; margin-bottom:8px;}
+  .entry p{color:var(--ink-soft); font-size:15px; line-height:1.7; max-width:480px;}
 
-/* SECTIONS */
-.sec{padding:110px 56px;}
-.sec-wrap{max-width:1200px;margin:0 auto;}
-.sec-tag{font-size:9px;font-weight:600;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-.sec-tag::before{content:'';width:24px;height:1px;background:var(--gold);}
-.sec-h{font-family:'Cormorant',serif;font-size:clamp(40px,5vw,68px);font-weight:300;line-height:1.05;letter-spacing:-0.02em;color:var(--cream);margin-bottom:20px;}
-.sec-h em{font-style:italic;color:var(--gold);}
-.sec-lead{font-size:17px;color:rgba(232,226,217,0.5);line-height:1.9;max-width:620px;}
+  .fx-cta{
+    margin-top:50px; padding:42px 36px; border-radius:8px; background:var(--accent-soft);
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+  }
+  .fx-cta p{font-size:15px; color:var(--ink-soft); max-width:340px; line-height:1.65;}
 
-/* ABOUT */
-.about{background:#0B0B0F;}
-.about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:80px;margin-top:70px;align-items:start;}
-.about-body{font-size:16.5px;color:rgba(232,226,217,0.65);line-height:2;margin-bottom:24px;}
-.about-body strong{color:var(--cream);font-weight:500;}
+  /* ---------- research focus ---------- */
+  .research-list{margin-top:50px;}
+  .rline{ padding:26px 0; border-bottom:1px solid var(--rule); }
+  .rline:first-child{padding-top:0;}
+  .rline h4{font-family:var(--serif); font-size:18px; font-weight:500; margin-bottom:8px;}
+  .rline p{color:var(--ink-soft); font-size:15px; max-width:480px; line-height:1.7;}
 
-.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;background:var(--border);}
-.as-item{background:#0B0B0F;padding:28px 20px;text-align:center;border:1px solid var(--border);transition:border-color 0.2s;}
-.as-item:hover{border-color:rgba(212,168,67,0.2);}
-.as-num{font-family:'Cormorant',serif;font-size:52px;font-weight:300;color:var(--gold);line-height:1;margin-bottom:6px;}
-.as-lbl{font-size:9px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);}
+  /* ---------- dispatch ---------- */
+  .dispatch-box{
+    margin-top:40px; padding:42px 36px; border-radius:8px; background:var(--accent-soft);
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+  }
+  .dispatch-box p{font-size:15px; color:var(--ink-soft); max-width:340px; line-height:1.65;}
 
-.exp-list{display:flex;flex-direction:column;gap:2px;}
-.exp-item{display:flex;gap:20px;align-items:flex-start;padding:22px 24px;background:var(--panel);border-left:2px solid var(--border2);transition:all 0.22s;cursor:default;}
-.exp-item:hover{border-left-color:var(--gold);background:#1A1A22;}
-.exp-n{font-family:'Cormorant',serif;font-size:38px;font-weight:300;font-style:italic;color:rgba(212,168,67,0.15);flex-shrink:0;width:36px;line-height:1;margin-top:2px;}
-.exp-title{font-size:14px;font-weight:600;color:var(--cream);margin-bottom:5px;letter-spacing:0.01em;}
-.exp-desc{font-size:13px;color:var(--muted);line-height:1.7;}
+  /* ---------- contact ---------- */
+  .contact-block{ display:flex; flex-direction:column; margin-top:44px; }
+  .contact-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    border-bottom:1px solid var(--rule); padding:24px 0; flex-wrap:wrap; gap:10px;
+  }
+  .contact-row:first-child{padding-top:0;}
+  .contact-row .label{font-size:14px; color:var(--grey);}
+  .contact-row .value{font-family:var(--serif); font-size:19px; font-weight:400;}
+  .contact-row a.value{transition:color 0.2s;}
+  .contact-row a.value:hover{color:var(--accent);}
 
-/* CSSG */
-.cssg{background:var(--dark);}
-.cssg-hero{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:60px;background:var(--panel);border:1px solid var(--border2);position:relative;overflow:hidden;}
-.cssg-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2),transparent);}
-.cssg-left{padding:56px;}
-.cssg-badge-text{font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);opacity:0.6;margin-bottom:18px;}
-.cssg-big{font-family:'Cormorant',serif;font-size:clamp(38px,4vw,56px);font-weight:300;line-height:1.05;color:var(--cream);margin-bottom:10px;}
-.cssg-tagline{font-family:'Cormorant',serif;font-size:18px;font-style:italic;color:rgba(212,168,67,0.5);margin-bottom:30px;}
-.cssg-desc{font-size:15px;color:rgba(232,226,217,0.5);line-height:1.9;}
-.cssg-desc strong{color:var(--cream);font-weight:500;}
-.cssg-right{padding:56px;border-left:1px solid var(--border);background:rgba(255,255,255,0.01);}
-.cssg-why-label{font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);opacity:0.6;margin-bottom:24px;}
-.cssg-why-item{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--border);font-size:14px;color:rgba(232,226,217,0.65);}
-.cssg-why-item:last-child{border-bottom:none;}
-.cssg-check{width:22px;height:22px;border-radius:50%;background:rgba(212,168,67,0.1);border:1px solid rgba(212,168,67,0.25);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--gold);}
-
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:1px;background:var(--border);}
-.svc-col{background:var(--dark);padding:36px 30px;}
-.svc-col-head{display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);}
-.svc-icon{width:42px;height:42px;background:rgba(212,168,67,0.08);border:1px solid rgba(212,168,67,0.15);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-.svc-col-title{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--cream);line-height:1.5;}
-.svc-items{display:flex;flex-direction:column;gap:1px;}
-.svc-item{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--panel);font-size:13px;color:var(--muted);transition:all 0.18s;cursor:default;}
-.svc-item:hover{background:#1E1E26;color:var(--cream);}
-.svc-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;opacity:0.6;}
-
-.cssg-foot{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:1px;background:var(--border);}
-.cf-item{background:var(--panel);padding:26px 28px;display:flex;gap:16px;align-items:flex-start;}
-.cf-icon{font-size:20px;margin-top:2px;}
-.cf-label{font-size:9px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
-.cf-desc{font-size:12.5px;color:var(--muted);line-height:1.6;}
-
-/* FRAULEX */
-.fraulex{background:#0B0B0F;position:relative;overflow:hidden;}
-.fraulex::before{content:'';position:absolute;top:-300px;right:-200px;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,0.05) 0%,transparent 60%);pointer-events:none;}
-.fl-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:70px;}
-.fl-brand{font-family:'Cormorant',serif;font-size:clamp(64px,8vw,104px);font-weight:300;line-height:0.9;letter-spacing:-0.02em;color:var(--cream);margin-bottom:18px;}
-.fl-brand em{font-style:italic;color:var(--gold);}
-.fl-tag{font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
-.fl-desc{font-size:16px;color:rgba(232,226,217,0.55);line-height:2;}
-.fl-desc strong{color:var(--cream);font-weight:500;}
-
-.fl-framework{background:var(--panel);border:1px solid var(--border2);border-top:2px solid var(--gold);padding:36px;}
-.fl-fw-tag{font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);opacity:0.6;margin-bottom:26px;}
-.fl-step{display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--border);}
-.fl-step:last-child{border-bottom:none;padding-bottom:0;}
-.fl-n{font-family:'Cormorant',serif;font-size:44px;font-weight:300;font-style:italic;color:rgba(212,168,67,0.12);line-height:1;flex-shrink:0;width:46px;}
-.fl-step-title{font-family:'Cormorant',serif;font-size:26px;font-weight:500;color:var(--cream);margin-bottom:6px;}
-.fl-step-desc{font-size:13px;color:var(--muted);line-height:1.7;}
-
-.prod-tag{font-size:9px;font-weight:600;letter-spacing:0.36em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:12px;}
-.prod-tag::before{content:'';width:20px;height:1px;background:var(--gold);}
-.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
-.prod-card{background:var(--panel);padding:30px 26px;display:flex;flex-direction:column;gap:12px;transition:all 0.25s;cursor:default;border-top:1px solid transparent;}
-.prod-card:hover{background:#1A1A22;border-top-color:var(--gold);}
-.prod-type{font-size:9px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.7;}
-.prod-name{font-family:'Cormorant',serif;font-size:22px;font-weight:500;color:var(--cream);line-height:1.2;}
-.prod-desc{font-size:13px;color:var(--muted);line-height:1.75;flex:1;}
-
-/* RESEARCH */
-.research{background:var(--dark);}
-.research-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:70px;align-items:start;}
-.res-body{font-size:16.5px;color:rgba(232,226,217,0.6);line-height:2;margin-bottom:24px;}
-.res-body strong{color:var(--cream);font-weight:500;}
-.focus-list{display:flex;flex-direction:column;gap:2px;}
-.focus-item{background:var(--panel);border:1px solid var(--border);border-left:2px solid rgba(212,168,67,0.25);padding:20px 22px;transition:all 0.22s;cursor:default;}
-.focus-item:hover{border-left-color:var(--gold);background:#1A1A22;transform:translateX(4px);}
-.focus-title{font-size:14px;font-weight:600;color:var(--cream);margin-bottom:5px;}
-.focus-desc{font-size:13px;color:var(--muted);line-height:1.7;}
-
-/* CONTACT */
-.contact{background:var(--gold);padding:110px 56px;text-align:center;position:relative;overflow:hidden;}
-.contact::before{content:'CONNECT';position:absolute;bottom:-60px;left:50%;transform:translateX(-50%);font-family:'Cormorant',serif;font-size:200px;font-weight:700;font-style:italic;color:rgba(11,11,15,0.06);white-space:nowrap;pointer-events:none;letter-spacing:-0.04em;}
-.contact-tag{font-size:9px;font-weight:700;letter-spacing:0.4em;text-transform:uppercase;color:rgba(11,11,15,0.5);margin-bottom:16px;position:relative;z-index:1;}
-.contact-h{font-family:'Cormorant',serif;font-size:clamp(44px,6vw,80px);font-weight:300;line-height:1.0;color:#0B0B0F;margin-bottom:16px;position:relative;z-index:1;}
-.contact-h em{font-style:italic;font-weight:700;}
-.contact-sub{font-size:16px;color:rgba(11,11,15,0.55);line-height:1.8;margin-bottom:52px;position:relative;z-index:1;}
-.contact-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
-.c-primary{display:inline-flex;align-items:center;gap:10px;background:#0B0B0F;color:var(--gold);font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:16px 34px;text-decoration:none;transition:all 0.3s;}
-.c-primary:hover{background:#1A1A22;transform:translateY(-2px);box-shadow:0 20px 50px rgba(11,11,15,0.3);}
-.c-secondary{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(11,11,15,0.6);text-decoration:none;padding:16px 24px;border:1.5px solid rgba(11,11,15,0.2);transition:all 0.25s;}
-.c-secondary:hover{color:#0B0B0F;border-color:rgba(11,11,15,0.5);}
-
-/* FOOTER */
-footer{background:var(--black);padding:26px 56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;border-top:1px solid var(--border);}
-.foot-logo{font-family:'Cormorant',serif;font-size:18px;font-weight:600;color:var(--gold);}
-.foot-links{display:flex;gap:28px;list-style:none;}
-.foot-links a{font-size:10px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint);text-decoration:none;transition:color 0.2s;}
-.foot-links a:hover{color:var(--gold);}
-.foot-copy{font-size:10px;color:var(--faint);letter-spacing:0.06em;}
-
-/* DIVIDER */
-.gold-line{height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,67,0.2),transparent);}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.75s ease,transform 0.75s ease;}
-.reveal.v{opacity:1;transform:none;}
-.d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}.d4{transition-delay:0.4s;}
-
-/* HERO ANIMS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:none;}}
-@keyframes fadeR{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:none;}}
-.h-a1{opacity:0;animation:fadeUp 0.9s 0.1s forwards;}
-.h-a2{opacity:0;animation:fadeUp 0.9s 0.25s forwards;}
-.h-a3{opacity:0;animation:fadeUp 0.9s 0.4s forwards;}
-.h-a4{opacity:0;animation:fadeUp 0.9s 0.55s forwards;}
-.h-a5{opacity:0;animation:fadeUp 0.9s 0.7s forwards;}
-.h-a6{opacity:0;animation:fadeR 0.9s 0.45s forwards;}
-.h-a7{opacity:0;animation:fadeUp 0.9s 0.85s forwards;}
-
-@media(max-width:960px){
-  nav{padding:0 20px;}.nav-links{display:none;}
-  .sec{padding:72px 20px;}
-  .hero-inner,.about-grid,.fl-head,.research-grid{grid-template-columns:1fr;gap:44px;}
-  .hero-inner{padding:100px 20px 60px;}
-  .stat-bar-inner{padding:0 20px;grid-template-columns:1fr;}
-  .sb-item{border-right:none;border-bottom:1px solid rgba(11,11,15,0.15);padding:20px 0;}
-  .cssg-hero,.svc-grid,.prod-grid,.cssg-foot{grid-template-columns:1fr;}
-  .cssg-right{border-left:none;border-top:1px solid var(--border);}
-  .about-stats{grid-template-columns:1fr;}
-  .contact{padding:80px 20px;}
-  footer{padding:20px;flex-direction:column;text-align:center;}
-}
+  footer{padding:50px 0 60px;}
+  footer .wrap{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    padding-top:30px; border-top:1px solid var(--rule);
+  }
+  footer p{font-size:13.5px; color:var(--grey);}
 </style>
 </head>
 <body>
 
-<nav id="nav">
-  <a href="#" class="nav-logo">Sahil <span>Singhal</span></a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#cssg">CSSG</a></li>
-    <li><a href="#fraulex">Fraulex</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-name">Sahil Singhal</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#cssg">CSSG</a>
+      <a href="#fraulex">Fraulex</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 </nav>
 
-<!-- ═══ HERO ═══ -->
-<div class="hero">
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
-  <div class="hero-grid-lines"></div>
+<header class="hero wrap">
+  <div class="kicker">Fraud Intelligence Researcher</div>
+  <h1 class="hero-name">Sahil Singhal</h1>
+  <div class="hero-role">CFE · LAWYER · CAPARO SPECIAL SERVICES GROUP</div>
 
-  <div class="hero-inner">
-    <div>
-      <div class="hero-badge h-a1">
-        <div class="hero-badge-dot"></div>
-        <div class="hero-badge-text">CFE · Lawyer · Intelligence Researcher</div>
-      </div>
-      <h1 class="hero-name h-a2">
-        Sahil
-        <span class="hero-name-bold">Singhal</span>
-      </h1>
-      <div class="hero-rule h-a3"></div>
-      <p class="hero-desc h-a4">I work at the intersection of corporate investigations, governance, risk at <strong>Caparo Special Services Group</strong> and through <strong>Fraulex Intelligence</strong> decoding how financial misconduct is built, hidden, and prosecuted.</p>
-      <div class="hero-btns h-a5">
-        <a href="#fraulex" class="btn-primary">Explore Fraulex →</a>
-        <a href="#contact" class="btn-ghost">Get In Touch</a>
-      </div>
-    </div>
+  <p class="hero-statement">
+    I study how financial misconduct takes shape inside organisations <em>and write about what that research reveals.</em>
+  </p>
+  <p class="hero-sub">Corporate fraud investigator at Caparo Special Services Group. Independent enforcement-case research published through Fraulex Intelligence.</p>
 
-    <div class="h-a6">
-      <div class="hero-card">
-        <div class="hc-top"><div class="hc-label">Credentials &amp; Affiliations</div></div>
-        <div class="hc-row"><div class="hc-icon">🏅</div><div><div class="hc-title">Certified Fraud Examiner (CFE)</div><div class="hc-sub">ACFE · 180+ Countries</div></div></div>
-        <div class="hc-row"><div class="hc-icon">⚖️</div><div><div class="hc-title">Lawyer</div><div class="hc-sub">White Collar Crime · Economic Offences</div></div></div>
-        <div class="hc-row"><div class="hc-icon">🏢</div><div><div class="hc-title">Caparo Special Services Group</div><div class="hc-sub">Fraud · Forensics · Compliance</div></div></div>
-        <div class="hc-row"><div class="hc-icon">🔎</div><div><div class="hc-title">Fraulex Intelligence</div><div class="hc-sub">Global Fraud Research</div></div></div>
-        <div class="hc-row"><div class="hc-icon">📁</div><div><div class="hc-title">8 Years Operational Experience</div><div class="hc-sub">Investigations · Due Diligence</div></div></div>
-      </div>
-    </div>
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="#dispatch">Subscribe to The Dispatch</a>
+    <a class="btn btn-text" href="#fraulex">Read the research →</a>
   </div>
 
-  <!-- GOLD STAT BAR -->
-  <div class="h-a7" style="width:100%;">
-    <div class="stat-bar">
-      <div class="stat-bar-inner">
-        <div class="sb-item">
-          <div class="sb-num">8<sup>+</sup></div>
-          <div class="sb-line"></div>
-          <div class="sb-text">
-            <div class="sb-label">Years Experience</div>
-            <div class="sb-sub">Fraud · Law · Intelligence</div>
-          </div>
-        </div>
-        <div class="sb-item" style="padding-left:40px;">
-          <div class="sb-num">70<sup>+</sup></div>
-          <div class="sb-line"></div>
-          <div class="sb-text">
-            <div class="sb-label">Corporate Investigations</div>
-            <div class="sb-sub">CFE-Led · Legally Defensible</div>
-          </div>
-        </div>
-        <div class="sb-item" style="padding-left:40px;">
-          <div class="sb-num">5</div>
-          <div class="sb-line"></div>
-          <div class="sb-text">
-            <div class="sb-label">Regulatory Bodies</div>
-            <div class="sb-sub">DOJ · SFO · FCA · SFIO · ED</div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="credit-line">
+    <div class="credit"><b>8+ years</b> investigative experience</div>
+    <div class="credit"><b>70+</b> investigations led</div>
+    <div class="credit"><b>CFE</b>, ACFE certified</div>
   </div>
-</div>
+</header>
 
-<!-- ═══ ABOUT ═══ -->
-<section class="sec about" id="about">
-  <div class="sec-wrap">
-    <div class="sec-tag reveal">About</div>
-    <h2 class="sec-h reveal d1">Corporate fraud investigator.<br><em>Intelligence researcher.</em></h2>
-    <div class="about-grid">
-      <div>
-        <p class="about-body reveal">As a Certified Fraud Examiner and Lawyer, I focus on understanding how corporate fraud and financial misconduct are constructed within organisations — and how investigative processes and regulatory authorities reconstruct and evaluate those events.</p>
-        <p class="about-body reveal d1">My work combines <strong>forensic investigation methodology</strong> with legal reasoning. I do not simply identify what went wrong I analyse the institutional failures, documentation patterns, and behavioural indicators that allowed misconduct to develop and persist.</p>
-        <div class="about-stats reveal d3">
-          <div class="as-item"><div class="as-num">8+</div><div class="as-lbl">Years Experience</div></div>
-          <div class="as-item"><div class="as-num">CFE</div><div class="as-lbl">Certified Examiner</div></div>
-          <div class="as-item"><div class="as-num">70+</div><div class="as-lbl">Investigations</div></div>
-        </div>
-      </div>
-      <div class="exp-list">
-        <div class="exp-item reveal"><div class="exp-n">I</div><div><div class="exp-title">Fraud Investigation</div><div class="exp-desc">Structured CFE-led investigations procurement fraud, financial misconduct, asset misappropriation, bribery and corruption.</div></div></div>
-        <div class="exp-item reveal d1"><div class="exp-n">II</div><div><div class="exp-title">Legal Analysis &amp; White Collar Crime</div><div class="exp-desc">Enforcement exposure analysis, evidentiary standards, regulatory proceedings, and legal defensibility of findings.</div></div></div>
-        <div class="exp-item reveal d2"><div class="exp-n">III</div><div><div class="exp-title">Enforcement Case Intelligence</div><div class="exp-desc">Decoding DOJ, SFO, SFIO, FCA, and ED enforcement cases to extract actionable intelligence.</div></div></div>
-        <div class="exp-item reveal d3"><div class="exp-n">IV</div><div><div class="exp-title">Fraud Risk Assessment</div><div class="exp-desc">Process-level fraud risk mapping, anti-fraud control frameworks, and risk register development.</div></div></div>
-        <div class="exp-item reveal d4"><div class="exp-n">V</div><div><div class="exp-title">Due Diligence &amp; Risk Profiling</div><div class="exp-desc">Corporate and individual risk profiling for transactions, partnerships, and senior appointments.</div></div></div>
-      </div>
+<section id="about" class="wrap rule-top">
+  <div class="eyebrow">Who I am</div>
+  <h2>Corporate fraud investigator.<br><em>Independent researcher.</em></h2>
+  <p class="lede">
+    As a Certified Fraud Examiner and lawyer, I focus on how corporate fraud takes shape inside organisations and separately, on how regulators reconstruct those events afterward. Investigation work and research are two different activities, and this site keeps them in two different places.
+  </p>
+
+  <div class="focus-list">
+    <div class="focus-item">
+      <h3>Fraud Investigation</h3>
+      <p>Structured, CFE-led investigations into procurement fraud, asset misappropriation, and bribery and corruption.</p>
+    </div>
+    <div class="focus-item">
+      <h3>Legal Analysis &amp; White Collar Crime</h3>
+      <p>A legal background in white collar crime and economic offences, applied to how findings hold up under evidentiary and regulatory standards.</p>
+    </div>
+    <div class="focus-item">
+      <h3>Enforcement Case Research</h3>
+      <p>Independent study of enforcement cases from regulators around the world, published as self-study material through Fraulex Intelligence.</p>
     </div>
   </div>
 </section>
 
-<div class="gold-line"></div>
+<section id="cssg" class="wrap rule-top">
+  <div class="eyebrow">Professional practice</div>
+  <h2>Caparo Special Services <em>Group</em></h2>
+  <p class="lede">Conducting investigation, risk, and compliance at CSSG, the governance, risk, and investigations division of Caparo Group.</p>
 
-<!-- ═══ CSSG ═══ -->
-<section class="sec cssg" id="cssg">
-  <div class="sec-wrap">
-    <div class="sec-tag reveal">Professional Association</div>
-    <h2 class="sec-h reveal d1">Caparo Special<br><em>Services Group</em></h2>
-    <p class="sec-lead reveal d2">Integrated Risk, Compliance &amp; Investigation Solutions — empowering organisations to mitigate risk, ensure compliance, and uphold integrity.</p>
-
-    <div class="cssg-hero reveal">
-      <div class="cssg-left">
-        <div class="cssg-badge-text">Division of Caparo Group · cssg@caparo.co.in</div>
-        <div class="cssg-big">Caparo Special<br>Services Group</div>
-        <div class="cssg-tagline">"Protect. Detect. Investigate. Prevail."</div>
-        <p class="cssg-desc">At CSSG I work across the full spectrum of GRC services — from proactive fraud risk assessments and whistleblower programme management to reactive fraud investigations and digital forensics. Every engagement is <strong>CFE-led and legally defensible</strong> from day one.</p>
-      </div>
-      <div class="cssg-right">
-        <div class="cssg-why-label">Why CSSG</div>
-        <div class="cssg-why-item"><div class="cssg-check">✓</div>Integrated approach across all risk domains</div>
-        <div class="cssg-why-item"><div class="cssg-check">✓</div>Confidential &amp; ethical at every stage</div>
-        <div class="cssg-why-item"><div class="cssg-check">✓</div>Experienced CFE &amp; legal professionals</div>
-        <div class="cssg-why-item"><div class="cssg-check">✓</div>Actionable, intelligence-led insights</div>
-        <div class="cssg-why-item"><div class="cssg-check">✓</div>Technology-driven delivery</div>
-      </div>
-    </div>
-
-    <div class="svc-grid">
-      <div class="svc-col reveal">
-        <div class="svc-col-head"><div class="svc-icon">🔍</div><div class="svc-col-title">Risk &amp;<br>Investigation</div></div>
-        <div class="svc-items">
-          <div class="svc-item"><div class="svc-dot"></div>Whistleblower Management</div>
-          <div class="svc-item"><div class="svc-dot"></div>Fraud Risk Assessment</div>
-          <div class="svc-item"><div class="svc-dot"></div>Due Diligence</div>
-          <div class="svc-item"><div class="svc-dot"></div>Fraud &amp; Misconduct Investigation</div>
-          <div class="svc-item"><div class="svc-dot"></div>Brand Protection</div>
-          <div class="svc-item"><div class="svc-dot"></div>Business Process Audit</div>
-        </div>
-      </div>
-      <div class="svc-col reveal d1">
-        <div class="svc-col-head"><div class="svc-icon">🏛</div><div class="svc-col-title">Governance &amp;<br>Compliance</div></div>
-        <div class="svc-items">
-          <div class="svc-item"><div class="svc-dot"></div>Internal Audit</div>
-          <div class="svc-item"><div class="svc-dot"></div>Secretarial Services</div>
-          <div class="svc-item"><div class="svc-dot"></div>POSH Compliance</div>
-        </div>
-      </div>
-      <div class="svc-col reveal d2">
-        <div class="svc-col-head"><div class="svc-icon">⚙️</div><div class="svc-col-title">Specialized<br>Solutions</div></div>
-        <div class="svc-items">
-          <div class="svc-item"><div class="svc-dot"></div>Digital Forensics</div>
-          <div class="svc-item"><div class="svc-dot"></div>Legal Services</div>
-          <div class="svc-item"><div class="svc-dot"></div>Security Services</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cssg-foot reveal">
-      <div class="cf-item"><div class="cf-icon">🔒</div><div><div class="cf-label">Confidential</div><div class="cf-desc">Sensitive information handled with the highest discretion.</div></div></div>
-      <div class="cf-item"><div class="cf-icon">🤝</div><div><div class="cf-label">Trusted</div><div class="cf-desc">Built on integrity, transparency and professional excellence.</div></div></div>
-      <div class="cf-item"><div class="cf-icon">⚡</div><div><div class="cf-label">Technology-Driven</div><div class="cf-desc">Advanced technology delivering accurate, reliable results.</div></div></div>
+  <div class="cssg-block">
+    <div class="org">Division of Caparo Group</div>
+    <p>CSSG provides integrated risk, compliance, and investigation services across fraud risk assessment, internal audit, whistleower management, due diligence, and digital forensics. My role there is investigative and advisory work for CSSG's clients.</p>
+    <div class="cssg-tags">
+      <span>Fraud Risk Assessment</span>
+      <span>Misconduct Investigation & Due Diligence</span>
+      <span>Whistle Blower Management</span>
+      <span>Evidence Analysis & Digital Forensics</span>
     </div>
   </div>
 </section>
 
-<div class="gold-line"></div>
+<section id="fraulex" class="wrap rule-top">
+  <div class="eyebrow">Independent research initiative</div>
+  <h2><span class="fx-name">Fraulex</span>decoding fraud patterns</h2>
+  <p class="lede">Fraulex is an independent research project. It studies how corporate fraud is constructed and how enforcement cases are built by regulators, then shares that analysis as self-study material sector guides, decoded case studies, and reference material a reader can work through on their own.</p>
 
-<!-- ═══ FRAULEX ═══ -->
-<section class="sec fraulex" id="fraulex">
-  <div class="sec-wrap">
-    <div class="sec-tag reveal">Independent Research Initiative</div>
-    <div class="fl-head">
-      <div>
-        <div class="fl-brand reveal">Frau<em>lex</em></div>
-        <div class="fl-tag reveal d1">Decoding Hidden Fraud Patterns</div>
-        <p class="fl-desc reveal d2">Fraulex is an independent fraud intelligence research initiative. It analyses how corporate fraud is constructed, how enforcement cases are built by regulators and prosecutors, and how organisations can use that intelligence to protect themselves before a crisis arrives.<br><br>The platform conduct research drawn from real enforcement cases across DOJ, SFO, SFIO, FCA, and ED.</p>
-      </div>
-      <div class="fl-framework reveal d2">
-        <div class="fl-fw-tag">The Fraulex Analytical Framework</div>
-        <div class="fl-step"><div class="fl-n">01</div><div><div class="fl-step-title">Detect</div><div class="fl-step-desc">Identify early signals of institutional risk what patterns appear before fraud matures into an enforcement matter.</div></div></div>
-        <div class="fl-step"><div class="fl-n">02</div><div><div class="fl-step-title">Decode</div><div class="fl-step-desc">Reconstruct enforcement dynamics and evidentiary structures from real DOJ, SFO, SFIO, and FCA cases.</div></div></div>
-        <div class="fl-step"><div class="fl-n">03</div><div><div class="fl-step-title">Defend</div><div class="fl-step-desc">Analyse how allegations perform in legal proceedings and what documented prevention evidence actually looks like.</div></div></div>
-      </div>
+  <div class="fx-framework">
+    <div class="fx-step">
+      <span class="step-word">Detect</span>
+      <h4>Read the early signals</h4>
+      <p>What patterns tend to appear before misconduct matures into an enforcement matter, based on published case records.</p>
+    </div>
+    <div class="fx-step">
+      <span class="step-word">Decode</span>
+      <h4>Study the case architecture</h4>
+      <p>How major enforcement cases were actually built, what evidence mattered, and what failed first.</p>
+    </div>
+    <div class="fx-step">
+      <span class="step-word">Document</span>
+      <h4>Self-assess at your own pace</h4>
+      <p>Structured guides a reader works through themselves, comparing their own situation against decoded patterns.</p>
+    </div>
+  </div>
+
+  <div class="catalogue">
+    <div class="catalogue-head">From the research catalogue</div>
+
+    <div class="entry">
+      <h3>RiskMap Series</h3>
+      <p>Sector-by-sector pattern guides covering nine industries, written for self-assessment rather than a review of any specific business.</p>
     </div>
 
-    <div class="prod-tag reveal">Research Material</div>
-    <div class="prod-grid">
-      <div class="prod-card reveal"><div class="prod-type">RiskMap Series</div><div class="prod-name">Sector Fraud Risk Libraries</div><div class="prod-desc">Complete fraud risk universe for 20+ sectors. Every risk identified from real enforcement cases warning signs and exact remediation steps.</div></div>
-      <div class="prod-card reveal d1"><div class="prod-type">Intelligence Briefs</div><div class="prod-name">Decoded Enforcement Cases</div><div class="prod-desc">Real enforcement cases decoded into eight sections fraud architecture, concealment, control failures, signals timeline, enforcement lens.</div></div>
-      <div class="prod-card reveal d2"><div class="prod-type">Evidence Toolkits</div><div class="prod-name">Investigation Methodology</div><div class="prod-desc">Professional grade evidence intelligence. Court standing guide. Preservation protocol. Legal privilege protection.</div></div>
-      <div class="prod-card reveal d3"><div class="prod-type">Investigation Guides</div><div class="prod-name">Crisis Response Protocols</div><div class="prod-desc">Step-by-step guides for the first 48–72 hours of a fraud crisis. Dawn raid response. Whistleblower response.</div></div>
-      <div class="prod-card reveal d4"><div class="prod-type">Regulatory References</div><div class="prod-name">Framework Intelligence</div><div class="prod-desc">Decoded regulatory frameworks UK Bribery Act Section 7, FCPA, Prevention of Corruption Act India, PMLA.</div></div>
-      <div class="prod-card reveal d4"><div class="prod-type">Simulations</div><div class="prod-name">Behavioural Fraud Testing</div><div class="prod-desc">Decision-makers face the same choices that led to prosecution in real enforcement cases. Every response correlated against real outcomes.</div></div>
+    <div class="entry">
+      <h3>Intelligence Briefs</h3>
+      <p>Individual enforcement cases decoded into a structured write-up — how the misconduct developed, what controls failed, and what the case teaches a reader studying it.</p>
     </div>
-    <div style="text-align:center;margin-top:52px;" class="reveal">
-      <a href="https://www.fraulex.com" class="btn-primary" target="_blank">Visit Fraulex Intelligence →</a>
+
+    <div class="entry">
+      <h3>Evidence &amp; Documentation Guides</h3>
+      <p>Reference material on what documented prevention evidence looks like in practice, for a reader to apply to their own records.</p>
+    </div>
+
+    <div class="entry">
+      <h3>Regulatory Reference Guides</h3>
+      <p>Plain-language breakdowns of major regulatory frameworks, written as reference material rather than legal advice.</p>
+    </div>
+
+    <div class="entry">
+      <h3>Pattern Simulations</h3>
+      <p>Self-administered scenario exercises modelled on real enforcement decisions, built to illustrate a pattern rather than assess an organisation.</p>
+    </div>
+  </div>
+
+  <div class="fx-cta">
+    <p>Everything in the catalogue is published research, available to anyone who wants it.</p>
+    <a class="btn btn-primary" href="https://www.fraulex.com">Browse the catalogue</a>
+  </div>
+</section>
+
+<section id="research" class="wrap rule-top">
+  <div class="eyebrow">Research focus</div>
+  <h2>Understanding how fraud is <em>built, hidden, and prosecuted.</em></h2>
+  <p class="lede">My research looks at the architecture of corporate fraud not just what happened, but how misconduct develops inside institutional systems, why controls fail under pressure, and how the same patterns recur across sectors and jurisdictions. It draws only on public enforcement records.</p>
+
+  <div class="research-list">
+    <div class="rline">
+      <h4>Corporate fraud architecture</h4>
+      <p>How financial misconduct is structured: the layering, concealment, and gradual normalisation of irregular behaviour.</p>
+    </div>
+    <div class="rline">
+      <h4>Enforcement case analysis</h4>
+      <p>Major regulatory cases studied for what was found and what evidence proved decisive.</p>
+    </div>
+    <div class="rline">
+      <h4>Control failure patterns</h4>
+      <p>Why internal controls fail under real operational pressure, and how fraud exploits approval chains under urgency.</p>
+    </div>
+    <div class="rline">
+      <h4>Genuine vs. paper compliance</h4>
+      <p>How courts and regulators distinguish real fraud prevention from documentation built only to look adequate.</p>
+    </div>
+    <div class="rline">
+      <h4>Cross-jurisdiction trends</h4>
+      <p>How enforcement behaviour is evolving across India, the UK, and the US, and what that signals for compliance globally.</p>
     </div>
   </div>
 </section>
 
-<div class="gold-line"></div>
-
-<!-- ═══ RESEARCH ═══ -->
-<section class="sec research" id="research">
-  <div class="sec-wrap">
-    <div class="sec-tag reveal">Research Focus</div>
-    <h2 class="sec-h reveal d1">Understanding how fraud is<br><em>built, hidden &amp; prosecuted.</em></h2>
-    <div class="research-grid">
-      <div>
-        <p class="res-body reveal">My research examines the architecture of corporate fraud not just what happened, but <strong>how misconduct develops within institutional systems</strong>, why controls fail under real operational pressure, and how the same patterns recur across jurisdictions and sectors.</p>
-        <p class="res-body reveal d1">A significant focus is on <strong>enforcement behaviour</strong> how regulatory agencies like the DOJ, SFO, SFIO, and ED construct their cases, what documentary evidence they treat as decisive, and how the difference between genuine prevention and paper compliance is assessed under scrutiny.</p>
-        <p class="res-body reveal d2">This research informs both Fraulex intelligence products and enterprise advisory work ensuring intelligence reflects how real investigations and enforcement proceedings actually develop.</p>
-      </div>
-      <div class="focus-list">
-        <div class="focus-item reveal"><div class="focus-title">Corporate Fraud Architecture</div><div class="focus-desc">How financial misconduct is structured the layering, concealment, gradual normalisation of irregular behaviour.</div></div>
-        <div class="focus-item reveal d1"><div class="focus-title">Enforcement Case Analysis</div><div class="focus-desc">DOJ, SFO, SFIO, FCA, and ED enforcement cases decoded what regulators found, what evidence was decisive.</div></div>
-        <div class="focus-item reveal d2"><div class="focus-title">Control Failure Patterns</div><div class="focus-desc">Why internal controls fail under real operational pressure how fraud exploits approval chains and decision-making under urgency.</div></div>
-        <div class="focus-item reveal d3"><div class="focus-title">Legal Defensibility of Prevention</div><div class="focus-desc">How courts and regulators distinguish genuine fraud prevention from paper compliance what adequate procedures evidence requires.</div></div>
-        <div class="focus-item reveal d4"><div class="focus-title">Cross-Jurisdiction Enforcement Trends</div><div class="focus-desc">How enforcement behaviour is evolving across India, UK, and US jurisdictions what patterns signal for compliance programmes globally.</div></div>
-      </div>
-    </div>
+<section id="dispatch" class="wrap rule-top">
+  <div class="eyebrow">Stay informed</div>
+  <h2>The Vault</h2>
+  <p class="lede">A periodic note on enforcement cases worth studying, for readers who want the research without checking back for it.</p>
+  <div class="vault-box">
+    <p>Free, and published independently of CSSG. Unsubscribe any time.</p>
+    <a class="btn btn-primary" href="https://www.fraulex.com">Subscribe to The Vault</a>
   </div>
 </section>
 
-<!-- ═══ CONTACT ═══ -->
-<div class="contact" id="contact">
-  <div class="contact-tag reveal">Get In Touch</div>
-  <h2 class="contact-h reveal d1">Let's work<br><em>together.</em></h2>
-  <p class="contact-sub reveal d2">For fraud investigations, intelligence briefs, enterprise advisory,<br>expert witness enquiries, or Fraulex Research access.</p>
-  <div class="contact-links reveal d3">
-    <a href="mailto:sahil@fraulex.com" class="c-primary">✉ sahil@fraulex.com</a>
-    <a href="https://www.fraulex.com" class="c-secondary" target="_blank">fraulex.com ↗</a>
-    <a href="https://www.caparo.in" class="c-secondary" target="_blank">caparo.in ↗</a>
+<section id="contact" class="wrap rule-top">
+  <div class="eyebrow">Contact</div>
+  <h2>Get in touch.</h2>
+  <p class="lede">For questions about the research, or about a specific Fraulex title.</p>
+
+  <div class="contact-block">
+    <div class="contact-row">
+      <span class="label">Research &amp; Fraulex</span>
+      <a class="value" href="mailto:sahil@fraulex.com">sahil@fraulex.com</a>
+    </div>
+    <div class="contact-row">
+      <span class="label">Fraulex catalogue</span>
+      <a class="value" href="https://www.fraulex.com">fraulex.com ↗</a>
+    </div>
+    <div class="contact-row">
+      <span class="label">Professional practice</span>
+      <a class="value" href="https://www.caparo.in">caparo.in ↗</a>
+    </div>
   </div>
-</div>
+</section>
 
 <footer>
-  <div class="foot-logo">Sahil Singhal</div>
-  <ul class="foot-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#cssg">CSSG</a></li>
-    <li><a href="#fraulex">Fraulex</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="mailto:sahil@fraulex.com">Contact</a></li>
-  </ul>
-  <div class="foot-copy">© 2026 Sahil Singhal · CFE · Lawyer</div>
+  <div class="wrap">
+    <p>© 2026 Sahil Singhal · CFE · Lawyer</p>
+    <p>Fraulex is an independent research initiative.</p>
+  </div>
 </footer>
 
-<script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>40),{passive:true});
-
-const io = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target);}});
-},{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    e.preventDefault();
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
-  });
-});
-</script>
 </body>
 </html>
