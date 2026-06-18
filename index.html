@@ -11,10 +11,10 @@
     --paper:#FBFAF7;
     --ink:#262420;
     --ink-soft:#5A5648;
-    --grey:#8C8775;
+    --grey:#6E6856;
     --rule:#EAE6DA;
     --accent:#9C6B3F;
-    --accent-soft:#9C6B3F0F;
+    --accent-soft:#9C6B3F1A;
     --serif: 'Fraunces', Georgia, serif;
     --sans: 'Inter', -apple-system, sans-serif;
     --max: 700px;
@@ -39,6 +39,9 @@
     *{animation:none !important; transition:none !important;}
   }
 
+  /* .wrap is always a child of the element that needs vertical padding/
+     border — never combined on the same node — so the two paddings/
+     borders never collide via shorthand specificity. */
   .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
 
   /* ---------- NAV ---------- */
@@ -55,7 +58,7 @@
   }
 
   /* ---------- HERO ---------- */
-  header.hero{ padding:100px 0 76px; }
+  .hero{ padding:100px 0 76px; }
   .kicker{
     font-size:14px; letter-spacing:0.03em; color:var(--accent);
     margin-bottom:24px; font-weight:500;
@@ -133,14 +136,15 @@
   .fx-step p{font-size:15px; color:var(--ink-soft); line-height:1.7; max-width:460px;}
 
   .catalogue{margin-top:58px;}
-  .catalogue-head{ font-size:14px; color:var(--grey); margin-bottom:8px; }
+  .catalogue-head{ font-size:14px; color:var(--grey); margin-bottom:24px; }
   .entry{ padding:30px 0; border-bottom:1px solid var(--rule); }
-  .entry:first-of-type{padding-top:30px;}
+  .entry:first-of-type{padding-top:0;}
   .entry h3{font-family:var(--serif); font-size:19px; font-weight:500; margin-bottom:8px;}
   .entry p{color:var(--ink-soft); font-size:15px; line-height:1.7; max-width:480px;}
 
   .fx-cta{
     margin-top:50px; padding:42px 36px; border-radius:8px; background:var(--accent-soft);
+    border:1px solid var(--rule);
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
   }
   .fx-cta p{font-size:15px; color:var(--ink-soft); max-width:340px; line-height:1.65;}
@@ -152,12 +156,13 @@
   .rline h4{font-family:var(--serif); font-size:18px; font-weight:500; margin-bottom:8px;}
   .rline p{color:var(--ink-soft); font-size:15px; max-width:480px; line-height:1.7;}
 
-  /* ---------- dispatch ---------- */
-  .dispatch-box{
+  /* ---------- vault (newsletter) ---------- */
+  .vault-box{
     margin-top:40px; padding:42px 36px; border-radius:8px; background:var(--accent-soft);
+    border:1px solid var(--rule);
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
   }
-  .dispatch-box p{font-size:15px; color:var(--ink-soft); max-width:340px; line-height:1.65;}
+  .vault-box p{font-size:15px; color:var(--ink-soft); max-width:340px; line-height:1.65;}
 
   /* ---------- contact ---------- */
   .contact-block{ display:flex; flex-direction:column; margin-top:44px; }
@@ -194,182 +199,196 @@
   </div>
 </nav>
 
-<header class="hero wrap">
-  <div class="kicker">Fraud Intelligence Researcher</div>
-  <h1 class="hero-name">Sahil Singhal</h1>
-  <div class="hero-role">CFE · LAWYER · CAPARO SPECIAL SERVICES GROUP</div>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Fraud Intelligence Researcher</div>
+    <h1 class="hero-name">Sahil Singhal</h1>
+    <div class="hero-role">CFE · LAWYER · CAPARO SPECIAL SERVICES GROUP</div>
 
-  <p class="hero-statement">
-    I study how financial misconduct takes shape inside organisations <em>and write about what that research reveals.</em>
-  </p>
-  <p class="hero-sub">Corporate fraud investigator at Caparo Special Services Group. Independent enforcement-case research published through Fraulex Intelligence.</p>
+    <p class="hero-statement">
+      I study how financial misconduct takes shape inside organisations <em>and write about what that research reveals.</em>
+    </p>
+    <p class="hero-sub">Corporate fraud investigator at Caparo Special Services Group. Independent enforcement-case research published through Fraulex Intelligence.</p>
 
-  <div class="hero-ctas">
-    <a class="btn btn-primary" href="#dispatch">Subscribe to The Dispatch</a>
-    <a class="btn btn-text" href="#fraulex">Read the research →</a>
-  </div>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#vault">Subscribe to The Vault</a>
+      <a class="btn btn-text" href="#fraulex">Read the research →</a>
+    </div>
 
-  <div class="credit-line">
-    <div class="credit"><b>8+ years</b> investigative experience</div>
-    <div class="credit"><b>70+</b> investigations led</div>
-    <div class="credit"><b>CFE</b>, ACFE certified</div>
+    <div class="credit-line">
+      <div class="credit"><b>8+ years</b> investigative experience</div>
+      <div class="credit"><b>70+</b> investigations led</div>
+      <div class="credit"><b>CFE</b>, ACFE certified</div>
+    </div>
   </div>
 </header>
 
-<section id="about" class="wrap rule-top">
-  <div class="eyebrow">Who I am</div>
-  <h2>Corporate fraud investigator.<br><em>Independent researcher.</em></h2>
-  <p class="lede">
-    As a Certified Fraud Examiner and lawyer, I focus on how corporate fraud takes shape inside organisations and separately, on how regulators reconstruct those events afterward. Investigation work and research are two different activities, and this site keeps them in two different places.
-  </p>
+<section id="about" class="rule-top">
+  <div class="wrap">
+    <div class="eyebrow">Who I am</div>
+    <h2>Corporate fraud investigator.<br><em>Independent researcher.</em></h2>
+    <p class="lede">
+      As a Certified Fraud Examiner and lawyer, I focus on how corporate fraud takes shape inside organisations and separately, on how regulators reconstruct those events afterward. Investigation work and research are two different activities, and this site keeps them in two different places.
+    </p>
 
-  <div class="focus-list">
-    <div class="focus-item">
-      <h3>Fraud Investigation</h3>
-      <p>Structured, CFE-led investigations into procurement fraud, asset misappropriation, and bribery and corruption.</p>
-    </div>
-    <div class="focus-item">
-      <h3>Legal Analysis &amp; White Collar Crime</h3>
-      <p>A legal background in white collar crime and economic offences, applied to how findings hold up under evidentiary and regulatory standards.</p>
-    </div>
-    <div class="focus-item">
-      <h3>Enforcement Case Research</h3>
-      <p>Independent study of enforcement cases from regulators around the world, published as self-study material through Fraulex Intelligence.</p>
+    <div class="focus-list">
+      <div class="focus-item">
+        <h3>Fraud Investigation</h3>
+        <p>Structured, CFE-led investigations into procurement fraud, asset misappropriation, and bribery and corruption.</p>
+      </div>
+      <div class="focus-item">
+        <h3>Legal Analysis &amp; White Collar Crime</h3>
+        <p>A legal background in white collar crime and economic offences, applied to how findings hold up under evidentiary and regulatory standards.</p>
+      </div>
+      <div class="focus-item">
+        <h3>Enforcement Case Research</h3>
+        <p>Independent study of enforcement cases from regulators around the world, published as self-study material through Fraulex Intelligence.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="cssg" class="wrap rule-top">
-  <div class="eyebrow">Professional practice</div>
-  <h2>Caparo Special Services <em>Group</em></h2>
-  <p class="lede">Conducting investigation, risk, and compliance at CSSG, the governance, risk, and investigations division of Caparo Group.</p>
+<section id="cssg" class="rule-top">
+  <div class="wrap">
+    <div class="eyebrow">Professional practice</div>
+    <h2>Caparo Special Services <em>Group</em></h2>
+    <p class="lede">Conducting investigation, risk, and compliance at CSSG, the governance, risk, and investigations division of Caparo Group.</p>
 
-  <div class="cssg-block">
-    <div class="org">Division of Caparo Group</div>
-    <p>CSSG provides integrated risk, compliance, and investigation services across fraud risk assessment, internal audit, whistleower management, due diligence, and digital forensics. My role there is investigative and advisory work for CSSG's clients.</p>
-    <div class="cssg-tags">
-      <span>Fraud Risk Assessment</span>
-      <span>Misconduct Investigation & Due Diligence</span>
-      <span>Whistle Blower Management</span>
-      <span>Evidence Analysis & Digital Forensics</span>
+    <div class="cssg-block">
+      <div class="org">Division of Caparo Group</div>
+      <p>CSSG provides integrated risk, compliance, and investigation services across fraud risk assessment, internal audit, whistleblower management, due diligence, and digital forensics. My role there is investigative and advisory work for CSSG's clients.</p>
+      <div class="cssg-tags">
+        <span>Fraud Risk Assessment</span>
+        <span>Misconduct Investigation &amp; Due Diligence</span>
+        <span>Whistleblower Management</span>
+        <span>Evidence Analysis &amp; Digital Forensics</span>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="fraulex" class="wrap rule-top">
-  <div class="eyebrow">Independent research initiative</div>
-  <h2><span class="fx-name">Fraulex</span>decoding fraud patterns</h2>
-  <p class="lede">Fraulex is an independent research project. It studies how corporate fraud is constructed and how enforcement cases are built by regulators, then shares that analysis as self-study material sector guides, decoded case studies, and reference material a reader can work through on their own.</p>
+<section id="fraulex" class="rule-top">
+  <div class="wrap">
+    <div class="eyebrow">Independent research initiative</div>
+    <h2><span class="fx-name">Fraulex</span> — decoding fraud patterns</h2>
+    <p class="lede">Fraulex is an independent research project. It studies how corporate fraud is constructed and how enforcement cases are built by regulators, then shares that analysis as self-study material sector guides, decoded case studies, and reference material a reader can work through on their own.</p>
 
-  <div class="fx-framework">
-    <div class="fx-step">
-      <span class="step-word">Detect</span>
-      <h4>Read the early signals</h4>
-      <p>What patterns tend to appear before misconduct matures into an enforcement matter, based on published case records.</p>
-    </div>
-    <div class="fx-step">
-      <span class="step-word">Decode</span>
-      <h4>Study the case architecture</h4>
-      <p>How major enforcement cases were actually built, what evidence mattered, and what failed first.</p>
-    </div>
-    <div class="fx-step">
-      <span class="step-word">Document</span>
-      <h4>Self-assess at your own pace</h4>
-      <p>Structured guides a reader works through themselves, comparing their own situation against decoded patterns.</p>
-    </div>
-  </div>
-
-  <div class="catalogue">
-    <div class="catalogue-head">From the research catalogue</div>
-
-    <div class="entry">
-      <h3>RiskMap Series</h3>
-      <p>Sector-by-sector pattern guides covering nine industries, written for self-assessment rather than a review of any specific business.</p>
+    <div class="fx-framework">
+      <div class="fx-step">
+        <span class="step-word">Detect</span>
+        <h4>Read the early signals</h4>
+        <p>What patterns tend to appear before misconduct matures into an enforcement matter, based on published case records.</p>
+      </div>
+      <div class="fx-step">
+        <span class="step-word">Decode</span>
+        <h4>Study the case architecture</h4>
+        <p>How major enforcement cases were actually built, what evidence mattered, and what failed first.</p>
+      </div>
+      <div class="fx-step">
+        <span class="step-word">Document</span>
+        <h4>Self-assess at your own pace</h4>
+        <p>Structured guides a reader works through themselves, comparing their own situation against decoded patterns.</p>
+      </div>
     </div>
 
-    <div class="entry">
-      <h3>Intelligence Briefs</h3>
-      <p>Individual enforcement cases decoded into a structured write-up — how the misconduct developed, what controls failed, and what the case teaches a reader studying it.</p>
+    <div class="catalogue">
+      <div class="catalogue-head">From the research catalogue</div>
+
+      <div class="entry">
+        <h3>RiskMap Series</h3>
+        <p>Sector-by-sector pattern guides covering nine industries, written for self-assessment rather than a review of any specific business.</p>
+      </div>
+
+      <div class="entry">
+        <h3>Intelligence Briefs</h3>
+        <p>Individual enforcement cases decoded into a structured write-up — how the misconduct developed, what controls failed, and what the case teaches a reader studying it.</p>
+      </div>
+
+      <div class="entry">
+        <h3>Evidence &amp; Documentation Guides</h3>
+        <p>Reference material on what documented prevention evidence looks like in practice, for a reader to apply to their own records.</p>
+      </div>
+
+      <div class="entry">
+        <h3>Regulatory Reference Guides</h3>
+        <p>Plain-language breakdowns of major regulatory frameworks, written as reference material rather than legal advice.</p>
+      </div>
+
+      <div class="entry">
+        <h3>Pattern Simulations</h3>
+        <p>Self-administered scenario exercises modelled on real enforcement decisions, built to illustrate a pattern rather than assess an organisation.</p>
+      </div>
     </div>
 
-    <div class="entry">
-      <h3>Evidence &amp; Documentation Guides</h3>
-      <p>Reference material on what documented prevention evidence looks like in practice, for a reader to apply to their own records.</p>
-    </div>
-
-    <div class="entry">
-      <h3>Regulatory Reference Guides</h3>
-      <p>Plain-language breakdowns of major regulatory frameworks, written as reference material rather than legal advice.</p>
-    </div>
-
-    <div class="entry">
-      <h3>Pattern Simulations</h3>
-      <p>Self-administered scenario exercises modelled on real enforcement decisions, built to illustrate a pattern rather than assess an organisation.</p>
-    </div>
-  </div>
-
-  <div class="fx-cta">
-    <p>Everything in the catalogue is published research, available to anyone who wants it.</p>
-    <a class="btn btn-primary" href="https://www.fraulex.com">Browse the catalogue</a>
-  </div>
-</section>
-
-<section id="research" class="wrap rule-top">
-  <div class="eyebrow">Research focus</div>
-  <h2>Understanding how fraud is <em>built, hidden, and prosecuted.</em></h2>
-  <p class="lede">My research looks at the architecture of corporate fraud not just what happened, but how misconduct develops inside institutional systems, why controls fail under pressure, and how the same patterns recur across sectors and jurisdictions. It draws only on public enforcement records.</p>
-
-  <div class="research-list">
-    <div class="rline">
-      <h4>Corporate fraud architecture</h4>
-      <p>How financial misconduct is structured: the layering, concealment, and gradual normalisation of irregular behaviour.</p>
-    </div>
-    <div class="rline">
-      <h4>Enforcement case analysis</h4>
-      <p>Major regulatory cases studied for what was found and what evidence proved decisive.</p>
-    </div>
-    <div class="rline">
-      <h4>Control failure patterns</h4>
-      <p>Why internal controls fail under real operational pressure, and how fraud exploits approval chains under urgency.</p>
-    </div>
-    <div class="rline">
-      <h4>Genuine vs. paper compliance</h4>
-      <p>How courts and regulators distinguish real fraud prevention from documentation built only to look adequate.</p>
-    </div>
-    <div class="rline">
-      <h4>Cross-jurisdiction trends</h4>
-      <p>How enforcement behaviour is evolving across India, the UK, and the US, and what that signals for compliance globally.</p>
+    <div class="fx-cta">
+      <p>Everything in the catalogue is published research, available to anyone who wants it.</p>
+      <a class="btn btn-primary" href="https://www.fraulex.com">Browse the catalogue</a>
     </div>
   </div>
 </section>
 
-<section id="dispatch" class="wrap rule-top">
-  <div class="eyebrow">Stay informed</div>
-  <h2>The Vault</h2>
-  <p class="lede">A periodic note on enforcement cases worth studying, for readers who want the research without checking back for it.</p>
-  <div class="vault-box">
-    <p>Free, and published independently of CSSG. Unsubscribe any time.</p>
-    <a class="btn btn-primary" href="https://www.fraulex.com">Subscribe to The Vault</a>
+<section id="research" class="rule-top">
+  <div class="wrap">
+    <div class="eyebrow">Research focus</div>
+    <h2>Understanding how fraud is <em>built, hidden, and prosecuted.</em></h2>
+    <p class="lede">My research looks at the architecture of corporate fraud not just what happened, but how misconduct develops inside institutional systems, why controls fail under pressure, and how the same patterns recur across sectors and jurisdictions. It draws only on public enforcement records.</p>
+
+    <div class="research-list">
+      <div class="rline">
+        <h4>Corporate fraud architecture</h4>
+        <p>How financial misconduct is structured: the layering, concealment, and gradual normalisation of irregular behaviour.</p>
+      </div>
+      <div class="rline">
+        <h4>Enforcement case analysis</h4>
+        <p>Major regulatory cases studied for what was found and what evidence proved decisive.</p>
+      </div>
+      <div class="rline">
+        <h4>Control failure patterns</h4>
+        <p>Why internal controls fail under real operational pressure, and how fraud exploits approval chains under urgency.</p>
+      </div>
+      <div class="rline">
+        <h4>Genuine vs. paper compliance</h4>
+        <p>How courts and regulators distinguish real fraud prevention from documentation built only to look adequate.</p>
+      </div>
+      <div class="rline">
+        <h4>Cross-jurisdiction trends</h4>
+        <p>How enforcement behaviour is evolving across India, the UK, and the US, and what that signals for compliance globally.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="contact" class="wrap rule-top">
-  <div class="eyebrow">Contact</div>
-  <h2>Get in touch.</h2>
-  <p class="lede">For questions about the research, or about a specific Fraulex title.</p>
+<section id="vault" class="rule-top">
+  <div class="wrap">
+    <div class="eyebrow">Stay informed</div>
+    <h2>The Vault</h2>
+    <p class="lede">A periodic note on enforcement cases worth studying, for readers who want the research without checking back for it.</p>
+    <div class="vault-box">
+      <p>Free, and published independently of CSSG. Unsubscribe any time.</p>
+      <a class="btn btn-primary" href="https://www.fraulex.com">Subscribe to The Vault</a>
+    </div>
+  </div>
+</section>
 
-  <div class="contact-block">
-    <div class="contact-row">
-      <span class="label">Research &amp; Fraulex</span>
-      <a class="value" href="mailto:sahil@fraulex.com">sahil@fraulex.com</a>
-    </div>
-    <div class="contact-row">
-      <span class="label">Fraulex catalogue</span>
-      <a class="value" href="https://www.fraulex.com">fraulex.com ↗</a>
-    </div>
-    <div class="contact-row">
-      <span class="label">Professional practice</span>
-      <a class="value" href="https://www.caparo.in">caparo.in ↗</a>
+<section id="contact" class="rule-top">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2>Get in touch.</h2>
+    <p class="lede">For questions about the research, or about a specific Fraulex title.</p>
+
+    <div class="contact-block">
+      <div class="contact-row">
+        <span class="label">Research &amp; Fraulex</span>
+        <a class="value" href="mailto:sahil@fraulex.com">sahil@fraulex.com</a>
+      </div>
+      <div class="contact-row">
+        <span class="label">Fraulex catalogue</span>
+        <a class="value" href="https://www.fraulex.com">fraulex.com ↗</a>
+      </div>
+      <div class="contact-row">
+        <span class="label">Professional practice</span>
+        <a class="value" href="https://www.caparo.in">caparo.in ↗</a>
+      </div>
     </div>
   </div>
 </section>
