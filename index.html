@@ -3,203 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sahil Singhal - CFE · White Collar Crime Lawyer · Fraud Investigator</title>
+<title>Sahil Singhal — CFE · White Collar Crime Lawyer</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500;600&display=swap');
 
 :root{
-  --ivory:#F2EDE2;
-  --ivory2:#EAE2D2;
-  --forest:#14231C;
-  --forest2:#1E332A;
-  --oxblood:#7A2E26;
-  --oxblood-soft:#7A2E2614;
-  --brass:#A8854F;
-  --brass-light:#C9A76B;
-  --brass-soft:#A8854F33;
-  --ink:#1C1A14;
-  --ink-soft:#4A4538;
-  --grey:#7C7563;
-  --rule:#D9CFB8;
-  --rule2:#C7B998;
+  --white:#FFFFFF;
+  --offwhite:#FAF9F7;
+  --black:#141414;
+  --ink-soft:#57534A;
+  --grey:#8A8578;
+  --red:#B8222A;
+  --red-soft:#B8222A12;
+  --rule:#E7E3DB;
   --display:'Fraunces',Georgia,serif;
   --body:'Source Serif 4',Georgia,serif;
   --label:'Jost',-apple-system,sans-serif;
-  --max:780px;
+  --max:800px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;font-size:18px;}
-body{background:var(--ivory);color:var(--ink);font-family:var(--body);line-height:1.7;font-size:1.0625rem;-webkit-font-smoothing:antialiased;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:var(--body);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased;}
 a{color:inherit;text-decoration:none;}
-::selection{background:var(--oxblood-soft);}
-*:focus-visible{outline:2px solid var(--oxblood);outline-offset:3px;}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
-
+::selection{background:var(--red-soft);}
+*:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 40px;}
 
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.4;mix-blend-mode:multiply;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.018 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
-}
+/* NAV */
+.topbar{border-bottom:1px solid var(--black);}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:26px 40px;}
+.brand{font-family:var(--display);font-weight:500;font-size:20px;color:var(--black);}
+.brand span{color:var(--red);}
+.nav-links{display:flex;gap:32px;font-family:var(--label);font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+.nav-links a:hover{color:var(--red);}
+@media(max-width:600px){.nav-links{gap:16px;font-size:10.5px;}}
 
-.doc-edge-top{position:fixed;top:0;left:0;right:0;height:5px;z-index:60;background:linear-gradient(90deg,var(--forest) 0%,var(--forest2) 50%,var(--forest) 100%);}
-.doc-edge-top::after{content:'';position:absolute;top:1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,var(--brass-light) 50%,transparent 100%);opacity:0.7;}
-
-.hero-watermark{
-  position:absolute; top:-40px; right:-20px; z-index:0; pointer-events:none;
-  font-family:var(--display); font-style:italic; font-weight:300;
-  font-size:340px; line-height:1; color:var(--forest); opacity:0.045;
-  user-select:none;
-}
-@media(max-width:760px){.hero-watermark{font-size:200px;top:-10px;right:-40px;}}
-
-nav{padding:42px 0 0;position:relative;z-index:10;}
-.nav-inner{max-width:var(--max);margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;}
-.nav-name{font-family:var(--display);font-weight:500;font-size:21px;letter-spacing:0.01em;color:var(--forest);}
-.nav-links{display:flex;gap:34px;font-family:var(--label);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
-.nav-links a{position:relative;padding-bottom:3px;}
-.nav-links a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--oxblood);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
-.nav-links a:hover{color:var(--ink);}
-.nav-links a:hover::after{transform:scaleX(1);}
-@media(max-width:600px){.nav-links{gap:16px;font-size:10px;}}
-
-.hero{padding:90px 0 0;position:relative;overflow:hidden;}
-
+/* HERO */
+.hero{padding:80px 0 56px;border-bottom:1px solid var(--rule);}
 .seal{
-  width:80px;height:80px;border-radius:50%;
-  background:radial-gradient(circle at 32% 28%, var(--brass-light) 0%, var(--brass) 46%, #7C6236 100%);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:40px;position:relative;
-  box-shadow:0 1px 0 rgba(255,255,255,0.35) inset, 0 -2px 4px rgba(0,0,0,0.22) inset, 0 8px 18px -8px rgba(20,35,28,0.45);
+  width:64px;height:64px;border-radius:50%;border:1.5px solid var(--red);
+  display:flex;align-items:center;justify-content:center;margin-bottom:32px;
 }
-.seal::before{content:'';position:absolute;inset:7px;border:1px solid rgba(20,35,28,0.35);border-radius:50%;}
-.seal::after{
-  content:'';position:absolute;inset:0;border-radius:50%;
-  background:conic-gradient(from -20deg, transparent 0deg, rgba(255,255,255,0.25) 8deg, transparent 22deg, transparent 340deg, rgba(255,255,255,0.15) 355deg, transparent 360deg);
-}
-.seal-inner{font-family:var(--display);font-style:italic;font-weight:500;font-size:22px;color:var(--forest);letter-spacing:0.02em;position:relative;z-index:1;text-shadow:0 1px 0 rgba(255,255,255,0.3);}
+.seal-inner{font-family:var(--display);font-style:italic;font-size:18px;color:var(--red);}
 
 h1.hero-name{
-  font-family:var(--display);font-weight:400;font-size:clamp(54px,8.5vw,86px);
-  line-height:0.98;letter-spacing:-0.015em;margin-bottom:20px;color:var(--ink);
-  position:relative;
+  font-family:var(--display);font-weight:400;font-size:clamp(46px,7.6vw,74px);
+  line-height:1.02;letter-spacing:-0.01em;margin-bottom:16px;color:var(--black);
 }
 .hero-role{
-  font-family:var(--label);font-size:13.5px;letter-spacing:0.22em;color:var(--oxblood);
-  margin-bottom:52px;text-transform:uppercase;font-weight:500;
-  display:flex;gap:12px;flex-wrap:wrap;align-items:center;
-  position:relative;
+  font-family:var(--label);font-size:13.5px;letter-spacing:0.16em;color:var(--red);
+  margin-bottom:36px;text-transform:uppercase;font-weight:500;
 }
-.hero-role .sep{color:var(--rule2);}
-
 .hero-statement{
-  font-family:var(--display);font-weight:400;font-style:italic;
-  font-size:clamp(26px,3.6vw,34px);line-height:1.48;
-  color:var(--forest);max-width:640px;margin-bottom:28px;
+  font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:clamp(21px,2.8vw,26px);line-height:1.55;color:var(--black);
+  max-width:600px;margin-bottom:26px;
 }
+.hero-sub{color:var(--ink-soft);max-width:540px;margin-bottom:36px;font-size:16px;line-height:1.75;}
+.hero-ctas{display:flex;gap:18px;flex-wrap:wrap;}
+.btn{font-family:var(--label);font-size:13.5px;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;padding:15px 30px;display:inline-block;}
+.btn-primary{background:var(--black);color:var(--white);}
+.btn-primary:hover{background:var(--red);}
+.btn-outline{border:1px solid var(--black);color:var(--black);}
+.btn-outline:hover{border-color:var(--red);color:var(--red);}
 
-.hero-sub{font-size:17.5px;color:var(--ink-soft);max-width:560px;margin-bottom:44px;line-height:1.75;}
-.hero-ctas{display:flex;gap:20px;flex-wrap:wrap;align-items:center;}
-.btn{
-  font-family:var(--label);font-size:14.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;
-  padding:17px 34px;display:inline-block;
-  transition:opacity 0.2s,background 0.2s,color 0.2s,border-color 0.2s,box-shadow 0.2s,transform 0.2s;
-}
-.btn-primary{background:var(--forest);color:var(--ivory);border:1px solid var(--forest);}
-.btn-primary:hover{background:var(--oxblood);border-color:var(--oxblood);box-shadow:0 6px 16px -6px rgba(122,46,38,0.5);transform:translateY(-1px);}
-.btn-text{color:var(--ink-soft);padding:16px 2px;border-bottom:1px solid var(--rule2);}
-.btn-text:hover{border-color:var(--oxblood);color:var(--oxblood);}
+.credit-line{margin-top:52px;border-top:1px solid var(--black);display:grid;grid-template-columns:repeat(3,1fr);}
+.credit{padding:22px 24px 0 0;}
+.credit+.credit{border-left:1px solid var(--rule);padding-left:24px;}
+.credit .num{font-family:var(--display);font-size:30px;color:var(--red);display:block;margin-bottom:4px;}
+.credit .lbl{font-family:var(--label);font-size:11px;letter-spacing:0.1em;color:var(--grey);text-transform:uppercase;}
+@media(max-width:600px){.credit-line{grid-template-columns:1fr;}.credit+.credit{border-left:none;border-top:1px solid var(--rule);padding-left:0;padding-top:18px;}}
 
-.credit-line{
-  margin-top:72px;border-top:1px solid var(--forest);border-bottom:1px solid var(--forest);
-  display:grid;grid-template-columns:repeat(3,1fr);position:relative;
-}
-.credit-line::before{content:'';position:absolute;top:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--brass-light) 50%,transparent);}
-.credit{padding:28px 30px;position:relative;}
-.credit+.credit{border-left:1px solid var(--rule2);}
-.credit .num{font-family:var(--display);font-size:36px;font-weight:500;color:var(--forest);display:block;margin-bottom:6px;letter-spacing:-0.01em;}
-.credit .lbl{font-family:var(--label);font-size:12px;letter-spacing:0.1em;color:var(--grey);text-transform:uppercase;}
-@media(max-width:600px){.credit-line{grid-template-columns:1fr;}.credit+.credit{border-left:none;border-top:1px solid var(--rule2);}}
+/* SECTION DIVIDER */
+.divider{background:var(--black);padding:16px 0;}
+.divider .wrap{display:flex;align-items:center;justify-content:space-between;}
+.divider-label{font-family:var(--label);font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);}
+.divider-rule{flex:1;height:1px;background:rgba(255,255,255,0.15);margin:0 20px;}
+.divider-num{font-family:var(--display);font-style:italic;font-size:14px;color:rgba(255,255,255,0.4);}
 
-.band{background:var(--forest);padding:20px 0;}
-.band .wrap{display:flex;align-items:center;justify-content:space-between;}
-.band-label{font-family:var(--label);font-size:12.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--brass);}
-.band-rule{flex:1;height:1px;background:rgba(168,133,79,0.25);margin:0 24px;}
-.band-num{font-family:var(--display);font-style:italic;font-size:16px;color:rgba(242,237,226,0.4);}
+/* SECTIONS */
+section{padding:60px 0;border-bottom:1px solid var(--rule);}
+.eyebrow{font-family:var(--label);font-size:12.5px;letter-spacing:0.16em;color:var(--red);margin-bottom:20px;font-weight:500;text-transform:uppercase;}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(28px,3.8vw,38px);line-height:1.18;margin-bottom:20px;max-width:600px;color:var(--black);}
+h2 em{font-style:italic;color:var(--red);}
+.lede{color:var(--ink-soft);max-width:580px;font-size:16.5px;line-height:1.75;}
 
-section{padding:70px 0;}
-.eyebrow{
-  font-family:var(--label);font-size:13.5px;letter-spacing:0.18em;color:var(--oxblood);
-  margin-bottom:24px;font-weight:500;text-transform:uppercase;
-  display:flex;align-items:center;gap:12px;
-}
-.eyebrow::before{content:'';width:22px;height:1px;background:var(--oxblood);}
-h2{
-  font-family:var(--display);font-weight:400;font-size:clamp(32px,4.4vw,44px);
-  line-height:1.16;margin-bottom:24px;max-width:640px;letter-spacing:-0.008em;color:var(--ink);
-}
-h2 em{font-style:italic;font-weight:400;color:var(--forest);}
-.lede{color:var(--ink-soft);max-width:600px;font-size:17px;line-height:1.75;}
-
-.focus-list{margin-top:44px;}
-.focus-item{padding:24px 0;border-bottom:1px solid var(--rule);display:flex;gap:28px;}
+.focus-list{margin-top:38px;}
+.focus-item{padding:22px 0;border-bottom:1px solid var(--rule);display:flex;gap:24px;}
 .focus-item:first-child{padding-top:0;}
-.focus-item .tag{font-family:var(--display);font-style:italic;font-size:16px;color:var(--rule2);padding-top:3px;flex-shrink:0;width:36px;}
-.focus-item h3{font-family:var(--display);font-size:21px;font-weight:500;margin-bottom:7px;letter-spacing:-0.005em;}
-.focus-item p{color:var(--ink-soft);font-size:16px;line-height:1.72;max-width:500px;}
+.focus-item .tag{font-family:var(--display);font-style:italic;font-size:14px;color:var(--red);padding-top:3px;flex-shrink:0;width:30px;}
+.focus-item h3{font-family:var(--display);font-size:20px;font-weight:500;margin-bottom:6px;}
+.focus-item p{color:var(--ink-soft);font-size:15.5px;line-height:1.72;max-width:500px;}
 
-.cssg-block{margin-top:34px;border:1px solid var(--forest);padding:34px;background:var(--ivory2);position:relative;}
-.cssg-block::before{content:'';position:absolute;top:6px;left:6px;right:6px;bottom:6px;border:1px solid var(--rule2);pointer-events:none;}
-.cssg-block .org{font-family:var(--label);font-size:12.5px;color:var(--forest);margin-bottom:16px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;}
-.cssg-block p{color:var(--ink-soft);font-size:16.5px;max-width:580px;line-height:1.75;margin-bottom:22px;}
+.cssg-block{margin-top:32px;border:1px solid var(--black);padding:32px;background:var(--offwhite);}
+.cssg-block .org{font-family:var(--label);font-size:11.5px;color:var(--red);margin-bottom:14px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;}
+.cssg-block p{color:var(--ink-soft);font-size:16px;max-width:560px;line-height:1.75;margin-bottom:20px;}
 .cssg-tags{display:flex;gap:10px;flex-wrap:wrap;}
-.cssg-tags span{font-size:13px;color:var(--forest);font-family:var(--label);letter-spacing:0.04em;border:1px solid var(--forest);padding:8px 16px;}
+.cssg-tags span{font-size:12.5px;color:var(--black);font-family:var(--label);letter-spacing:0.04em;border:1px solid var(--black);padding:7px 14px;}
 
-.fx-name{font-family:var(--display);font-style:italic;font-weight:500;color:var(--oxblood);}
+.fx-name{font-family:var(--display);font-style:italic;font-weight:500;color:var(--red);}
 
-.catalogue{margin-top:44px;}
-.catalogue-head{font-family:var(--label);font-size:13px;color:var(--grey);margin-bottom:6px;letter-spacing:0.14em;text-transform:uppercase;}
-.entry{padding:24px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:60px 1fr;gap:10px;}
-.entry:first-of-type{padding-top:20px;}
-.entry .efile{font-family:var(--display);font-style:italic;font-size:19px;color:var(--rule2);padding-top:3px;}
-.entry h3{font-family:var(--display);font-size:19px;font-weight:500;margin-bottom:7px;letter-spacing:-0.005em;}
-.entry p{color:var(--ink-soft);font-size:15.5px;line-height:1.7;max-width:500px;}
+.catalogue{margin-top:40px;}
+.entry{padding:22px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:56px 1fr;gap:10px;}
+.entry:first-of-type{padding-top:18px;}
+.entry .efile{font-family:var(--display);font-style:italic;font-size:17px;color:var(--red);padding-top:2px;}
+.entry h3{font-family:var(--display);font-size:19px;font-weight:500;margin-bottom:6px;}
+.entry p{color:var(--ink-soft);font-size:15px;line-height:1.7;max-width:500px;}
 @media(max-width:560px){.entry{grid-template-columns:1fr;}}
 
-.fx-cta{
-  margin-top:44px;padding:34px 38px;background:var(--forest);color:var(--ivory);
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;
-  position:relative;
-}
-.fx-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--brass);}
-.fx-cta p{font-family:var(--body);font-size:16px;color:#CFC8B5;max-width:360px;line-height:1.65;}
-.fx-cta .btn-fx{background:var(--brass);color:var(--forest);border:1px solid var(--brass);font-family:var(--label);font-size:14px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;padding:15px 30px;display:inline-block;transition:background 0.2s,color 0.2s,border-color 0.2s;}
-.fx-cta .btn-fx:hover{background:var(--oxblood);color:var(--ivory);border-color:var(--oxblood);}
+.fx-cta{margin-top:36px;padding:30px 32px;background:var(--black);color:var(--white);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.fx-cta p{font-size:15.5px;color:rgba(255,255,255,0.68);max-width:340px;line-height:1.65;}
+.fx-cta .btn-fx{background:var(--red);color:var(--white);font-family:var(--label);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;padding:14px 26px;display:inline-block;}
+.fx-cta .btn-fx:hover{background:var(--white);color:var(--red);}
 
-.contact-block{display:flex;flex-direction:column;margin-top:40px;border-top:1px solid var(--forest);border-bottom:1px solid var(--forest);}
-.contact-row{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule2);padding:22px 4px;flex-wrap:wrap;gap:10px;}
-.contact-row:last-child{border-bottom:none;}
-.contact-row .label{font-family:var(--label);font-size:13px;color:var(--grey);letter-spacing:0.12em;text-transform:uppercase;}
-.contact-row .value{font-family:var(--display);font-size:21px;font-weight:400;color:var(--ink);}
-.contact-row a.value{transition:color 0.2s;}
-.contact-row a.value:hover{color:var(--oxblood);}
+.contact-block{margin-top:36px;border-top:1px solid var(--black);}
+.contact-row{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding:20px 0;flex-wrap:wrap;gap:10px;}
+.contact-row .label{font-family:var(--label);font-size:12px;color:var(--grey);letter-spacing:0.1em;text-transform:uppercase;}
+.contact-row .value{font-family:var(--display);font-size:19px;color:var(--black);}
+.contact-row a.value:hover{color:var(--red);}
 
-footer{padding:44px 0 52px;background:var(--ivory2);}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-footer p{font-family:var(--label);font-size:12.5px;color:var(--grey);letter-spacing:0.08em;text-transform:uppercase;}
-
-.reveal{opacity:0;transform:translateY(14px);transition:opacity 0.65s ease,transform 0.65s ease;}
-.reveal.v{opacity:1;transform:none;}
+footer{padding:34px 0 44px;}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+footer p{font-family:var(--label);font-size:11.5px;color:var(--grey);letter-spacing:0.06em;text-transform:uppercase;}
 </style>
 </head>
 <body>
 
-<div class="doc-edge-top"></div>
-
-<nav>
-  <div class="nav-inner">
-    <div class="nav-name">Sahil Singhal</div>
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">Sahil <span>Singhal</span></div>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#cssg">CSSG</a>
@@ -207,29 +140,27 @@ footer p{font-family:var(--label);font-size:12.5px;color:var(--grey);letter-spac
       <a href="#contact">Contact</a>
     </div>
   </div>
-</nav>
+</div>
 
 <header class="hero">
   <div class="wrap">
-    <div class="seal reveal"><div class="seal-inner">SS</div></div>
+    <div class="seal"><div class="seal-inner">SS</div></div>
 
-    <h1 class="hero-name reveal">Sahil Singhal</h1>
+    <h1 class="hero-name">Sahil Singhal</h1>
+    <div class="hero-role">Certified Fraud Examiner · White Collar Crime Lawyer</div>
 
-    <div class="hero-role reveal">
-      <span>Certified Fraud Examiner</span><span class="sep">·</span>
-      <span>White Collar Crime Lawyer</span>
-    </div>
+    <p class="hero-statement">Every fraud leaves a structural weakness behind. My work is finding it first.</p>
 
-    <p class="hero-sub reveal">
+    <p class="hero-sub">
       Leading strategic intelligence and investigations at Caparo Special Services Group. Independent research on bribery and corruption published through Fraulex Intelligence.
     </p>
 
-    <div class="hero-ctas reveal">
+    <div class="hero-ctas">
       <a class="btn btn-primary" href="#cssg">My Work at CSSG</a>
-      <a class="btn btn-text" href="https://www.fraulex.com">Browse the Research →</a>
+      <a class="btn btn-outline" href="#fraulex">Browse the Research</a>
     </div>
 
-    <div class="credit-line reveal">
+    <div class="credit-line">
       <div class="credit"><span class="num">CFE</span><span class="lbl">ACFE Certified</span></div>
       <div class="credit"><span class="num">LLB</span><span class="lbl">White Collar Crime</span></div>
       <div class="credit"><span class="num">10+</span><span class="lbl">Years of Practice</span></div>
@@ -237,27 +168,27 @@ footer p{font-family:var(--label);font-size:12.5px;color:var(--grey);letter-spac
   </div>
 </header>
 
-<div class="band">
-  <div class="wrap"><div class="band-label">Who I Am</div><div class="band-rule"></div><div class="band-num">I</div></div>
+<div class="divider">
+  <div class="wrap"><div class="divider-label">Who I Am</div><div class="divider-rule"></div><div class="divider-num">I</div></div>
 </div>
 
 <section id="about">
   <div class="wrap">
-    <div class="eyebrow reveal">Background</div>
-    <h2 class="reveal">Corporate fraud investigator.<br><em>White collar crime lawyer.</em></h2>
-    <p class="lede reveal">
+    <div class="eyebrow">Background</div>
+    <h2>Corporate fraud investigator. <em>White collar crime lawyer.</em></h2>
+    <p class="lede">
       As a Certified Fraud Examiner and lawyer, my work sits at the intersection of forensic investigation and legal analysis. I study how financial misconduct, bribery, and corruption are built inside organisations, and how companies can prove they took real steps to prevent it.
     </p>
 
     <div class="focus-list">
-      <div class="focus-item reveal">
+      <div class="focus-item">
         <div class="tag">i</div>
         <div>
           <h3>Fraud Investigation</h3>
           <p>CFE-led investigations into procurement fraud, financial statement fraud, asset misappropriation, and bribery, conducted to a standard that holds up under legal and regulatory scrutiny.</p>
         </div>
       </div>
-      <div class="focus-item reveal">
+      <div class="focus-item">
         <div class="tag">ii</div>
         <div>
           <h3>White Collar Crime &amp; Anti-Bribery Law</h3>
@@ -268,19 +199,19 @@ footer p{font-family:var(--label);font-size:12.5px;color:var(--grey);letter-spac
   </div>
 </section>
 
-<div class="band">
-  <div class="wrap"><div class="band-label">Professional Practice</div><div class="band-rule"></div><div class="band-num">II</div></div>
+<div class="divider">
+  <div class="wrap"><div class="divider-label">Professional Practice</div><div class="divider-rule"></div><div class="divider-num">II</div></div>
 </div>
 
 <section id="cssg">
   <div class="wrap">
-    <div class="eyebrow reveal">Caparo Special Services Group</div>
-    <h2 class="reveal">Integrated risk, governance, <em>and investigation.</em></h2>
-    <p class="lede reveal">
+    <div class="eyebrow">Caparo Special Services Group</div>
+    <h2>Integrated risk, governance, <em>and investigation.</em></h2>
+    <p class="lede">
       CSSG is the governance, risk, and investigations division of Caparo Group, one of India's leading industrial conglomerates. I lead fraud investigation and enterprise risk strategy for the group and its external clients.
     </p>
 
-    <div class="cssg-block reveal">
+    <div class="cssg-block">
       <div class="org">Division of Caparo Group</div>
       <p>
         My role spans the full investigation cycle, from designing anti-fraud controls and running risk assessments before a problem emerges, to leading investigations when one does. Every engagement is CFE-led, legally informed, and built to hold up under board or regulatory scrutiny.
@@ -294,72 +225,67 @@ footer p{font-family:var(--label);font-size:12.5px;color:var(--grey);letter-spac
   </div>
 </section>
 
-<div class="band">
-  <div class="wrap"><div class="band-label">Independent Research</div><div class="band-rule"></div><div class="band-num">III</div></div>
+<div class="divider">
+  <div class="wrap"><div class="divider-label">Independent Research</div><div class="divider-rule"></div><div class="divider-num">III</div></div>
 </div>
 
 <section id="fraulex">
   <div class="wrap">
-    <div class="eyebrow reveal">Fraulex Intelligence</div>
-    <h2 class="reveal"><span class="fx-name">Fraulex</span> anti-bribery and corruption research</h2>
-    <p class="lede reveal">
+    <div class="eyebrow">Fraulex Intelligence</div>
+    <h2><span class="fx-name">Fraulex</span> anti-bribery and corruption research</h2>
+    <p class="lede">
       Fraulex studies bribery and corruption cases under the UK Bribery Act, the US FCPA, India's Prevention of Corruption Act and PMLA, France's Sapin II, and other anti-corruption laws worldwide. It breaks down how each case happened and identifies what a company needs to prove it took real steps to prevent it.
     </p>
 
     <div class="catalogue">
-      <div class="catalogue-head reveal">From the Research Catalogue</div>
-
-      <div class="entry reveal">
+      <div class="entry">
         <div class="efile">a</div>
         <div>
           <h3>Intelligence Briefs</h3>
-          <p>Individual enforcement cases decoded: how the bribery was structured, what controls failed, and what a regulator ultimately found.</p>
+          <p>A breakdown of one case: how the bribery was structured, what controls failed, and what a regulator ultimately found.</p>
         </div>
       </div>
-
-      <div class="entry reveal">
+      <div class="entry">
         <div class="efile">b</div>
         <div>
           <h3>Regulatory Guides</h3>
           <p>The law explained in plain language, covering the UK Bribery Act and FCPA.</p>
         </div>
       </div>
-
-      <div class="entry reveal">
+      <div class="entry">
         <div class="efile">c</div>
         <div>
           <h3>Defense Shield</h3>
           <p>The adequate procedures standard, laid out clearly against the areas regulators check most often.</p>
         </div>
       </div>
-
-      <div class="entry reveal">
+      <div class="entry">
         <div class="efile">d</div>
         <div>
           <h3>SimLab</h3>
-          <p>Scenario exercises built on real enforcement failures, run against a company's own approval chain to stress-test whether its controls would actually catch it.</p>
+          <p>A case tested against a company's own approval process, to see whether it would actually catch it.</p>
         </div>
       </div>
     </div>
 
-    <div class="fx-cta reveal">
+    <div class="fx-cta">
       <p>Published research, available to anyone. Every guide is self-study, no engagement required.</p>
       <a class="btn-fx" href="https://www.fraulex.com">Browse the Catalogue</a>
     </div>
   </div>
 </section>
 
-<div class="band">
-  <div class="wrap"><div class="band-label">Correspondence</div><div class="band-rule"></div><div class="band-num">IV</div></div>
+<div class="divider">
+  <div class="wrap"><div class="divider-label">Correspondence</div><div class="divider-rule"></div><div class="divider-num">IV</div></div>
 </div>
 
 <section id="contact">
   <div class="wrap">
-    <div class="eyebrow reveal">Contact</div>
-    <h2 class="reveal">Get in touch.</h2>
-    <p class="lede reveal">For questions about the research or Fraulex Intelligence material.</p>
+    <div class="eyebrow">Contact</div>
+    <h2>Get in touch.</h2>
+    <p class="lede">For questions about the research or Fraulex Intelligence material.</p>
 
-    <div class="contact-block reveal">
+    <div class="contact-block">
       <div class="contact-row">
         <span class="label">Research &amp; Fraulex</span>
         <a class="value" href="mailto:sahil@fraulex.com">sahil@fraulex.com</a>
@@ -383,11 +309,5 @@ footer p{font-family:var(--label);font-size:12.5px;color:var(--grey);letter-spac
   </div>
 </footer>
 
-<script>
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target);}});
-},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
 </body>
 </html>
